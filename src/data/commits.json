@@ -1,0 +1,275 @@
+[
+  {
+    "hash": "3746d955d0e432570be7714b2dc457f1928f4c5b",
+    "date": "2026-02-10T10:08:03+07:00",
+    "author_name": "Chris G",
+    "author_email": "chrisg@example.com",
+    "message": "Initial commit",
+    "files": [
+      {
+        "path": ".agent/workflows/openspec-apply.md",
+        "added": 20,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": ".agent/workflows/openspec-archive.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": ".agent/workflows/openspec-proposal.md",
+        "added": 25,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": ".gitignore",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": ".prettierrc",
+        "added": 5,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "AGENTS.md",
+        "added": 18,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "README.md",
+        "added": 73,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "eslint.config.js",
+        "added": 23,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "index.html",
+        "added": 13,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/AGENTS.md",
+        "added": 456,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/design.md",
+        "added": 12,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/proposal.md",
+        "added": 20,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/specs/city-layout/spec.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/specs/data-ingestion/spec.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/specs/interaction/spec.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/specs/visualization/spec.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/develop-mvp/tasks.md",
+        "added": 8,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/design.md",
+        "added": 22,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/proposal.md",
+        "added": 8,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/specs/code-quality/spec.md",
+        "added": 14,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/specs/frontend-setup/spec.md",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/specs/project-structure/spec.md",
+        "added": 29,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/changes/initialize-project/tasks.md",
+        "added": 13,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "openspec/project.md",
+        "added": 70,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "package-lock.json",
+        "added": 3975,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "package.json",
+        "added": 37,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "public/vite.svg",
+        "added": 1,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "references/Research Methodology Temporal Code City.pdf",
+        "added": 0,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "references/Research Planning Temporal Code City.pdf",
+        "added": 0,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "scripts/git-parser.ts",
+        "added": 69,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "src/App.css",
+        "added": 42,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "src/App.tsx",
+        "added": 19,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "src/assets/react.svg",
+        "added": 1,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "src/index.css",
+        "added": 27,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "src/main.tsx",
+        "added": 10,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tsconfig.app.json",
+        "added": 28,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tsconfig.json",
+        "added": 7,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tsconfig.node.json",
+        "added": 26,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "vite.config.ts",
+        "added": 7,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "274ba463fc535b6c088f4b050283c3e12b2228a9",
+    "date": "2026-02-10T10:08:22+07:00",
+    "author_name": "Chris G",
+    "author_email": "chrisg@example.com",
+    "message": "Add file to delete",
+    "files": [
+      {
+        "path": "delete_me.txt",
+        "added": 0,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "ee9a2f01bae77c0ecdc1654c5816d53d67734b53",
+    "date": "2026-02-10T10:08:22+07:00",
+    "author_name": "Chris G",
+    "author_email": "chrisg@example.com",
+    "message": "Delete file",
+    "files": [
+      {
+        "path": "delete_me.txt",
+        "added": 0,
+        "deleted": 0,
+        "status": "D"
+      }
+    ]
+  }
+]
