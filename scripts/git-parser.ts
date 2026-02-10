@@ -19,45 +19,90 @@ if (!fs.existsSync(outputDir)) {
 async function run() {
     console.log('Parsing Git log...');
     try {
-        // We use --numstat to get insertions and deletions per file
-        // We also want no merges to keep the history linear-ish for the MVP city
-        // simple-git's log parser handles --numstat and puts it in `diff`
-        const log = await git.log([
+        const separator = '|||';
+        // Format: COMMIT:hash|||date|||author|||email|||message
+        const format = `COMMIT:${separator}%H${separator}%aI${separator}%an${separator}%ae${separator}%s`;
+
+        const logOutput = await git.raw([
+            'log',
+            `--pretty=format:${format}`,
             '--numstat',
+            '--summary',
             '--no-merges',
-            '--date=iso'
+            '--reverse' // Verify current order preference. Desired: Chronological for building city
         ]);
 
-        const commits = log.all.map((commit) => {
-            // commit.diff is present when --numstat or --stat is used
-            // It is an object? No, in simple-git it might be attached differently depending on version
-            // Let's debug if needed, but standard usage suggests it parses it.
-            // However, simple-git types say `diff` property exists on `LogResult`? 
-            // Actually, looking at docs, `diff` is NOT on `ListLogLine` by default.
-            // If we use `git.log`, we might get a `ListLogSummary` which has `all` array.
+        const commits = [];
+        let currentCommit = null;
 
-            // If simple-git doesn't parse numstat automatically into the objects in `all`, 
-            // we might need to rely on the `diff` property of the `LogResult` which might aggregate it?
-            // No, usually it attaches `diff` to the commit object if it can parse it.
+        const lines = logOutput.split('\n');
 
-            // Let's assume for a moment we might need to perform a raw parse if this doesn't work.
-            // But let's try to map what we expect.
+        for (const line of lines) {
+            if (line.trim() === '') continue;
 
-            return {
-                hash: commit.hash,
-                date: commit.date,
-                message: commit.message,
-                author_name: commit.author_name,
-                author_email: commit.author_email,
-                files: commit.diff ? commit.diff.files : []
-            };
-        });
+            if (line.startsWith(`COMMIT:${separator}`)) {
+                if (currentCommit) {
+                    commits.push(currentCommit);
+                }
+                const parts = line.split(separator);
+                currentCommit = {
+                    hash: parts[1],
+                    date: parts[2],
+                    author_name: parts[3],
+                    author_email: parts[4],
+                    message: parts[5],
+                    files: []
+                };
+            } else if (currentCommit) {
+                // Parse numstat: "added deleted path"
+                // e.g. "10  5   src/App.tsx"
+                const numstatMatch = line.match(/^(\d+|-)\s+(\d+|-)\s+(.+)$/);
 
-        console.log(`Parsed ${commits.length} commits.`);
-        if (commits.length > 0) {
-            console.log('Sample commit:', JSON.stringify(commits[0], null, 2));
+                if (numstatMatch) {
+                    const addedStr = numstatMatch[1];
+                    const deletedStr = numstatMatch[2];
+                    const filePath = numstatMatch[3];
+
+                    const added = addedStr === '-' ? 0 : parseInt(addedStr, 10);
+                    const deleted = deletedStr === '-' ? 0 : parseInt(deletedStr, 10);
+
+                    // default status 'M' for modified
+                    currentCommit.files.push({
+                        path: filePath,
+                        added,
+                        deleted,
+                        status: 'M'
+                    });
+                    continue;
+                }
+
+                // Parse summary: " create mode 100644 path"
+                const createMatch = line.match(/\s*create mode \d+ (.+)/);
+                if (createMatch) {
+                    const filePath = createMatch[1];
+                    const fileEntry = currentCommit.files.find(f => f.path === filePath);
+                    if (fileEntry) fileEntry.status = 'A';
+                    continue;
+                }
+
+                // Parse summary: " delete mode 100644 path"
+                const deleteMatch = line.match(/\s*delete mode \d+ (.+)/);
+                if (deleteMatch) {
+                    const filePath = deleteMatch[1];
+                    const fileEntry = currentCommit.files.find(f => f.path === filePath);
+                    if (fileEntry) fileEntry.status = 'D';
+                    continue;
+                }
+
+                // Parse summary: " rename ..." (Not handling for MVP simplicity unless critical)
+            }
+        }
+        // Push last commit
+        if (currentCommit) {
+            commits.push(currentCommit);
         }
 
+        console.log(`Parsed ${commits.length} commits.`);
         fs.writeFileSync(outputFile, JSON.stringify(commits, null, 2));
         console.log(`Saved to ${outputFile}`);
 

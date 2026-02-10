@@ -1,19 +1,62 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import './App.css'
+
+import { useState, useMemo } from 'react';
+import { Scene } from './components/Scene';
+import { buildCityAtCommit } from './utils/cityBuilder';
+import { computeLayout } from './utils/layout';
+import CommitsData from './data/commits.json';
+import type { Commit } from './types';
+import './App.css';
+
+// Cast imported JSON to typed array
+const commits = CommitsData as unknown as Commit[];
 
 function App() {
+  const [timeIndex, setTimeIndex] = useState(commits.length - 1);
+
+  // Compute city state only when time changes
+  const cityLayout = useMemo(() => {
+    if (commits.length === 0) return null;
+    const city = buildCityAtCommit(commits, timeIndex);
+    return computeLayout(city, { width: 100, height: 100, padding: 1 });
+  }, [timeIndex]);
+
+  const currentCommit = commits[timeIndex];
+
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <mesh>
-        <boxGeometry />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-      <OrbitControls />
-    </Canvas>
-  )
+    <div className="app-container">
+      {/* 3D Scene */}
+      <div className="scene-container">
+        {cityLayout && <Scene data={cityLayout} />}
+      </div>
+
+      {/* UI Overlay */}
+      <div className="ui-overlay">
+        <h1>Temporal Code City</h1>
+        
+        {currentCommit && (
+          <div className="info-panel">
+            <p><strong>Commit:</strong> {currentCommit.hash.substring(0, 7)}</p>
+            <p><strong>Date:</strong> {new Date(currentCommit.date).toLocaleString()}</p>
+            <p><strong>Author:</strong> {currentCommit.author_name}</p>
+            <p><strong>Message:</strong> {currentCommit.message}</p>
+          </div>
+        )}
+
+        <div className="controls">
+          <label>Time Travel:</label>
+          <input 
+            type="range" 
+            min="0" 
+            max={commits.length - 1} 
+            value={timeIndex} 
+            onChange={(e) => setTimeIndex(Number(e.target.value))} 
+            className="time-slider"
+          />
+          <span>{timeIndex + 1} / {commits.length}</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
