@@ -1,54 +1,116 @@
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
+import * as THREE from 'three';
 import type { LayoutNode } from '../types';
 
 interface BuildingProps {
   node: LayoutNode;
+  changedPaths: Set<string>;
+  onSelect: (node: LayoutNode) => void;
+  minDate: number;
+  maxDate: number;
 }
 
-export const Building: React.FC<BuildingProps> = ({ node }) => {
-  const meshRef = useRef<any>(null);
-  const [hovered, setHover] = useState(false);
-  
-  // Dimensions
+// Ease-out exponential lerp factor
+const LERP_SPEED = 6;
+
+// Cold color (old files)
+const COLD = new THREE.Color('#3a6b9e');
+// Hot color (recent files)
+const HOT = new THREE.Color('#ff5500');
+// Highlight color for files changed in current commit
+const HIGHLIGHT = new THREE.Color('#ff8800');
+
+export const Building: React.FC<BuildingProps> = ({
+  node,
+  changedPaths,
+  onSelect,
+  minDate,
+  maxDate,
+}) => {
+  const meshRef = useRef<THREE.Mesh>(null!);
+  const currentHRef = useRef(0); // animated height, starts at 0 (spawn animation)
+  const hoveredRef = useRef(false);
+  const [hovered, setHovered] = React.useState(false);
+
+  // Linear scale height — clamped minimum so tiny files are still visible
+  const targetH = Math.max(0.2, node.size * 0.1);
+
+  // Position (d3 treemap gives top-left; Three.js box is center-origin)
   const w = node.width;
-  const d = node.height; // layout 'height' is depth in 3D (z)
-  
-  // Height metric: Scaled LoC
-  // Prevent huge spikes. Maybe log scale?
-  // Let's iterate. simple linear scale for now.
-  const h = Math.max(0.1, node.size * 0.1); 
-  
-  // Position
-  // d3 coords are top-left (x0, y0).
-  // Three.js BoxGeometry is centered.
-  // We need to shift by half width/depth.
-  // Also layout is 2D (x, y). In 3D: x -> x, y -> z
+  const d = node.height;
   const x = node.x + w / 2;
   const z = node.y + d / 2;
-  const y = h / 2; // Sitting on ground (y=0)
 
-  // Color by file type (extension)
-  const getFileColor = (name: string) => {
-    if (name.endsWith('.ts') || name.endsWith('.tsx')) return '#3178c6';
-    if (name.endsWith('.js')) return '#f7df1e';
-    if (name.endsWith('.css')) return '#264de4';
-    if (name.endsWith('.json')) return '#292929';
-    if (name.endsWith('.md')) return '#000000';
-    return '#888888';
-  };
+  // Recency color: 0 = oldest (cold), 1 = newest (hot)
+  const dateMs = node.lastModified ? new Date(node.lastModified).getTime() : minDate;
+  const range = maxDate - minDate || 1;
+  const recency = Math.max(0, Math.min(1, (dateMs - minDate) / range));
+  const baseColor = new THREE.Color().lerpColors(COLD, HOT, recency);
 
-  const color = getFileColor(node.name);
+  const isChanged = changedPaths.has(node.path);
+
+  useFrame((_, delta) => {
+    if (!meshRef.current) return;
+
+    // Exponential smoothing — ease-out lerp
+    const factor = 1 - Math.exp(-delta * LERP_SPEED);
+    currentHRef.current += (targetH - currentHRef.current) * factor;
+
+    const h = Math.max(0.0001, currentHRef.current);
+
+    // Scale y to animated height; keep base anchored at y = 0
+    meshRef.current.scale.y = h / targetH;
+    meshRef.current.position.y = h / 2;
+
+    // Animate emissive: pulse changed buildings, fade others
+    const mat = meshRef.current.material as THREE.MeshStandardMaterial;
+    if (isChanged) {
+      const pulse = 0.4 + 0.3 * Math.sin(Date.now() * 0.005);
+      mat.emissive.copy(HIGHLIGHT);
+      mat.emissiveIntensity = pulse;
+    } else {
+      mat.emissiveIntensity *= 0.92; // fade out any leftover glow
+    }
+  });
 
   return (
     <mesh
       ref={meshRef}
-      position={[x, y, z]}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
+      position={[x, 0, z]}
+      onClick={(e) => { e.stopPropagation(); onSelect(node); }}
+      onPointerOver={(e) => { e.stopPropagation(); hoveredRef.current = true; setHovered(true); }}
+      onPointerOut={() => { hoveredRef.current = false; setHovered(false); }}
     >
-      <boxGeometry args={[w * 0.9, h, d * 0.9]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : color} />
+      <boxGeometry args={[w * 0.9, targetH, d * 0.9]} />
+      <meshStandardMaterial
+        color={hovered ? '#ffffff' : baseColor}
+        emissive={isChanged ? HIGHLIGHT : new THREE.Color(0, 0, 0)}
+        emissiveIntensity={isChanged ? 0.6 : 0}
+        roughness={0.6}
+        metalness={0.2}
+      />
+      {hovered && (
+        <Html
+          position={[0, targetH / 2 + 0.5, 0]}
+          center
+          style={{ pointerEvents: 'none' }}
+        >
+          <div style={{
+            background: 'rgba(0,0,0,0.8)',
+            color: '#fff',
+            padding: '3px 8px',
+            borderRadius: 4,
+            fontSize: 11,
+            whiteSpace: 'nowrap',
+            border: '1px solid rgba(255,255,255,0.2)',
+          }}>
+            {node.name}
+          </div>
+        </Html>
+      )}
     </mesh>
   );
 };

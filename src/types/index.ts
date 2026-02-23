@@ -22,6 +22,8 @@ export interface CityNode {
     size: number;
     children?: CityNode[];
     lastModified?: string;
+    totalAdded?: number;
+    totalDeleted?: number;
 }
 
 export interface LayoutNode extends CityNode {
