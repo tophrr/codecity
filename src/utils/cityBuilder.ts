@@ -2,6 +2,18 @@
 import type { Commit, CityNode } from '../types';
 
 /**
+ * Returns the set of file paths that changed in a specific commit.
+ */
+export function getCommitChangedPaths(commits: Commit[], commitIndex: number): Set<string> {
+    if (commitIndex < 0 || commitIndex >= commits.length) return new Set();
+    return new Set(
+        commits[commitIndex].files
+            .filter(f => f.status !== 'D')
+            .map(f => f.path)
+    );
+}
+
+/**
  * Builds the city state at a specific commit index.
  * @param commits List of all commits sorted chronologically (oldest to newest)
  * @param commitIndex Index of the commit to build state for (inclusive)
@@ -47,37 +59,26 @@ export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityN
         const fileName = parts.pop();
         const dirParts = parts;
 
-        // Navigate to parent dir
         let current = root;
-        const stack: CityNode[] = [root]; // Track path for cleanup
+        const stack: CityNode[] = [root];
 
         for (const part of dirParts) {
             const child = current.children?.find(c => c.name === part);
-            if (!child) return; // Directory doesn't exist, can't remove file
+            if (!child) return;
             current = child;
             stack.push(current);
         }
 
-        // Remove file from current dir
         if (current.children) {
             current.children = current.children.filter(c => c.name !== fileName);
         }
 
-        // Cleanup empty directories
-        // We walk up the stack. If a directory is empty (no children), remove it from its parent.
-        // Note: This matches "Git behavior" (git doesn't track empty dirs).
-        // But maybe we want to keep them if they were explicitly created? Git doesn't.
-
-        // Reverse stack traversal
         for (let i = stack.length - 1; i > 0; i--) {
             const node = stack[i];
             const parent = stack[i - 1];
-
-            // If node is empty (and not root), remove it
             if (node.children && node.children.length === 0) {
                 parent.children = parent.children?.filter(c => c !== node);
             } else {
-                // If not empty, stop cleaning up
                 break;
             }
         }
@@ -97,7 +98,6 @@ export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityN
             if (file.status === 'D') {
                 removeFile(file.path);
             } else {
-                // A, M, or R (if handled)
                 const dirNode = ensureDirectory(dirParts);
 
                 let fileNode = dirNode.children?.find(c => c.name === fileName);
@@ -107,24 +107,21 @@ export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityN
                         path: file.path,
                         type: 'file',
                         size: 0,
-                        lastModified: commit.date
+                        lastModified: commit.date,
+                        totalAdded: 0,
+                        totalDeleted: 0,
                     };
                     dirNode.children = dirNode.children || [];
                     dirNode.children.push(fileNode);
                 }
 
-                // Update size (LoC)
-                // Ensure size doesn't go below 0 (can happen with binary files or incorrect stats)
                 fileNode.size = Math.max(0, fileNode.size + file.added - file.deleted);
                 fileNode.lastModified = commit.date;
+                fileNode.totalAdded = (fileNode.totalAdded ?? 0) + file.added;
+                fileNode.totalDeleted = (fileNode.totalDeleted ?? 0) + file.deleted;
             }
         }
     }
-
-    // Recalculate directory sizes (sum of children)?
-    // Layout engine might handle that, or we do it here.
-    // Usually Treemap needs value on leaf nodes. Directories accumulate.
-    // Let's implement a recursive size calculator if needed, but for now leaf size is enough.
 
     return root;
 }
