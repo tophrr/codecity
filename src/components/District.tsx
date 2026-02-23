@@ -8,6 +8,7 @@ interface DistrictProps {
   depth?: number;
   changedPaths: Set<string>;
   onSelect: (node: LayoutNode) => void;
+  onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
 }
@@ -15,7 +16,7 @@ interface DistrictProps {
 // Lot surface color per depth — sits above the global road plane
 const LOT_COLOR = ['#1a1a30', '#161628', '#121220'];
 
-export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, minDate, maxDate }) => {
+export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, onHover, minDate, maxDate }) => {
   const w = node.width;
   const d = node.height;
   const x = node.x + w / 2;
@@ -27,7 +28,7 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
   const lotY = 0.01 + depth * 0.015;
   const lotH = 0.04;
 
-  const sharedProps = { changedPaths, onSelect, minDate, maxDate };
+  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
 
   return (
     <group>

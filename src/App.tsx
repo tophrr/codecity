@@ -4,7 +4,10 @@ import { Scene } from './components/Scene';
 import { buildCityAtCommit, getCommitChangedPaths } from './utils/cityBuilder';
 import { computeLayout } from './utils/layout';
 import CommitsData from './data/commits.json';
+import DepsData from './data/deps.json';
 import type { Commit, LayoutNode } from './types';
+
+const deps = DepsData as Record<string, string[]>;
 import './App.css';
 
 const commits = CommitsData as unknown as Commit[];
@@ -64,6 +67,7 @@ function App() {
             onSelect={handleSelect}
             minDate={minDate}
             maxDate={maxDate}
+            deps={deps}
           />
         )}
       </div>

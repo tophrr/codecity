@@ -8,12 +8,13 @@ interface CityProps {
   root: LayoutNode;
   changedPaths: Set<string>;
   onSelect: (node: LayoutNode) => void;
+  onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
 }
 
-export const City: React.FC<CityProps> = ({ root, changedPaths, onSelect, minDate, maxDate }) => {
-  const sharedProps = { changedPaths, onSelect, minDate, maxDate };
+export const City: React.FC<CityProps> = ({ root, changedPaths, onSelect, onHover, minDate, maxDate }) => {
+  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
   return (
     <group>
       {root.type === 'directory' ? (
