@@ -34,6 +34,12 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
       <pointLight position={[cx, size * 0.4, cz]} intensity={0.8} color="#6688ff" />
       <hemisphereLight args={['#202040', '#000000', 0.4]} />
 
+      {/* Single global road ground plane — district gaps expose this as streets */}
+      <mesh position={[cx, -0.02, cz]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+        <planeGeometry args={[size * 1.5, size * 1.5]} />
+        <meshStandardMaterial color="#52527a" roughness={0.95} metalness={0.05} />
+      </mesh>
+
       <City
         root={data}
         changedPaths={changedPaths}
@@ -42,7 +48,7 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
         maxDate={maxDate}
       />
 
-      <gridHelper args={[size * 2, 40, '#222244', '#111122']} position={[cx, -0.15, cz]} />
+      <gridHelper args={[size * 2, 40, '#1a1a30', '#111120']} position={[cx, -0.6, cz]} />
 
       <EffectComposer>
         <Bloom
