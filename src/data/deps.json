@@ -1,524 +1,146 @@
 {
-  "electron/ipc/DependencyIPC.ts": [
-    "electron/ipc/BaseIPC.ts"
-  ],
-  "electron/ipc/FileSystemIPC.ts": [
-    "electron/ipc/BaseIPC.ts"
-  ],
-  "electron/ipc/PluginIPC.ts": [
-    "electron/ipc/BaseIPC.ts"
-  ],
-  "electron/ipc/ProjectIPC.ts": [
-    "electron/ipc/BaseIPC.ts",
-    "electron/lib/ProjectGenerator.ts",
-    "electron/lib/HistoryManager.ts"
-  ],
-  "electron/ipc/SystemIPC.ts": [
-    "electron/ipc/BaseIPC.ts"
-  ],
-  "electron/lib/ProjectGenerator.ts": [
-    "src/lib/compiler/Compiler.ts",
-    "src/lib/adapter/ReactFlowAdapter.ts"
-  ],
-  "electron/main.ts": [
-    "electron/ipc/SystemIPC.ts",
-    "electron/ipc/ProjectIPC.ts",
-    "electron/ipc/FileSystemIPC.ts",
-    "electron/ipc/PluginIPC.ts",
-    "electron/ipc/DependencyIPC.ts",
-    "electron/ipc/BotProcessIPC.ts",
-    "electron/ipc/TitlebarIPC.ts",
-    "electron/ipc/DiscordRPCIPC.ts",
-    "electron/ipc/RuntimeIPC.ts",
-    "electron/ipc/StorageIPC.ts"
-  ],
-  "src/App.tsx": [
-    "src/views/dashboard/DashboardPage.tsx",
-    "src/views/explorer/ExplorerPage.tsx",
-    "src/views/plugins/PluginsPage.tsx",
-    "src/views/community/CommunityPage.tsx",
-    "src/views/settings/SettingsPage.tsx"
-  ],
-  "src/lib/compiler/Compiler.ts": [
-    "src/lib/compiler/ast/GraphParser.ts",
-    "src/lib/compiler/ast/LogicValidator.ts",
-    "src/lib/compiler/ast/CodePrinter.ts",
-    "src/lib/compiler/ast/types.ts"
-  ],
-  "src/lib/plugins/PluginManager.ts": [
-    "src/lib/plugins/interfaces.ts",
-    "src/lib/compiler/ast/nodes/index.ts",
-    "src/lib/plugins/DynamicASTNodeAdapter.ts",
-    "src/lib/registries/NodeSchemaRegistry.ts",
-    "src/lib/plugins/DynamicViewRegistry.ts",
-    "src/lib/railgun-flow.ts"
-  ],
-  "src/lib/plugins/interfaces.ts": [
-    "src/lib/compiler/graphTypes.ts"
-  ],
-  "src/lib/storage/adapters/fs-adapter.ts": [
-    "src/lib/storage/types.ts"
-  ],
-  "src/main.tsx": [
-    "src/index.css",
-    "src/lib/electron-setup.ts"
-  ],
-  "electron/ipc/BotProcessIPC.ts": [
-    "electron/ipc/BaseIPC.ts",
-    "electron/storage/StorageProvider.ts"
-  ],
-  "src/lib/compiler/ast/GraphParser.ts": [
-    "src/lib/compiler/graphTypes.ts",
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/index.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/LogicValidator.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/ScopeManager.ts"
-  ],
-  "src/lib/compiler/ast/CodePrinter.ts": [
-    "src/lib/compiler/ast/types.ts"
-  ],
-  "src/lib/compiler/ast/nodes/EventParser.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/NodeParser.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/ParserContext.ts": [
-    "src/lib/compiler/ast/types.ts"
-  ],
-  "src/lib/compiler/ast/nodes/actions/ConsoleLog.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/data/ArrayBuilder.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/events/OnCommand.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/events/OnInteractionCreate.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/events/OnMessageCreate.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/events/OnReady.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/events/OnSlashCommand.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/index.ts": [
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/EventParser.ts",
-    "src/lib/compiler/ast/nodes/events/OnReady.ts",
-    "src/lib/compiler/ast/nodes/events/OnMessageCreate.ts",
-    "src/lib/compiler/ast/nodes/events/OnCommand.ts",
-    "src/lib/compiler/ast/nodes/events/OnSlashCommand.ts",
-    "src/lib/compiler/ast/nodes/events/OnInteractionCreate.ts",
-    "src/lib/compiler/ast/nodes/primitives/String.ts",
-    "src/lib/compiler/ast/nodes/primitives/Number.ts",
-    "src/lib/compiler/ast/nodes/primitives/Boolean.ts",
-    "src/lib/compiler/ast/nodes/logic/If.ts",
-    "src/lib/compiler/ast/nodes/logic/WhileLoop.ts",
-    "src/lib/compiler/ast/nodes/logic/DoWhileLoop.ts",
-    "src/lib/compiler/ast/nodes/logic/ForLoop.ts",
-    "src/lib/compiler/ast/nodes/logic/LoopControl.ts",
-    "src/lib/compiler/ast/nodes/logic/Comparison.ts",
-    "src/lib/compiler/ast/nodes/logic/LogicOp.ts",
-    "src/lib/compiler/ast/nodes/logic/Not.ts",
-    "src/lib/compiler/ast/nodes/logic/Wait.ts",
-    "src/lib/compiler/ast/nodes/variables/DeclareVariable.ts",
-    "src/lib/compiler/ast/nodes/variables/SetVariable.ts",
-    "src/lib/compiler/ast/nodes/variables/Increment.ts",
-    "src/lib/compiler/ast/nodes/variables/ObjectAccessor.ts",
-    "src/lib/compiler/ast/nodes/math/Add.ts",
-    "src/lib/compiler/ast/nodes/math/Subtract.ts",
-    "src/lib/compiler/ast/nodes/math/Multiply.ts",
-    "src/lib/compiler/ast/nodes/math/Divide.ts",
-    "src/lib/compiler/ast/nodes/math/Power.ts",
-    "src/lib/compiler/ast/nodes/math/Modulus.ts",
-    "src/lib/compiler/ast/nodes/math/MathAssignment.ts",
-    "src/lib/compiler/ast/nodes/data/ArrayBuilder.ts",
-    "src/lib/compiler/ast/nodes/data/Splitter.ts",
-    "src/lib/compiler/ast/nodes/actions/ConsoleLog.ts",
-    "src/lib/compiler/ast/nodes/discord/SendMessage.ts",
-    "src/lib/compiler/ast/nodes/discord/Embed.ts",
-    "src/lib/compiler/ast/nodes/discord/EmbedField.ts",
-    "src/lib/compiler/ast/nodes/discord/Button.ts",
-    "src/lib/compiler/ast/nodes/discord/ActionRow.ts",
-    "src/lib/compiler/ast/nodes/discord/ShowModal.ts",
-    "src/lib/compiler/ast/nodes/discord/MemberActions.ts",
-    "src/lib/compiler/ast/nodes/discord/EditMessage.ts",
-    "src/lib/compiler/ast/nodes/discord/DeleteMessage.ts",
-    "src/lib/compiler/ast/nodes/discord/AwaitComponent.ts",
-    "src/lib/compiler/ast/nodes/functions/FunctionDef.ts",
-    "src/lib/compiler/ast/nodes/functions/CallFunction.ts",
-    "src/lib/compiler/ast/nodes/functions/Return.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/Comparison.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/If.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/LogicOp.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/Not.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/WhileLoop.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Add.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Divide.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Modulus.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Multiply.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Power.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/Subtract.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/primitives/Boolean.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/primitives/Number.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/primitives/String.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/DeclareVariable.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/SetVariable.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/ForLoop.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/LoopControl.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/Wait.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/ObjectAccessor.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/ActionRow.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/Button.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/Embed.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/MemberActions.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/SendMessage.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/ShowModal.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/functions/CallFunction.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/functions/FunctionDef.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/functions/Return.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/data/Splitter.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/EmbedField.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/logic/DoWhileLoop.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/math/MathAssignment.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/Increment.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/strategies/EventStrategy.ts": [
-    "src/lib/compiler/ast/strategies/WrappingStrategy.ts"
-  ],
-  "src/lib/compiler/ast/strategies/LegacyCommandStrategy.ts": [
-    "src/lib/compiler/ast/strategies/WrappingStrategy.ts"
-  ],
-  "src/lib/compiler/ast/strategies/SlashCommandStrategy.ts": [
-    "src/lib/compiler/ast/strategies/WrappingStrategy.ts"
-  ],
-  "src/lib/compiler/ast/strategies/PluginInjectionStrategy.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/plugins/PluginManager.ts"
-  ],
-  "src/lib/plugins/DynamicASTNodeAdapter.ts": [
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts",
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/graphTypes.ts",
-    "src/lib/plugins/interfaces.ts"
-  ],
-  "electron/ipc/TitlebarIPC.ts": [
-    "electron/ipc/BaseIPC.ts"
-  ],
-  "src/components/layout/Titlebar.tsx": [
-    "src/components/layout/menu.ts"
-  ],
-  "src/components/layout/sidebar.ts": [
-    "src/components/layout/menu.ts"
-  ],
-  "src/views/explorer/ExplorerPage.tsx": [
-    "src/views/explorer/components/ExplorerSidebar.tsx",
-    "src/views/explorer/components/ExplorerTabs.tsx",
-    "src/views/explorer/components/BotStatusPanel.tsx"
-  ],
-  "src/views/viewRegistry.ts": [
-    "src/views/dashboard/DashboardPage.tsx",
-    "src/views/explorer/ExplorerPage.tsx",
-    "src/views/plugins/PluginsPage.tsx",
-    "src/views/community/CommunityPage.tsx"
-  ],
-  "src/views/dashboard/DashboardPage.tsx": [
-    "src/views/dashboard/SystemStatus.tsx"
-  ],
-  "src/lib/registries/CommandRegistry.ts": [
-    "src/lib/registries/commands/CommandDefinition.ts",
-    "src/lib/registries/commands/LegacyCommand.ts",
-    "src/lib/registries/commands/SlashCommand.ts"
-  ],
-  "src/lib/registries/EventRegistry.ts": [
-    "src/lib/registries/events/EventDefinition.ts",
-    "src/lib/registries/events/ClientReady.ts",
-    "src/lib/registries/events/MessageCreate.ts",
-    "src/lib/registries/events/InteractionCreate.ts"
-  ],
-  "src/lib/registries/commands/LegacyCommand.ts": [
-    "src/lib/registries/commands/CommandDefinition.ts"
-  ],
-  "src/lib/registries/events/ClientReady.ts": [
-    "src/lib/registries/events/EventDefinition.ts"
-  ],
-  "src/lib/registries/events/InteractionCreate.ts": [
-    "src/lib/registries/events/EventDefinition.ts"
-  ],
-  "src/lib/registries/events/MessageCreate.ts": [
-    "src/lib/registries/events/EventDefinition.ts"
-  ],
-  "src/views/explorer/components/ExplorerTabs.tsx": [
-    "src/views/explorer/components/PluginToolbar.tsx"
-  ],
-  "src/lib/registries/commands/SlashCommand.ts": [
-    "src/lib/registries/commands/CommandDefinition.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/AwaitComponent.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/DeleteMessage.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/discord/EditMessage.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/hooks/useGlobalVariables.ts": [
-    "src/hooks/useElectron.ts"
-  ],
-  "src/views/settings/SettingsPage.tsx": [
-    "src/views/settings/SettingsTabRegistry.ts",
-    "src/views/settings/tabs/GeneralSettingsDef.ts",
-    "src/views/settings/tabs/EditorSettingsDef.ts",
-    "src/views/settings/tabs/RPCSettingsDef.ts"
-  ],
-  "src/views/settings/SettingsTabRegistry.ts": [
-    "src/views/settings/components/AutoSettingsRenderer.tsx"
-  ],
-  "src/views/settings/components/AutoSettingsRenderer.tsx": [
-    "src/views/settings/components/SettingUI.tsx"
-  ],
-  "electron/ipc/RuntimeIPC.ts": [
-    "electron/ipc/BaseIPC.ts",
-    "electron/lib/RuntimeManager.ts"
-  ],
-  "src/lib/validation/GraphValidator.ts": [
-    "src/lib/validation/types.ts",
-    "src/lib/validation/ValidationRegistry.ts",
-    "src/lib/validation/rules/ReachabilityRule.ts",
-    "src/lib/validation/rules/CycleDetectionRule.ts",
-    "src/lib/validation/rules/RequiredInputRule.ts"
-  ],
-  "src/components/editor/FlowEditor.tsx": [
-    "src/components/editor/flow/UniversalNode.tsx",
-    "src/components/editor/flow/FlowContextMenu.tsx",
-    "src/components/editor/flow/VibrantEdge.tsx",
-    "src/components/editor/ShortcutHelper.tsx"
-  ],
-  "src/components/editor/flow/UniversalNode.tsx": [
-    "src/components/editor/flow/CustomHandle.tsx"
-  ],
-  "src/lib/schemas/index.ts": [
-    "src/lib/schemas/events/index.ts",
-    "src/lib/schemas/discord/index.ts",
-    "src/lib/schemas/logic/index.ts",
-    "src/lib/schemas/variables/index.ts",
-    "src/lib/schemas/math/index.ts",
-    "src/lib/schemas/data/index.ts",
-    "src/lib/schemas/functions/index.ts"
-  ],
-  "electron/ipc/StorageIPC.ts": [
-    "electron/ipc/BaseIPC.ts",
-    "electron/storage/StorageProvider.ts",
-    "electron/storage/PathResolver.ts"
-  ],
-  "electron/storage/StorageProvider.ts": [
-    "electron/storage/PathResolver.ts"
-  ],
-  "src/components/ui/modal-builder/ModalBuilder.tsx": [
-    "src/components/ui/modal-builder/FieldRenderer.tsx"
-  ],
-  "src/lib/validation/ValidationRegistry.ts": [
-    "src/lib/validation/ValidationRule.ts",
-    "src/lib/validation/types.ts"
-  ],
-  "src/lib/validation/ValidationRule.ts": [
-    "src/lib/validation/types.ts"
-  ],
-  "src/lib/validation/rules/CycleDetectionRule.ts": [
-    "src/lib/validation/ValidationRule.ts",
-    "src/lib/validation/types.ts"
-  ],
-  "src/lib/validation/rules/ReachabilityRule.ts": [
-    "src/lib/validation/ValidationRule.ts",
-    "src/lib/validation/types.ts"
-  ],
-  "src/lib/validation/rules/RequiredInputRule.ts": [
-    "src/lib/validation/ValidationRule.ts",
-    "src/lib/validation/types.ts"
-  ],
-  "src/lib/plugins/DynamicViewRegistry.ts": [
-    "src/lib/plugins/interfaces.ts"
-  ],
-  "src/lib/plugins/BridgeAPI.ts": [
-    "src/lib/plugins/interfaces.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/GetGlobalVariable.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
-  ],
-  "src/lib/compiler/ast/nodes/variables/SetGlobalVariable.ts": [
-    "src/lib/compiler/ast/types.ts",
-    "src/lib/compiler/ast/nodes/NodeParser.ts",
-    "src/lib/compiler/ast/nodes/ParserContext.ts"
+  "cmd/typego/main.go": [
+    "pkg/cli/install.go"
+  ],
+  "compiler/compiler.go": [
+    "compiler/plugins/defer.go"
+  ],
+  "engine/engine.go": [
+    "bridge/core/registry.go",
+    "bridge/intrinsics/intrinsics.go",
+    "bridge/stdlib/memory/memory.go",
+    "bridge/stdlib/worker/worker.go",
+    "eventloop/eventloop.go",
+    "bridge/modules/crypto/crypto.go",
+    "bridge/modules/fmt/fmt.go",
+    "bridge/modules/json/errors.go",
+    "bridge/modules/net/http.go",
+    "bridge/modules/os/os.go",
+    "bridge/modules/sync/sync.go"
+  ],
+  "engine/worker.go": [
+    "bridge/stdlib/worker/worker.go",
+    "compiler/compiler.go"
+  ],
+  "internal/builder/templates.go": [
+    "engine/engine.go"
+  ],
+  "bridge/core/registry.go": [
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/fmt/fmt.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/sync/sync.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/stdlib/memory/memory.go": [
+    "bridge/modules/sync/sync.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/stdlib/worker/worker.go": [
+    "eventloop/eventloop.go"
+  ],
+  "engine/engine_test.go": [
+    "engine/engine.go"
+  ],
+  "internal/builder/builder_test.go": [
+    "internal/builder/doc.go"
+  ],
+  "tests/integration/harness.go": [
+    "engine/engine.go"
+  ],
+  "bridge/modules/net/http.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/os/os.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/json/json.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/crypto/crypto.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/net/server.go": [
+    "eventloop/eventloop.go"
+  ],
+  "internal/ecosystem/installer/install.go": [
+    "internal/ecosystem/ast/extractor.go",
+    "internal/ecosystem/builder/compile.go",
+    "internal/ecosystem/resolver/toolchain.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/root.go": [
+    "pkg/cli/cmd/doc.go",
+    "pkg/cli/pkg/add.go"
+  ],
+  "pkg/cli/internal/config.go": [
+    "internal/ecosystem/ast/extractor.go"
+  ],
+  "pkg/cli/pkg/add.go": [
+    "pkg/cli/cmd/doc.go",
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/list.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/remove.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/outdated.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/update.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/cmd/build.go": [
+    "compiler/compiler.go",
+    "internal/builder/doc.go",
+    "internal/ecosystem/ast/extractor.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/cmd/dev.go": [
+    "internal/ecosystem/ast/extractor.go"
+  ],
+  "pkg/cli/cmd/interpreter.go": [
+    "compiler/compiler.go",
+    "engine/engine.go"
+  ],
+  "pkg/cli/cmd/run.go": [
+    "compiler/compiler.go",
+    "internal/builder/doc.go",
+    "internal/ecosystem/ast/extractor.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/cmd/types.go": [
+    "bridge/core/registry.go",
+    "bridge/intrinsics/intrinsics.go",
+    "bridge/modules/crypto/crypto.go",
+    "bridge/modules/net/http.go",
+    "bridge/modules/sync/sync.go",
+    "bridge/stdlib/memory/memory.go",
+    "bridge/stdlib/worker/worker.go",
+    "compiler/compiler.go",
+    "internal/linker/fetcher.go"
+  ],
+  "bridge/intrinsics/intrinsics.go": [
+    "eventloop/eventloop.go"
+  ],
+  "compiler/plugins/defer.go": [
+    "internal/transformer/core/transformer.go",
+    "internal/transformer/visitors/defer_visitor.go"
+  ],
+  "internal/transformer/visitors/defer_visitor.go": [
+    "internal/transformer/core/transformer.go"
+  ],
+  "internal/transformer/visitors/iota_visitor.go": [
+    "internal/transformer/core/transformer.go"
   ]
 }

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const REPO_PATH = 'C:\\Users\\LENOVO\\Documents\\web\\railgun';
+const REPO_PATH = 'C:\\Users\\LENOVO\\Documents\\go\\typego';
 
 const git = simpleGit(REPO_PATH);
 const outputDir = path.resolve(__dirname, '../src/data');
