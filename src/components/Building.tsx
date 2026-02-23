@@ -38,9 +38,21 @@ export const Building: React.FC<BuildingProps> = ({
   // Linear scale height — clamped minimum so tiny files are still visible
   const targetH = Math.max(0.2, node.size * 0.1);
 
+  // Sigmoid soft-minimum for footprint — prevents paper-thin buildings.
+  // When the treemap cell is very narrow, sigmoid smoothly boosts it toward minFootprint.
+  // When it's wide, the natural cell width is used unchanged.
+  const MIN_FOOTPRINT = 1.0;
+  const SIGMOID_K = 4;
+  const softMin = (val: number) => {
+    const t = 1 / (1 + Math.exp(-SIGMOID_K * (val - MIN_FOOTPRINT)));
+    return MIN_FOOTPRINT * (1 - t) + val * t;
+  };
+
   // Position (d3 treemap gives top-left; Three.js box is center-origin)
   const w = node.width;
   const d = node.height;
+  const bw = softMin(w) * 0.88; // rendered building width (sigmoid-boosted)
+  const bd = softMin(d) * 0.88; // rendered building depth
   const x = node.x + w / 2;
   const z = node.y + d / 2;
 
@@ -84,7 +96,7 @@ export const Building: React.FC<BuildingProps> = ({
       onPointerOver={(e) => { e.stopPropagation(); hoveredRef.current = true; setHovered(true); }}
       onPointerOut={() => { hoveredRef.current = false; setHovered(false); }}
     >
-      <boxGeometry args={[w * 0.9, targetH, d * 0.9]} />
+      <boxGeometry args={[bw, targetH, bd]} />
       <meshStandardMaterial
         color={hovered ? '#ffffff' : baseColor}
         emissive={isChanged ? HIGHLIGHT : new THREE.Color(0, 0, 0)}

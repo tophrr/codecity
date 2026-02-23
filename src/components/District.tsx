@@ -12,25 +12,31 @@ interface DistrictProps {
   maxDate: number;
 }
 
+// Lot surface color per depth — sits above the global road plane
+const LOT_COLOR = ['#1a1a30', '#161628', '#121220'];
+
 export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, minDate, maxDate }) => {
   const w = node.width;
   const d = node.height;
   const x = node.x + w / 2;
   const z = node.y + d / 2;
-  const h = 0.3;
-  const y = -h / 2 - depth * 0.1;
+
+  // Each depth level raises the lot slightly above the global ground plane.
+  // This means gaps in the treemap expose the lot of the parent (or the road ground at depth 0).
+  // No padding — no overlap possible.
+  const lotY = 0.01 + depth * 0.015;
+  const lotH = 0.04;
 
   const sharedProps = { changedPaths, onSelect, minDate, maxDate };
 
   return (
     <group>
-      <mesh position={[x, y, z]}>
-        <boxGeometry args={[w, h, d]} />
+      {/* Lot surface — exact footprint only, raised above the global road plane */}
+      <mesh position={[x, lotY, z]} receiveShadow>
+        <boxGeometry args={[w, lotH, d]} />
         <meshStandardMaterial
-          color={'#1a1a2e'}
-          transparent
-          opacity={0.5 + depth * 0.1}
-          roughness={1}
+          color={LOT_COLOR[Math.min(depth, 2)]}
+          roughness={0.9}
         />
       </mesh>
 
