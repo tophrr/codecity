@@ -1,275 +1,4080 @@
 [
   {
-    "hash": "3746d955d0e432570be7714b2dc457f1928f4c5b",
-    "date": "2026-02-10T10:08:03+07:00",
-    "author_name": "Chris G",
-    "author_email": "chrisg@example.com",
+    "hash": "a3d7b3057a9bc6b0f20ef34b6b4cd86a9edaa392",
+    "date": "2026-01-16T11:08:14+07:00",
+    "author_name": "Repyh",
+    "author_email": "christianoroh9@gmail.com",
     "message": "Initial commit",
     "files": [
       {
-        "path": ".agent/workflows/openspec-apply.md",
-        "added": 20,
+        "path": ".gitignore",
+        "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": ".agent/workflows/openspec-archive.md",
-        "added": 24,
+        "path": "LICENSE",
+        "added": 21,
         "deleted": 0,
         "status": "A"
-      },
-      {
-        "path": ".agent/workflows/openspec-proposal.md",
-        "added": 25,
-        "deleted": 0,
-        "status": "A"
-      },
+      }
+    ]
+  },
+  {
+    "hash": "a346bf5dbd8422bf2714245ffa4fa1d797c32b88",
+    "date": "2026-01-16T11:12:30+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: add gitignore",
+    "files": [
       {
         "path": ".gitignore",
-        "added": 24,
+        "added": 30,
         "deleted": 0,
         "status": "A"
-      },
+      }
+    ]
+  },
+  {
+    "hash": "77b3f693209f7b3baa7872019905afda16cad5fa",
+    "date": "2026-01-16T11:13:17+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat: initial project structure",
+    "files": [
       {
-        "path": ".prettierrc",
-        "added": 5,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "AGENTS.md",
-        "added": 18,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "README.md",
-        "added": 73,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "eslint.config.js",
+        "path": "bridge/buffer.go",
         "added": 23,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "index.html",
-        "added": 13,
+        "path": "bridge/console.go",
+        "added": 41,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/AGENTS.md",
-        "added": 456,
+        "path": "bridge/fmt.go",
+        "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/design.md",
-        "added": 12,
+        "path": "bridge/http.go",
+        "added": 77,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/proposal.md",
-        "added": 20,
+        "path": "bridge/memory.go",
+        "added": 40,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/specs/city-layout/spec.md",
-        "added": 24,
+        "path": "bridge/memory_factory.go",
+        "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/specs/data-ingestion/spec.md",
-        "added": 24,
+        "path": "bridge/mutex.go",
+        "added": 53,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/specs/interaction/spec.md",
-        "added": 24,
+        "path": "bridge/os.go",
+        "added": 59,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/specs/visualization/spec.md",
-        "added": 24,
+        "path": "bridge/reflection.go",
+        "added": 87,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/develop-mvp/tasks.md",
-        "added": 8,
+        "path": "bridge/sync.go",
+        "added": 84,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/design.md",
-        "added": 22,
+        "path": "bridge/worker.go",
+        "added": 62,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/proposal.md",
-        "added": 8,
+        "path": "cmd/typego/build.go",
+        "added": 170,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/specs/code-quality/spec.md",
-        "added": 14,
+        "path": "cmd/typego/init.go",
+        "added": 89,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/specs/frontend-setup/spec.md",
-        "added": 24,
+        "path": "cmd/typego/main.go",
+        "added": 30,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/specs/project-structure/spec.md",
-        "added": 29,
+        "path": "cmd/typego/run.go",
+        "added": 76,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/changes/initialize-project/tasks.md",
-        "added": 13,
+        "path": "cmd/typego/types.go",
+        "added": 40,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "openspec/project.md",
-        "added": 70,
+        "path": "compiler/compiler.go",
+        "added": 71,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "package-lock.json",
-        "added": 3975,
+        "path": "engine/engine.go",
+        "added": 66,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "package.json",
-        "added": 37,
+        "path": "engine/worker.go",
+        "added": 87,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "public/vite.svg",
-        "added": 1,
+        "path": "eventloop/eventloop.go",
+        "added": 104,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "references/Research Methodology Temporal Code City.pdf",
-        "added": 0,
+        "path": "examples/demo.ts",
+        "added": 53,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "references/Research Planning Temporal Code City.pdf",
-        "added": 0,
+        "path": "examples/guarded_memory.ts",
+        "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "scripts/git-parser.ts",
-        "added": 69,
+        "path": "examples/workers/main.ts",
+        "added": 50,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "src/App.css",
-        "added": 42,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "src/App.tsx",
-        "added": 19,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "src/assets/react.svg",
-        "added": 1,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "src/index.css",
-        "added": 27,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "src/main.tsx",
-        "added": 10,
-        "deleted": 0,
-        "status": "A"
-      },
-      {
-        "path": "tsconfig.app.json",
+        "path": "examples/workers/worker.ts",
         "added": 28,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tsconfig.json",
-        "added": 7,
+        "path": "go.mod",
+        "added": 19,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tsconfig.node.json",
+        "path": "test-project/src/index.ts",
+        "added": 10,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "4bc131a1778cecd199a8a8f8164ddd91f9369f80",
+    "date": "2026-01-16T11:51:45+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(core): implement Hyper-Linker and Two-Pass Build",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 75,
+        "deleted": 15,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 25,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "go.mod",
+        "added": 7,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/fetcher.go",
+        "added": 44,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 51,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 86,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "95ec2b10c655d25ce2f84c7bce6afefe5ed6f333",
+    "date": "2026-01-16T11:51:54+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(cli): implement additive type registration",
+    "files": [
+      {
+        "path": "cmd/typego/types.go",
+        "added": 70,
+        "deleted": 4,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "e504e82cbc764278ff4bd7a8130e23340e27c4d4",
+    "date": "2026-01-16T11:51:57+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "test: add dynamic import examples",
+    "files": [
+      {
+        "path": "examples/demo_color.ts",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/imports.ts",
+        "added": 3,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "f25c3ad12a675e53c4e21b5cef68048f0d809764",
+    "date": "2026-01-16T12:01:58+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(npm): enable node_modules bundling and fix shim imports",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 6,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/demo_npm.ts",
+        "added": 7,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "ce92901612dd741e97811bae8b691f048eed5003",
+    "date": "2026-01-16T12:05:16+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(node): implement process and Buffer polyfills",
+    "files": [
+      {
+        "path": "bridge/polyfills.go",
+        "added": 41,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 4,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "examples/demo_env.ts",
+        "added": 16,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "0f2d46c42773d4244b9bf63562838e02e7ba7368",
+    "date": "2026-01-16T12:06:30+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(node): fix build syntax and verify with chalk",
+    "files": [
+      {
+        "path": "examples/demo_chalk.ts",
+        "added": 7,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "e89a9e2a1a47bfca92e98013d83a0f2c01bff8c5",
+    "date": "2026-01-16T12:10:19+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(node): enable FORCE_COLOR and esModuleInterop for NPM support",
+    "files": [
+      {
+        "path": "bridge/polyfills.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "64b9b36b98b073e511c5d0d414e93c58857e6f34",
+    "date": "2026-01-16T12:12:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(cli): update init to support NPM and Node.js types",
+    "files": [
+      {
+        "path": "cmd/typego/init.go",
+        "added": 26,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "3ac980a564fbe34957d86df74cf1dff27a66c8aa",
+    "date": "2026-01-16T12:15:15+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(run): implementation JIT compilation to support dynamic imports and NPM",
+    "files": [
+      {
+        "path": "cmd/typego/run.go",
+        "added": 93,
+        "deleted": 39,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "7157a37869837b93ac31131e4f268d1aa61d2bc9",
+    "date": "2026-01-16T12:25:51+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(demo): add Cluster Demo with chalk, setTimeout polyfill, and makeShared",
+    "files": [
+      {
+        "path": "bridge/memory_factory.go",
+        "added": 22,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/worker.go",
+        "added": 9,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 23,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "examples/cluster/main.ts",
+        "added": 35,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "59a9d21a91bdf16bf4bc706287ac78d7fd044660",
+    "date": "2026-01-16T12:29:11+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "refactor(polyfills): move polyfills to dedicated folder for maintainability",
+    "files": [
+      {
+        "path": ".gitignore",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/buffer.go",
         "added": 26,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "vite.config.ts",
-        "added": 7,
+        "path": "bridge/polyfills/polyfills.go",
+        "added": 14,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/{polyfills.go => polyfills/process.go}",
+        "added": 4,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/timers.go",
+        "added": 64,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 3,
+        "deleted": 19,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "0126750db5ffc0cd0ff2d40a56031cbbf5f7755f",
+    "date": "2026-01-16T12:35:32+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: ignore local typego.exe builds",
+    "files": [
+      {
+        "path": ".gitignore",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "43937fcc976e6dcadea0b8d49bd5d4db70a6f617",
+    "date": "2026-01-16T12:39:37+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "added readme",
+    "files": []
+  },
+  {
+    "hash": "12ca8ccf32c4491af05bc3d7bc75e968cd8a475c",
+    "date": "2026-01-16T12:43:41+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "better readme",
+    "files": []
+  },
+  {
+    "hash": "e8cc261293596b37cafaa2aed1cc9894ee212d45",
+    "date": "2026-01-16T12:44:08+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix readme",
+    "files": []
+  },
+  {
+    "hash": "29e03e4d0b907952c1d9f96a4f2a97eefe1dfe4c",
+    "date": "2026-01-16T12:47:58+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: add comprehensive GoDoc comments to all packages",
+    "files": [
+      {
+        "path": "bridge/buffer.go",
+        "added": 20,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/doc.go",
+        "added": 36,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/mutex.go",
+        "added": 24,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/doc.go",
+        "added": 52,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/reflection.go",
+        "added": 28,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "compiler/doc.go",
+        "added": 43,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "engine/doc.go",
+        "added": 38,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "eventloop/doc.go",
+        "added": 48,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/linker/doc.go",
+        "added": 59,
         "deleted": 0,
         "status": "A"
       }
     ]
   },
   {
-    "hash": "274ba463fc535b6c088f4b050283c3e12b2228a9",
-    "date": "2026-02-10T10:08:22+07:00",
-    "author_name": "Chris G",
-    "author_email": "chrisg@example.com",
-    "message": "Add file to delete",
+    "hash": "d8c1c7479224170911ae80f49717eeec8dd19fb3",
+    "date": "2026-01-16T12:50:25+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "examples: add hybrid NPM + Go module demo",
     "files": [
       {
-        "path": "delete_me.txt",
+        "path": "examples/demo_hybrid.ts",
+        "added": 70,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "39f7c33390e6becbd511a6f1fce0ab25a49253c8",
+    "date": "2026-01-16T12:54:28+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fixed ai-slop readme",
+    "files": []
+  },
+  {
+    "hash": "fdf857b8608a6aa85f116e6b0edbdcb43fe8c55b",
+    "date": "2026-01-16T12:57:35+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(cli): use GitHub module instead of local replace for portable builds",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 3,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 4,
+        "deleted": 6,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "200e0e890f25a6025743d0b18ddc6d26f17a6337",
+    "date": "2026-01-16T13:01:13+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(cli): use go get @latest for dynamic module resolution",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 6,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 6,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "61808e78500ccc74d1c1df9bb2f853d6db1c9fa6",
+    "date": "2026-01-16T13:07:25+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(cli): fetch all subpackages with GOPROXY=direct for reliable module resolution",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 15,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 18,
+        "deleted": 10,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "24348422cfbc6c48307174f7ce85d116ef3f3fbb",
+    "date": "2026-01-16T13:12:47+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(types): generate default go.d.ts instead of requiring master file",
+    "files": [
+      {
+        "path": "cmd/typego/types.go",
+        "added": 24,
+        "deleted": 7,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f68ec5c3ae0ef80fdf136a00813f309e741ca6d0",
+    "date": "2026-01-16T13:15:20+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(types): scan all TS files when no argument provided",
+    "files": [
+      {
+        "path": "cmd/typego/types.go",
+        "added": 58,
+        "deleted": 34,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "d23d81abb9a3d07c01cdb2f724d14c746567656d",
+    "date": "2026-01-16T13:17:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(types): deduplicate files and suppress scan warnings",
+    "files": [
+      {
+        "path": "cmd/typego/types.go",
+        "added": 7,
+        "deleted": 17,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "7cb6eaa8584d020e826bf84eb89282c5e6bf7bbe",
+    "date": "2026-01-16T16:54:20+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(memory): expose makeShared in go/memory and cleanup legacy types",
+    "files": [
+      {
+        "path": "bridge/memory.go",
+        "added": 34,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "go.mod",
+        "added": 2,
+        "deleted": 4,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "7524cd7d1c1876f99e3260455ce81dc382c0a6d8",
+    "date": "2026-01-16T17:14:17+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(engine): implement memory monitoring and lifecycle management",
+    "files": [
+      {
+        "path": "engine/engine.go",
+        "added": 55,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "4d69a69d3a3d444c8b24d642a4d747e5432ec9c9",
+    "date": "2026-01-16T17:15:18+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(http): add timeouts and response body size limits",
+    "files": [
+      {
+        "path": "bridge/http.go",
+        "added": 36,
+        "deleted": 13,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "43b80f67acc56c27ad71b4f18e388d26aa4b7948",
+    "date": "2026-01-16T17:15:32+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(cli): add --memory-limit flag and parameterize build shim",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 5,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/main.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "95a095b31a6faf62fcad4a9f2b95ff1a9faf0da9",
+    "date": "2026-01-16T17:15:43+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "test(resource-guardrails): add memory and http verification scripts",
+    "files": [
+      {
+        "path": "examples/verify_http.ts",
+        "added": 27,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/verify_memory.ts",
+        "added": 23,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "774e8ad92ed3d06cdc63f4587e2ad63216034b00",
+    "date": "2026-01-16T17:34:48+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(sandbox): implement secure fs jail and environment filtering",
+    "files": [
+      {
+        "path": "bridge/http.go",
+        "added": 8,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/os.go",
+        "added": 54,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/process.go",
+        "added": 15,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "325297cd80e6b34b74817821e4622e06a4702222",
+    "date": "2026-01-16T17:35:11+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(cli): point shim to local source for correct development testing",
+    "files": [
+      {
+        "path": "cmd/typego/run.go",
+        "added": 8,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "7b575faac1cba2786ebf3a942c4fed9c6aca1277",
+    "date": "2026-01-16T17:35:33+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs(examples): refactor examples into professional showcase",
+    "files": [
+      {
+        "path": "examples/01-hello-world.ts",
+        "added": 20,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/02-go-concurrency.ts",
+        "added": 32,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/03-multithreading-workers.ts",
+        "added": 33,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/04-secure-network.ts",
+        "added": 38,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/05-secure-fs.ts",
+        "added": 44,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/06-process-env.ts",
+        "added": 30,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/demo.ts",
+        "added": 0,
+        "deleted": 53,
+        "status": "D"
+      },
+      {
+        "path": "examples/demo_chalk.ts",
+        "added": 0,
+        "deleted": 7,
+        "status": "D"
+      },
+      {
+        "path": "examples/demo_color.ts",
+        "added": 0,
+        "deleted": 6,
+        "status": "D"
+      },
+      {
+        "path": "examples/demo_env.ts",
+        "added": 0,
+        "deleted": 16,
+        "status": "D"
+      },
+      {
+        "path": "examples/demo_hybrid.ts",
+        "added": 0,
+        "deleted": 70,
+        "status": "D"
+      },
+      {
+        "path": "examples/demo_npm.ts",
+        "added": 0,
+        "deleted": 7,
+        "status": "D"
+      },
+      {
+        "path": "examples/guarded_memory.ts",
+        "added": 0,
+        "deleted": 64,
+        "status": "D"
+      },
+      {
+        "path": "examples/imports.ts",
+        "added": 0,
+        "deleted": 3,
+        "status": "D"
+      },
+      {
+        "path": "examples/verify_http.ts",
+        "added": 0,
+        "deleted": 27,
+        "status": "D"
+      },
+      {
+        "path": "examples/verify_memory.ts",
+        "added": 0,
+        "deleted": 23,
+        "status": "D"
+      },
+      {
+        "path": "examples/workers/main.ts",
+        "added": 0,
+        "deleted": 50,
+        "status": "D"
+      },
+      {
+        "path": "examples/workers/worker.ts",
+        "added": 0,
+        "deleted": 28,
+        "status": "D"
+      }
+    ]
+  },
+  {
+    "hash": "eaa8ea35ada135962510e5f90bb360d58fabcd43",
+    "date": "2026-01-16T17:35:59+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(types): add ReadFile definition to go/os d.ts",
+    "files": []
+  },
+  {
+    "hash": "95dfab8542b0a1785fdb6bba797a8bd7bc843c67",
+    "date": "2026-01-16T17:51:53+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(types): make type scanning recursive across project root",
+    "files": [
+      {
+        "path": "cmd/typego/types.go",
+        "added": 26,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 1,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "e26b41a861ae1c5564c3ab08f0705926de02d782",
+    "date": "2026-01-16T18:08:53+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(cli): conditionally apply go.mod replacement in dev mode",
+    "files": [
+      {
+        "path": "cmd/typego/run.go",
+        "added": 15,
+        "deleted": 4,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "421f55b24c6c8c79e69d9a7ca2c46fd906ed89e0",
+    "date": "2026-01-16T21:39:14+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "update readme",
+    "files": []
+  },
+  {
+    "hash": "0444262b57c5a23a32afb335729dd84e837ff2dd",
+    "date": "2026-01-20T01:18:23+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "refactor(cli): extract shimTemplate to internal/builder package",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 2,
+        "deleted": 80,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 3,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/doc.go",
+        "added": 4,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 11,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "24df42318eaa9ae6f3ee0da485fca8b90e097ee5",
+    "date": "2026-01-20T01:27:10+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(linker): add struct and method inspection with TypeScript generation",
+    "files": [
+      {
+        "path": "internal/linker/generator.go",
+        "added": 90,
+        "deleted": 16,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 205,
+        "deleted": 24,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "b004c23a865eddf629769b6e67c4a55e528efb6b",
+    "date": "2026-01-20T01:30:15+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(bridge): add recursive struct binding with nested fields and callbacks",
+    "files": [
+      {
+        "path": "bridge/reflection.go",
+        "added": 198,
+        "deleted": 64,
+        "status": "M"
+      },
+      {
+        "path": "examples/07-struct-binding.ts",
+        "added": 16,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "6a9b5a1bd9449b3d4e46afbd04bc4f6a43173d3b",
+    "date": "2026-01-20T01:33:27+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(linker): add struct constructor generation to shim",
+    "files": [
+      {
+        "path": "internal/linker/generator.go",
+        "added": 9,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "ad5829bd06368e61dcafe315b8e5ec614260808c",
+    "date": "2026-01-20T01:35:59+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: add struct binding documentation",
+    "files": []
+  },
+  {
+    "hash": "d1e91a50ee6004f1ef77dabe98faf4e5a4a7f974",
+    "date": "2026-01-20T01:48:54+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(linker): only attach methods to actual struct types + add nested struct tests",
+    "files": [
+      {
+        "path": "examples/08-external-module.ts",
+        "added": 19,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/09-nested-structs.ts",
+        "added": 33,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 4,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 3,
+        "deleted": 5,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "d0c9f484809b3384b879885167821113573c8240",
+    "date": "2026-01-20T13:46:31+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "v1.2.0: Interpreter mode, modular stdlib, performance optimization",
+    "files": [
+      {
+        "path": ".gitignore",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/{buffer.go => core/arraybuffer.go}",
+        "added": 7,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/{ => core}/reflection.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/registry.go",
+        "added": 35,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/doc.go",
+        "added": 12,
+        "deleted": 23,
+        "status": "M"
+      },
+      {
+        "path": "bridge/fmt.go",
+        "added": 0,
+        "deleted": 32,
+        "status": "D"
+      },
+      {
+        "path": "bridge/memory.go",
+        "added": 0,
+        "deleted": 72,
+        "status": "D"
+      },
+      {
+        "path": "bridge/memory_factory.go",
+        "added": 0,
+        "deleted": 86,
+        "status": "D"
+      },
+      {
+        "path": "bridge/modules/fmt/fmt.go",
+        "added": 59,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/{ => modules/net}/http.go",
+        "added": 26,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "bridge/{ => modules/os}/os.go",
+        "added": 26,
+        "deleted": 15,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 153,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/mutex.go",
+        "added": 0,
+        "deleted": 77,
+        "status": "D"
+      },
+      {
+        "path": "bridge/polyfills/encoding.go",
+        "added": 64,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/polyfills/init.go",
+        "added": 19,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/polyfills/polyfills.go",
+        "added": 0,
+        "deleted": 14,
+        "status": "D"
+      },
+      {
+        "path": "bridge/stdlib/memory/memory.go",
+        "added": 107,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 74,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/sync.go",
+        "added": 0,
+        "deleted": 84,
+        "status": "D"
+      },
+      {
+        "path": "bridge/worker.go",
+        "added": 0,
+        "deleted": 71,
+        "status": "D"
+      },
+      {
+        "path": "cmd/typego/interpreter.go",
+        "added": 48,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 157,
+        "deleted": 121,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/types.go",
+        "added": 89,
+        "deleted": 19,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 23,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 20,
+        "deleted": 11,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "examples/01-hello-world.ts",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/02-go-concurrency.ts",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "examples/03-multithreading-workers.ts",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "examples/04-secure-network.ts",
+        "added": 11,
+        "deleted": 12,
+        "status": "M"
+      },
+      {
+        "path": "examples/05-secure-fs.ts",
+        "added": 8,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "examples/06-process-env.ts",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/09-nested-structs.ts",
+        "added": 23,
+        "deleted": 17,
+        "status": "M"
+      },
+      {
+        "path": "examples/10-typego-stdlib.ts",
+        "added": 29,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 67,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 93,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 74,
+        "deleted": 16,
+        "status": "M"
+      },
+      {
+        "path": "test-project/src/index.ts",
+        "added": 0,
+        "deleted": 10,
+        "status": "D"
+      }
+    ]
+  },
+  {
+    "hash": "9b79627a29e7f3ea2b59c6ca3594739cb4ed78f5",
+    "date": "2026-01-20T13:52:33+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: cleanup examples, update README",
+    "files": [
+      {
+        "path": "examples/cluster/main.ts",
+        "added": 0,
+        "deleted": 35,
+        "status": "D"
+      }
+    ]
+  },
+  {
+    "hash": "c648d21de67ff56f5b9995555add0c7f342ca971",
+    "date": "2026-01-20T14:05:33+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: add OPTIMIZATION.md and link in README",
+    "files": []
+  },
+  {
+    "hash": "86e4d247a948b2cc6c7934cef3787443420a8caf",
+    "date": "2026-01-20T15:30:10+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore(release): v1.2.1 - implement professional testing pipeline and dev experience",
+    "files": [
+      {
+        "path": ".github/workflows/test.yml",
+        "added": 34,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "Makefile",
+        "added": 28,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 30,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/watch.go",
+        "added": 108,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "compiler/cache.go",
+        "added": 108,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 12,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine_test.go",
+        "added": 68,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "eventloop/eventloop.go",
+        "added": 16,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/builder_test.go",
+        "added": 44,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tests/e2e/e2e_test.go",
+        "added": 110,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tests/integration/bridge_test.go",
+        "added": 44,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tests/integration/harness.go",
+        "added": 100,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tests/integration/http_test.go",
+        "added": 36,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "775c3e0d500a89e5480ed430e33cd8a537f1c118",
+    "date": "2026-01-20T15:35:16+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: updated contributing",
+    "files": []
+  },
+  {
+    "hash": "92b8387f9960ce506ef152f49913a6ea9b136952",
+    "date": "2026-01-20T15:35:33+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: update contributing again",
+    "files": []
+  },
+  {
+    "hash": "60c952b07b8716d0a801b53779979c6ab85154e8",
+    "date": "2026-01-20T15:42:52+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "refactor(bridge): relocate console bindings to core package",
+    "files": [
+      {
+        "path": "bridge/{ => core}/console.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 1,
+        "deleted": 2,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "0cdbc3333f23d284202f2b9fd61ec5c63baff98b",
+    "date": "2026-01-20T15:47:01+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ci): track go.sum and fix gitignore to resolve CI dependency error",
+    "files": [
+      {
+        "path": ".gitignore",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "go.sum",
+        "added": 37,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "6cfd4d6406a6033f6fd70e12d379a12007ee1061",
+    "date": "2026-01-20T15:54:16+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: update contribution guide",
+    "files": []
+  },
+  {
+    "hash": "0bff9c6e203184d783d5999052860757ab14d77b",
+    "date": "2026-01-20T15:57:07+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ci): upgrade to go 1.23 and official linter action to resolve goarch versioning error",
+    "files": [
+      {
+        "path": ".github/workflows/test.yml",
+        "added": 8,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "go.mod",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "bb9518621bece265f3614f76806a99993ec51e3f",
+    "date": "2026-01-20T16:05:08+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(bridge): address unchecked return values in bridge modules to satisfy linter",
+    "files": [
+      {
+        "path": "bridge/core/console.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/fmt/fmt.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/http.go",
+        "added": 9,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/os/os.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 5,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/process.go",
+        "added": 8,
+        "deleted": 8,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/timers.go",
+        "added": 4,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/memory/memory.go",
+        "added": 10,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 7,
+        "deleted": 7,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "46bc68e8f44b8483390d51c6e882f7e95e377327",
+    "date": "2026-01-20T16:39:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: resolve remaining unchecked return values identified by golangci-lint",
+    "files": [
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 3,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/init.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/main.go",
+        "added": 1,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/types.go",
+        "added": 1,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 1,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "tests/integration/http_test.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "560f2fcc8bf4f93cba856383281d38881a204700",
+    "date": "2026-01-20T18:55:22+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "refactor(engine): wrap Go panics as JS Error objects",
+    "files": [
+      {
+        "path": "engine/engine.go",
+        "added": 46,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "9b08d8340210b053ba2e20b1660b92e34c62996c",
+    "date": "2026-01-20T18:56:40+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(eventloop): add graceful shutdown with context",
+    "files": [
+      {
+        "path": "eventloop/eventloop.go",
+        "added": 40,
+        "deleted": 2,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "a1dc212e70d487dc475b576b09eb7f7cca59b7a1",
+    "date": "2026-01-20T18:58:42+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "test(engine): add error propagation tests",
+    "files": [
+      {
+        "path": "engine/engine_test.go",
+        "added": 91,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "50cf1c32b89bfa45cf86947977186a9f54db0027",
+    "date": "2026-01-20T19:00:01+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs(engine): document error handling behavior",
+    "files": [
+      {
+        "path": "engine/doc.go",
+        "added": 37,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "063f12e61daeecdb549dbd371309a59e0f9bf04e",
+    "date": "2026-01-20T19:12:39+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(bridge): add go:encoding/json module",
+    "files": [
+      {
+        "path": "bridge/modules/json/errors.go",
+        "added": 8,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/modules/json/json.go",
+        "added": 87,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "4865cb265246692e4c1a873ea18893a8aee0f049",
+    "date": "2026-01-20T19:13:30+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(os): expand environment and process bindings",
+    "files": [
+      {
+        "path": "bridge/modules/os/os.go",
+        "added": 73,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "404668f34b3ee09e51247e9e46ce70f0eabf5095",
+    "date": "2026-01-20T19:14:13+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(bridge): implement crypto primitives (sha256, hmac, rand)",
+    "files": [
+      {
+        "path": "bridge/modules/crypto/crypto.go",
+        "added": 99,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "7e687e210df18b5b632c114928eb5ff129fb552a",
+    "date": "2026-01-20T19:15:15+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore(engine): register json and crypto modules",
+    "files": [
+      {
+        "path": "engine/engine.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "9419d7e9ce8f5543e1014b0ff8313f751dc663a1",
+    "date": "2026-01-20T19:42:43+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(http): add ListenAndServe with JS callback",
+    "files": [
+      {
+        "path": "bridge/modules/net/helpers.go",
+        "added": 12,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 225,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "09d1cff9cbeaaaf9a169241935d1dd3a55a1bae3",
+    "date": "2026-01-20T19:46:13+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(http): support custom headers in Post",
+    "files": [
+      {
+        "path": "bridge/modules/net/http.go",
+        "added": 93,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f91de48bed100462bc9e1ec13bc507c533820b85",
+    "date": "2026-01-20T20:10:02+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(dx): implement typego dev command",
+    "files": [
+      {
+        "path": "cmd/typego/build.go",
+        "added": 29,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/dev.go",
+        "added": 160,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "9ee4db15a67a65b36343eb8fff9ee6c379e2079d",
+    "date": "2026-01-20T20:18:57+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs(release): update CHANGELOG.md and README.md for v1.3.0",
+    "files": []
+  },
+  {
+    "hash": "c0f547e061cb132cf6fd10c11783ee95681ec5b7",
+    "date": "2026-01-20T20:43:23+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore(CI/CD): Introduce AI style guidelines and comprehensive project instructions for AI assistants.",
+    "files": []
+  },
+  {
+    "hash": "ada9ddf3eb7ba64ee59c6a917a8b5d8de29752a5",
+    "date": "2026-01-20T23:32:35+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat: overhaul type generation dx",
+    "files": [
+      {
+        "path": "Makefile",
+        "added": 3,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/global.go",
+        "added": 31,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/core/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/modules/sync/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/stdlib/memory/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/stdlib/worker/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/types.go",
+        "added": 35,
+        "deleted": 62,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 1,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "examples/11-http-server.ts",
+        "added": 79,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "tests/dx/types_test.go",
+        "added": 100,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "42fdb9c490351732f82a57427e200bf80919d213",
+    "date": "2026-01-20T23:33:47+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fixed",
+    "files": []
+  },
+  {
+    "hash": "2e176d7c35640aef580c4d3e202d27018a26c0ed",
+    "date": "2026-01-20T23:40:55+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: update worker.d.ts syntax for better compatibility",
+    "files": []
+  },
+  {
+    "hash": "996f2e197e139ab2f16f1c69a7f5e27626632d3a",
+    "date": "2026-01-21T00:02:38+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat: add consumer simulation workflow",
+    "files": [
+      {
+        "path": ".github/workflows/consumer_sim.yml",
+        "added": 133,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "5ea03ce1a5c396475a060b30499f1296ec8732cf",
+    "date": "2026-01-21T00:09:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(dx): properly decentralized go:crypto types",
+    "files": [
+      {
+        "path": "bridge/modules/crypto/types.go",
+        "added": 6,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "cmd/typego/types.go",
+        "added": 3,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "61ccc26eadf642e0fb4b63062b97f7b0fe93d60c",
+    "date": "2026-01-21T00:17:19+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(compiler): register go:crypto internal module",
+    "files": [
+      {
+        "path": "compiler/compiler.go",
+        "added": 3,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f0eea152d3528f392d19953fcf4ea5837a9af3e6",
+    "date": "2026-01-21T00:21:23+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ci): remove invalid assignment to import in worker.ts",
+    "files": [
+      {
+        "path": ".github/workflows/consumer_sim.yml",
+        "added": 3,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "085ac9f0cbf974cc8c4dd15b8073bca087bacb07",
+    "date": "2026-01-21T00:24:03+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ci): use self.onmessage and implicit build target",
+    "files": [
+      {
+        "path": ".github/workflows/consumer_sim.yml",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "49e25b62efe83edb7f4a68ed79a5d29655340490",
+    "date": "2026-01-21T00:32:16+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: removed unreliable workflow",
+    "files": [
+      {
+        "path": ".github/workflows/consumer_sim.yml",
+        "added": 0,
+        "deleted": 135,
+        "status": "D"
+      }
+    ]
+  },
+  {
+    "hash": "4a0c1181028d54ffa0cba0f6d298f72084962b41",
+    "date": "2026-01-21T00:38:00+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore(release): v1.3.1",
+    "files": []
+  },
+  {
+    "hash": "10f8488cedadaa68e688e19361a224571b46e4a9",
+    "date": "2026-01-21T00:38:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix changelog",
+    "files": []
+  },
+  {
+    "hash": "0f48dfefb7524aee6708437604220bb50f3984b4",
+    "date": "2026-01-21T10:40:48+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: migrate ownership from repyh3 to repyh",
+    "files": [
+      {
+        "path": "bridge/core/registry.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/crypto/crypto.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/fmt/fmt.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/json/json.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/http.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/os/os.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/init.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/timers.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/memory/memory.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/build.go",
+        "added": 9,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/interpreter.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/run.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "cmd/typego/types.go",
+        "added": 9,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 10,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine_test.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "go.mod",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/builder_test.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "tests/integration/harness.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "5e6a512025aa62a92d04d469d375b2dcdaa5807f",
+    "date": "2026-01-21T12:23:34+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(ecosystem): implement jit modules installer and CLI refactor (Phase 1 & 2)",
+    "files": [
+      {
+        "path": "cmd/typego/main.go",
+        "added": 2,
+        "deleted": 28,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 19,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 15,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/ast/extractor.go",
+        "added": 55,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/ast/parser.go",
+        "added": 65,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/builder/compile.go",
+        "added": 32,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/builder/scaffold.go",
+        "added": 45,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/builder/templates/main.tmpl",
+        "added": 27,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/config.go",
+        "added": 50,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 203,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/ecosystem/resolver/toolchain.go",
+        "added": 56,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 16,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/build.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/dev.go",
+        "added": 26,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/init.go",
+        "added": 17,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/install.go",
+        "added": 35,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/interpreter.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/root.go",
+        "added": 31,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/run.go",
+        "added": 27,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/types.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "{cmd/typego => pkg/cli}/watch.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "tests/ecosystem_test_project/src/index.ts",
+        "added": 4,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "4796535f9072108ac0cedb8af55525246a27ca1e",
+    "date": "2026-01-21T12:24:13+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(ecosystem): implement JIT binary detection utility (Phase 3)",
+    "files": [
+      {
+        "path": "internal/ecosystem/utils.go",
+        "added": 32,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "335a39b223d9d8f0c151a91a1c4ee1ae23b90d42",
+    "date": "2026-01-21T12:27:37+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(ecosystem): implement reliability features and clean command (Phase 4)",
+    "files": [
+      {
+        "path": "internal/ecosystem/config.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 11,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/utils.go",
+        "added": 82,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/clean.go",
+        "added": 36,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "2fc9e1c4545cf9e38b9dc5c3152d81de96e4953a",
+    "date": "2026-01-21T12:32:06+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(e2e): implement robust repo root detection for local dev replacements",
+    "files": [
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 9,
+        "deleted": 14,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/utils.go",
+        "added": 20,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/build.go",
+        "added": 5,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/run.go",
+        "added": 4,
+        "deleted": 10,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "b90f9f7db5bc2d351a631f131f250912ef036f35",
+    "date": "2026-01-21T12:45:10+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: update readme and fix install",
+    "files": [
+      {
+        "path": "test_project/src/index.ts",
+        "added": 18,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "dc150e22a5602e46be5a7394d8f6035172c985c2",
+    "date": "2026-01-21T12:45:15+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: update readme and install",
+    "files": [
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 5,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "test_project/src/index.ts",
+        "added": 0,
+        "deleted": 18,
+        "status": "D"
+      },
+      {
+        "path": "tests/ecosystem_test_project/src/index.ts",
+        "added": 0,
+        "deleted": 4,
+        "status": "D"
+      }
+    ]
+  },
+  {
+    "hash": "65154b7a3c009754790cc2ee1400d3e9061b7686",
+    "date": "2026-01-21T17:11:43+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: clean unnecessary comments",
+    "files": [
+      {
+        "path": "bridge/core/global.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 0,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/crypto/crypto.go",
+        "added": 3,
+        "deleted": 8,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/json/errors.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/json/json.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/process.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/memory/memory.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "compiler/cache.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 8,
+        "deleted": 18,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 2,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine_test.go",
+        "added": 0,
+        "deleted": 8,
+        "status": "M"
+      },
+      {
+        "path": "examples/02-go-concurrency.ts",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "examples/03-multithreading-workers.ts",
+        "added": 1,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "examples/06-process-env.ts",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/{08-external-module.ts => 07-external-module.ts}",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/07-struct-binding.ts",
+        "added": 0,
+        "deleted": 16,
+        "status": "D"
+      },
+      {
+        "path": "examples/{09-nested-structs.ts => 08-nested-structs.ts}",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/{10-typego-stdlib.ts => 09-typego-stdlib.ts}",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "examples/{11-http-server.ts => 10-http-server.ts}",
+        "added": 1,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "tests/dx/types_test.go",
+        "added": 0,
+        "deleted": 8,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "0803d137848e99ded888ee8c7e5e4be149f0efad",
+    "date": "2026-01-21T17:58:19+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(cli): modular restructuring with package manager commands",
+    "files": [
+      {
+        "path": "pkg/cli/internal/config.go",
+        "added": 54,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/internal/doc.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/internal/output.go",
+        "added": 47,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/pkg/add.go",
+        "added": 68,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/{ => pkg}/clean.go",
+        "added": 7,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/doc.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/{ => pkg}/install.go",
+        "added": 7,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/list.go",
+        "added": 67,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/pkg/remove.go",
+        "added": 55,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/root.go",
+        "added": 8,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "0420d5ee1dd3538cf04016d77857673d6aaed10d",
+    "date": "2026-01-21T18:05:32+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(cli): add update and outdated commands",
+    "files": [
+      {
+        "path": "pkg/cli/pkg/outdated.go",
+        "added": 87,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/pkg/update.go",
+        "added": 129,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/root.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f38a93d06bf038b90b3986c5dff54815355a2321",
+    "date": "2026-01-21T21:56:40+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ecosystem): restore external module shim generation in JIT installer",
+    "files": [
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 24,
+        "deleted": 42,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/utils.go",
+        "added": 9,
+        "deleted": 16,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/build.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/dev.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/doc.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/cmd/init.go",
+        "added": 150,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/interpreter.go",
+        "added": 4,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/run.go",
+        "added": 4,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/types.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/{ => cmd}/watch.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/init.go",
+        "added": 0,
+        "deleted": 129,
+        "status": "D"
+      },
+      {
+        "path": "pkg/cli/pkg/outdated.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/update.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/root.go",
+        "added": 11,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "sandbox-test/sandbox/.gitignore",
+        "added": 1,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/server.log",
         "added": 0,
         "deleted": 0,
         "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/src/db/store.ts",
+        "added": 24,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/src/handlers/links.ts",
+        "added": 77,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/src/index.ts",
+        "added": 126,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/src/middleware/logger.ts",
+        "added": 13,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "sandbox-test/sandbox/src/utils/shortid.ts",
+        "added": 10,
+        "deleted": 0,
+        "status": "A"
       }
     ]
   },
   {
-    "hash": "ee9a2f01bae77c0ecdc1654c5816d53d67734b53",
-    "date": "2026-02-10T10:08:22+07:00",
-    "author_name": "Chris G",
-    "author_email": "chrisg@example.com",
-    "message": "Delete file",
+    "hash": "4a6a6b8522e6bb9dc8e3ba1938a9ef73f66de9b3",
+    "date": "2026-01-21T22:52:16+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat: release v1.4.0 - typego package ecosystem & smarter linker",
     "files": [
       {
-        "path": "delete_me.txt",
+        "path": "internal/ecosystem/config.go",
+        "added": 20,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/installer/install.go",
+        "added": 74,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 46,
+        "deleted": 23,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 29,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/add.go",
+        "added": 9,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "sandbox-test/sandbox/server.log",
         "added": 0,
         "deleted": 0,
         "status": "D"
       }
     ]
+  },
+  {
+    "hash": "7073c0b46b43bbf7bd5bb4c11f8efffc2829b0f3",
+    "date": "2026-01-21T22:59:29+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: remove unused functions in generator to satisfy linter",
+    "files": [
+      {
+        "path": "internal/linker/generator.go",
+        "added": 0,
+        "deleted": 12,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "d2e97726ec5432a3f19e5a7600a4ab014bbc9b79",
+    "date": "2026-01-21T23:11:58+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: use ASCII diagram for project structure in CONTRIBUTING.md",
+    "files": []
+  },
+  {
+    "hash": "8dd101b19cb20d5f55d71cb2c9b7b6d1aa11f107",
+    "date": "2026-01-21T18:48:29Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "chore: sanitize redundant comments and AI-fluff",
+    "files": [
+      {
+        "path": "bridge/core/console.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/global.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/registry.go",
+        "added": 0,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/crypto/crypto.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/fmt/fmt.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/json/json.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/http.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/os/os.go",
+        "added": 0,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 0,
+        "deleted": 8,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "eventloop/eventloop.go",
+        "added": 0,
+        "deleted": 12,
+        "status": "M"
+      },
+      {
+        "path": "examples/10-http-server.ts",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/utils.go",
+        "added": 0,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 0,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/build.go",
+        "added": 1,
+        "deleted": 15,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/dev.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/interpreter.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/run.go",
+        "added": 0,
+        "deleted": 17,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/types.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/add.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/list.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/remove.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "d5e6f9bcf2b366f140038ac47b1ffa2ef7d32b63",
+    "date": "2026-01-22T02:09:06+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: added note for jules periodic maintenance",
+    "files": []
+  },
+  {
+    "hash": "36bbcde31497af7fff88e19a8306a0442c543f0d",
+    "date": "2026-01-21T19:10:35Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "feat(bridge/core): optimize reflection binding performance",
+    "files": [
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 50,
+        "deleted": 18,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "4ec4d8ed98d7c41123fef937a5f50bc19d20fb4c",
+    "date": "2026-01-21T19:14:40Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "feat(bridge/core): optimize reflection binding performance",
+    "files": [
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 4,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "a9027f60c56840ee2baf1849273437c15882fb9c",
+    "date": "2026-01-21T19:19:12Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "feat(bridge/core): optimize reflection binding performance",
+    "files": [
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 8,
+        "deleted": 3,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f4be4a025a81f8afc794028783298d8c2d0ad044",
+    "date": "2026-01-22T10:34:03+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: created roadmap.md",
+    "files": []
+  },
+  {
+    "hash": "2e34249f67ff8ee076ac935e63c8926676e6e06e",
+    "date": "2026-01-22T10:50:15+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(engine): migrate from goja to sobek for ES2017+ support",
+    "files": [
+      {
+        "path": "bridge/core/arraybuffer.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/console.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/global.go",
+        "added": 5,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 18,
+        "deleted": 18,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/registry.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/crypto/crypto.go",
+        "added": 9,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/fmt/fmt.go",
+        "added": 7,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/json/json.go",
+        "added": 8,
+        "deleted": 8,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/http.go",
+        "added": 11,
+        "deleted": 11,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/net/server.go",
+        "added": 19,
+        "deleted": 19,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/os/os.go",
+        "added": 21,
+        "deleted": 21,
+        "status": "M"
+      },
+      {
+        "path": "bridge/modules/sync/sync.go",
+        "added": 23,
+        "deleted": 23,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/buffer.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/encoding.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/init.go",
+        "added": 2,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/process.go",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/polyfills/timers.go",
+        "added": 11,
+        "deleted": 11,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/memory/memory.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/stdlib/worker/worker.go",
+        "added": 14,
+        "deleted": 14,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "eventloop/eventloop.go",
+        "added": 4,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "go.mod",
+        "added": 3,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "go.sum",
+        "added": 8,
+        "deleted": 10,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 7,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/build.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "tests/integration/harness.go",
+        "added": 10,
+        "deleted": 10,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "be0c1d76f5e11407e033db57bcc5d3bcb529ec3d",
+    "date": "2026-01-22T13:04:48+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat(intrinsics): implement defer keyword, intellisense, and build fixes",
+    "files": [
+      {
+        "path": "bridge/intrinsics/intrinsics.go",
+        "added": 23,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/panic.go",
+        "added": 26,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/scope.go",
+        "added": 49,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/sizeof.go",
+        "added": 68,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "compiler/compiler.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "compiler/plugins/defer.go",
+        "added": 61,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 5,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "examples/test_defer_syntax.ts",
+        "added": 10,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/test_intrinsics.ts",
+        "added": 25,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/transformer/core/transformer.go",
+        "added": 43,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/transformer/core/walker.go",
+        "added": 114,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "internal/transformer/visitors/defer_visitor.go",
+        "added": 115,
+        "deleted": 0,
+        "status": "A"
+      }
+    ]
+  },
+  {
+    "hash": "4817805b7990dec61a5ff36145cbbe140fd0ad8a",
+    "date": "2026-01-22T16:20:54+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "feat: migrate polyfills to intrinsics and add global codebase index",
+    "files": [
+      {
+        "path": "bridge/intrinsics/buffer.go",
+        "added": 52,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/concurrency.go",
+        "added": 183,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/encoding.go",
+        "added": 66,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/globals.go",
+        "added": 49,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/intrinsics.go",
+        "added": 29,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/panic.go",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/pointers.go",
+        "added": 51,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/{polyfills => intrinsics}/process.go",
+        "added": 6,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/recover.go",
+        "added": 12,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/scope.go",
+        "added": 63,
+        "deleted": 19,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/slices.go",
+        "added": 110,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/{polyfills => intrinsics}/timers.go",
+        "added": 11,
+        "deleted": 12,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/types.go",
+        "added": 39,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/polyfills/buffer.go",
+        "added": 0,
+        "deleted": 26,
+        "status": "D"
+      },
+      {
+        "path": "bridge/polyfills/doc.go",
+        "added": 0,
+        "deleted": 52,
+        "status": "D"
+      },
+      {
+        "path": "bridge/polyfills/encoding.go",
+        "added": 0,
+        "deleted": 64,
+        "status": "D"
+      },
+      {
+        "path": "bridge/polyfills/init.go",
+        "added": 0,
+        "deleted": 19,
+        "status": "D"
+      },
+      {
+        "path": "compiler/plugins/defer.go",
+        "added": 1,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "engine/engine.go",
+        "added": 9,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "examples/{02-go-concurrency.ts => 02-concurrency-basics.ts}",
+        "added": 8,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "examples/11-concurrency-advanced.ts",
+        "added": 54,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/12-memory-management.ts",
+        "added": 38,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/13-error-handling.ts",
+        "added": 41,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/14-metaprogramming.ts",
+        "added": 31,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/15-pointers.ts",
+        "added": 36,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "examples/test_defer_syntax.ts",
+        "added": 0,
+        "deleted": 10,
+        "status": "D"
+      },
+      {
+        "path": "examples/test_intrinsics.ts",
+        "added": 0,
+        "deleted": 25,
+        "status": "D"
+      },
+      {
+        "path": "internal/builder/builder_test.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "internal/transformer/visitors/iota_visitor.go",
+        "added": 52,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "pkg/cli/cmd/interpreter.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/types.go",
+        "added": 15,
+        "deleted": 2,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "f267ed226f91f545768cc758a3584378c2759c61",
+    "date": "2026-01-22T16:37:03+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "chore: moved sandbox and rename as projects in examples",
+    "files": [
+      {
+        "path": ".github/workflows/validate-examples.yml",
+        "added": 105,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/.gitignore",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/db/store.ts",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/handlers/links.ts",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/index.ts",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/middleware/logger.ts",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/utils/shortid.ts",
+        "added": 0,
+        "deleted": 0,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "4a66f67aa73aab882c96ab2f74e76051c12b2824",
+    "date": "2026-01-22T16:54:56+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs(intrinsics): examples + docs; feat(bridge): intrinsics & recursive linker updates",
+    "files": [
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 56,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/intrinsics.go",
+        "added": 2,
+        "deleted": 0,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/io.go",
+        "added": 71,
+        "deleted": 0,
+        "status": "A"
+      },
+      {
+        "path": "bridge/intrinsics/pointers.go",
+        "added": 35,
+        "deleted": 9,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/timers.go",
+        "added": 33,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "bridge/intrinsics/types.go",
+        "added": 10,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "engine/worker.go",
+        "added": 73,
+        "deleted": 46,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/generator.go",
+        "added": 28,
+        "deleted": 13,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/inspector.go",
+        "added": 29,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/types.go",
+        "added": 38,
+        "deleted": 17,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "fee481267d201b17ecaa8ea4ce36bedab73be3a9",
+    "date": "2026-01-22T17:03:32+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(ci): correct YAML syntax in validate-examples workflow",
+    "files": [
+      {
+        "path": ".github/workflows/validate-examples.yml",
+        "added": 1,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "836499543916edd74966404780fe45d3477eb208",
+    "date": "2026-01-22T17:06:56+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix(bridge): resolve SA6002 lint error by using pointer in sync.Pool",
+    "files": [
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 7,
+        "deleted": 3,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "46cf4d16833a3d2115c316206ab3b4488aa92f11",
+    "date": "2026-01-22T18:17:07Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "chore: sanitize redundant comments and AI-fluff",
+    "files": [
+      {
+        "path": "compiler/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "engine/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "eventloop/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/config.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/dev.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/run.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/watch.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/internal/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "77451840de9cfa4760f7f538c6ebe220480fe67b",
+    "date": "2026-01-22T19:17:56Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "Optimize bridge/core and overhaul README documentation",
+    "files": [
+      {
+        "path": "bridge/core/arraybuffer.go",
+        "added": 0,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/console.go",
+        "added": 8,
+        "deleted": 7,
+        "status": "M"
+      },
+      {
+        "path": "bridge/core/reflection.go",
+        "added": 37,
+        "deleted": 5,
+        "status": "M"
+      },
+      {
+        "path": "compiler/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "engine/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "eventloop/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "internal/builder/templates.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "internal/ecosystem/config.go",
+        "added": 0,
+        "deleted": 4,
+        "status": "M"
+      },
+      {
+        "path": "internal/linker/doc.go",
+        "added": 0,
+        "deleted": 2,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/dev.go",
+        "added": 0,
+        "deleted": 6,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/run.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/cmd/watch.go",
+        "added": 0,
+        "deleted": 3,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/internal/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      },
+      {
+        "path": "pkg/cli/pkg/doc.go",
+        "added": 0,
+        "deleted": 1,
+        "status": "M"
+      }
+    ]
+  },
+  {
+    "hash": "25870a9f2764d9146401791ef852e5e9442b8e40",
+    "date": "2026-01-22T19:30:53Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "Optimize bridge/core and overhaul README documentation",
+    "files": []
+  },
+  {
+    "hash": "54839189fe084be0dc340af8e7d59191e22e5da2",
+    "date": "2026-01-22T19:41:35Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "Optimize bridge/core and overhaul README documentation",
+    "files": []
+  },
+  {
+    "hash": "d5fc917731558ecc9998535c0f7f4360ecee2085",
+    "date": "2026-01-22T19:53:37Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "Optimize bridge/core and overhaul README documentation",
+    "files": []
+  },
+  {
+    "hash": "728532bf837b9848ddb7261d50f97227f1ccf992",
+    "date": "2026-01-23T03:11:26+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "Update README.md",
+    "files": []
+  },
+  {
+    "hash": "302f846535cf35b2a72125562bea1b9b84cbbd6c",
+    "date": "2026-01-23T03:12:23+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: incorrect example",
+    "files": []
+  },
+  {
+    "hash": "b8e22a08912d2e94ec73dc25cf4b9d9060183849",
+    "date": "2026-01-23T03:14:05+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "fix: incorrect example code snippet",
+    "files": []
+  },
+  {
+    "hash": "1b26d878311c969c8d992d2b574717de5fd5d514",
+    "date": "2026-01-22T20:21:27Z",
+    "author_name": "google-labs-jules[bot]",
+    "author_email": "161369871+google-labs-jules[bot]@users.noreply.github.com",
+    "message": "Fix README examples and API references",
+    "files": []
+  },
+  {
+    "hash": "fabe06823d95b78fc076a91e7f9955b314413c1c",
+    "date": "2026-01-23T22:36:04+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: correct README examples to match bridge implementation",
+    "files": []
+  },
+  {
+    "hash": "772e990a5459676d4710f37fa635dcb2d01a228c",
+    "date": "2026-01-23T22:38:11+07:00",
+    "author_name": "Repyh",
+    "author_email": "cjho88793@gmail.com",
+    "message": "docs: updates changelog and roadmap for v1.5.0",
+    "files": []
   }
 ]
