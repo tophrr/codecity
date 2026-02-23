@@ -6,43 +6,46 @@ import { Building } from './Building';
 interface DistrictProps {
   node: LayoutNode;
   depth?: number;
+  changedPaths: Set<string>;
+  onSelect: (node: LayoutNode) => void;
+  onHover: (path: string | null) => void;
+  minDate: number;
+  maxDate: number;
 }
 
-export const District: React.FC<DistrictProps> = ({ node, depth = 0 }) => {
-  // District base (footprint)
+// Lot surface color per depth — sits above the global road plane
+const LOT_COLOR = ['#1a1a30', '#161628', '#121220'];
+
+export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, onHover, minDate, maxDate }) => {
   const w = node.width;
-  const d = node.height; // z
+  const d = node.height;
   const x = node.x + w / 2;
   const z = node.y + d / 2;
-  
-  // District height (thin slice)
-  const h = 0.5;
-  const y = -h/2 - (depth * 0.1); // Stack districts downwards slightly to avoid z-fighting?
-                                  // Or just at y=0.
-                                  // Better: slight offset based on depth to show hierarchy visually if needed.
-                                  // For now, let's put them just below y=0.
+
+  // Each depth level raises the lot slightly above the global ground plane.
+  // This means gaps in the treemap expose the lot of the parent (or the road ground at depth 0).
+  // No padding — no overlap possible.
+  const lotY = 0.01 + depth * 0.015;
+  const lotH = 0.04;
+
+  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
 
   return (
     <group>
-      {/* Background/Base for the district */}
-      <mesh position={[x, y, z]}>
-        <boxGeometry args={[w, h, d]} />
-        <meshStandardMaterial 
-          color={'#cccccc'} 
-          transparent 
-          opacity={0.1 + (depth * 0.05)} 
-          wireframe={false} 
+      {/* Lot surface — exact footprint only, raised above the global road plane */}
+      <mesh position={[x, lotY, z]} receiveShadow>
+        <boxGeometry args={[w, lotH, d]} />
+        <meshStandardMaterial
+          color={LOT_COLOR[Math.min(depth, 2)]}
+          roughness={0.9}
         />
-        {/* Wireframe border for distinct look */}
-        {/* Or line segments. For MVP, simple box. */}
       </mesh>
-      
-      {/* Render children */}
+
       {node.children?.map((child) => (
         child.type === 'file' ? (
-          <Building key={child.path} node={child} />
+          <Building key={child.path} node={child} {...sharedProps} />
         ) : (
-          <District key={child.path} node={child} depth={depth + 1} />
+          <District key={child.path} node={child} depth={depth + 1} {...sharedProps} />
         )
       ))}
     </group>

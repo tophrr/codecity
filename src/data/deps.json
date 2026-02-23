@@ -1,0 +1,146 @@
+{
+  "cmd/typego/main.go": [
+    "pkg/cli/install.go"
+  ],
+  "compiler/compiler.go": [
+    "compiler/plugins/defer.go"
+  ],
+  "engine/engine.go": [
+    "bridge/core/registry.go",
+    "bridge/intrinsics/intrinsics.go",
+    "bridge/stdlib/memory/memory.go",
+    "bridge/stdlib/worker/worker.go",
+    "eventloop/eventloop.go",
+    "bridge/modules/crypto/crypto.go",
+    "bridge/modules/fmt/fmt.go",
+    "bridge/modules/json/errors.go",
+    "bridge/modules/net/http.go",
+    "bridge/modules/os/os.go",
+    "bridge/modules/sync/sync.go"
+  ],
+  "engine/worker.go": [
+    "bridge/stdlib/worker/worker.go",
+    "compiler/compiler.go"
+  ],
+  "internal/builder/templates.go": [
+    "engine/engine.go"
+  ],
+  "bridge/core/registry.go": [
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/fmt/fmt.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/sync/sync.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/stdlib/memory/memory.go": [
+    "bridge/modules/sync/sync.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/stdlib/worker/worker.go": [
+    "eventloop/eventloop.go"
+  ],
+  "engine/engine_test.go": [
+    "engine/engine.go"
+  ],
+  "internal/builder/builder_test.go": [
+    "internal/builder/doc.go"
+  ],
+  "tests/integration/harness.go": [
+    "engine/engine.go"
+  ],
+  "bridge/modules/net/http.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/os/os.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/json/json.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/crypto/crypto.go": [
+    "bridge/core/registry.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/net/server.go": [
+    "eventloop/eventloop.go"
+  ],
+  "internal/ecosystem/installer/install.go": [
+    "internal/ecosystem/ast/extractor.go",
+    "internal/ecosystem/builder/compile.go",
+    "internal/ecosystem/resolver/toolchain.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/root.go": [
+    "pkg/cli/cmd/doc.go",
+    "pkg/cli/pkg/add.go"
+  ],
+  "pkg/cli/internal/config.go": [
+    "internal/ecosystem/ast/extractor.go"
+  ],
+  "pkg/cli/pkg/add.go": [
+    "pkg/cli/cmd/doc.go",
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/list.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/remove.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/outdated.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/update.go": [
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/cmd/build.go": [
+    "compiler/compiler.go",
+    "internal/builder/doc.go",
+    "internal/ecosystem/ast/extractor.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/cmd/dev.go": [
+    "internal/ecosystem/ast/extractor.go"
+  ],
+  "pkg/cli/cmd/interpreter.go": [
+    "compiler/compiler.go",
+    "engine/engine.go"
+  ],
+  "pkg/cli/cmd/run.go": [
+    "compiler/compiler.go",
+    "internal/builder/doc.go",
+    "internal/ecosystem/ast/extractor.go",
+    "internal/linker/fetcher.go"
+  ],
+  "pkg/cli/cmd/types.go": [
+    "bridge/core/registry.go",
+    "bridge/intrinsics/intrinsics.go",
+    "bridge/modules/crypto/crypto.go",
+    "bridge/modules/net/http.go",
+    "bridge/modules/sync/sync.go",
+    "bridge/stdlib/memory/memory.go",
+    "bridge/stdlib/worker/worker.go",
+    "compiler/compiler.go",
+    "internal/linker/fetcher.go"
+  ],
+  "bridge/intrinsics/intrinsics.go": [
+    "eventloop/eventloop.go"
+  ],
+  "compiler/plugins/defer.go": [
+    "internal/transformer/core/transformer.go",
+    "internal/transformer/visitors/defer_visitor.go"
+  ],
+  "internal/transformer/visitors/defer_visitor.go": [
+    "internal/transformer/core/transformer.go"
+  ],
+  "internal/transformer/visitors/iota_visitor.go": [
+    "internal/transformer/core/transformer.go"
+  ]
+}

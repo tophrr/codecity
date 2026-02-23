@@ -1,33 +1,92 @@
 
-import React from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { City } from './City';
+import { DependencyArcs } from './DependencyArcs';
 import type { LayoutNode } from '../types';
+import type { PositionMap } from './DependencyArcs';
 
 interface SceneProps {
   data: LayoutNode;
+  changedPaths: Set<string>;
+  onSelect: (node: LayoutNode) => void;
+  minDate: number;
+  maxDate: number;
+  deps: Record<string, string[]>;
 }
 
-export const Scene: React.FC<SceneProps> = ({ data }) => {
-  // Determine camera position based on city size
-  // Center is roughly width/2, height/2 (in layout coords)
+/** Walk the layout tree and collect every leaf file's world top-center position. */
+function buildPositionMap(node: LayoutNode, map: PositionMap = new Map()): PositionMap {
+  if (node.type === 'file') {
+    const x = node.x + node.width / 2;
+    const z = node.y + node.height / 2;
+    const h = Math.max(0.2, node.size * 0.1);
+    map.set(node.path, [x, h, z]);
+  } else if (node.children) {
+    for (const child of node.children) buildPositionMap(child, map);
+  }
+  return map;
+}
+
+export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minDate, maxDate, deps }) => {
   const cx = data.width / 2;
   const cz = data.height / 2;
   const size = Math.max(data.width, data.height);
-  
+
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+
+  const handleHover = useCallback((path: string | null) => setHoveredPath(path), []);
+
+  const positionMap = useMemo(() => buildPositionMap(data), [data]);
+
   return (
-    <Canvas style={{ width: '100vw', height: '100vh', background: '#111' }}>
-      <PerspectiveCamera makeDefault position={[cx, size, cz * 2]} fov={60} />
+    <Canvas
+      style={{ width: '100vw', height: '100vh', background: '#0a0a12' }}
+      gl={{ antialias: true, toneMappingExposure: 1.2 }}
+    >
+      <fog attach="fog" args={['#0a0a12', size * 0.6, size * 2.2]} />
+
+      <PerspectiveCamera makeDefault position={[cx, size * 0.8, cz * 2]} fov={60} />
       <OrbitControls target={[cx, 0, cz]} />
-      
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 20, 10]} intensity={1} castShadow />
-      <pointLight position={[cx, 20, cz]} intensity={0.5} />
-      
-      <City root={data} />
-      
-      <gridHelper args={[size * 2, 20]} position={[cx, -0.1, cz]} />
+
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[size, size, size * 0.5]} intensity={1.2} castShadow />
+      <pointLight position={[cx, size * 0.4, cz]} intensity={0.8} color="#6688ff" />
+      <hemisphereLight args={['#202040', '#000000', 0.4]} />
+
+      {/* Single global road ground plane — district gaps expose this as streets */}
+      <mesh position={[cx, -0.02, cz]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+        <planeGeometry args={[size * 1.5, size * 1.5]} />
+        <meshStandardMaterial color="#52527a" roughness={0.95} metalness={0.05} />
+      </mesh>
+
+      <City
+        root={data}
+        changedPaths={changedPaths}
+        onSelect={onSelect}
+        onHover={handleHover}
+        minDate={minDate}
+        maxDate={maxDate}
+      />
+
+      <DependencyArcs
+        hoveredPath={hoveredPath}
+        deps={deps}
+        positionMap={positionMap}
+      />
+
+      <gridHelper args={[size * 2, 40, '#1a1a30', '#111120']} position={[cx, -0.6, cz]} />
+
+      <EffectComposer>
+        <Bloom
+          luminanceThreshold={0.6}
+          luminanceSmoothing={0.3}
+          intensity={0.8}
+          mipmapBlur
+        />
+      </EffectComposer>
     </Canvas>
   );
 };
