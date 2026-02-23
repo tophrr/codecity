@@ -7,9 +7,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const git = simpleGit();
+const git = simpleGit('C:\\Users\\LENOVO\\Documents\\go\\typego');
 const outputDir = path.resolve(__dirname, '../src/data');
 const outputFile = path.join(outputDir, 'commits.json');
+
+const BLACKLIST_EXTENSIONS = ['.d.ts', '.lock', '.json', '.md'];
+const BLACKLIST_PATHS = ['node_modules/', '.typego/'];
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
@@ -62,6 +65,14 @@ async function run() {
                     const addedStr = numstatMatch[1];
                     const deletedStr = numstatMatch[2];
                     const filePath = numstatMatch[3];
+
+                    // Check blacklist
+                    const shouldSkip = BLACKLIST_EXTENSIONS.some(ext => filePath.endsWith(ext)) ||
+                                        BLACKLIST_PATHS.some(p => filePath.includes(p));
+                    
+                    if (shouldSkip) {
+                        continue;
+                    }
 
                     const added = addedStr === '-' ? 0 : parseInt(addedStr, 10);
                     const deleted = deletedStr === '-' ? 0 : parseInt(deletedStr, 10);
