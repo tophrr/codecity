@@ -9,6 +9,7 @@ interface BuildingProps {
   node: LayoutNode;
   changedPaths: Set<string>;
   onSelect: (node: LayoutNode) => void;
+  onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
 }
@@ -27,6 +28,7 @@ export const Building: React.FC<BuildingProps> = ({
   node,
   changedPaths,
   onSelect,
+  onHover,
   minDate,
   maxDate,
 }) => {
@@ -93,8 +95,8 @@ export const Building: React.FC<BuildingProps> = ({
       ref={meshRef}
       position={[x, 0, z]}
       onClick={(e) => { e.stopPropagation(); onSelect(node); }}
-      onPointerOver={(e) => { e.stopPropagation(); hoveredRef.current = true; setHovered(true); }}
-      onPointerOut={() => { hoveredRef.current = false; setHovered(false); }}
+      onPointerOver={(e) => { e.stopPropagation(); hoveredRef.current = true; setHovered(true); onHover(node.path); }}
+      onPointerOut={() => { hoveredRef.current = false; setHovered(false); onHover(null); }}
     >
       <boxGeometry args={[bw, targetH, bd]} />
       <meshStandardMaterial

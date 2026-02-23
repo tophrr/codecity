@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { City } from './City';
+import { DependencyArcs } from './DependencyArcs';
 import type { LayoutNode } from '../types';
+import type { PositionMap } from './DependencyArcs';
 
 interface SceneProps {
   data: LayoutNode;
@@ -12,12 +14,32 @@ interface SceneProps {
   onSelect: (node: LayoutNode) => void;
   minDate: number;
   maxDate: number;
+  deps: Record<string, string[]>;
 }
 
-export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minDate, maxDate }) => {
+/** Walk the layout tree and collect every leaf file's world top-center position. */
+function buildPositionMap(node: LayoutNode, map: PositionMap = new Map()): PositionMap {
+  if (node.type === 'file') {
+    const x = node.x + node.width / 2;
+    const z = node.y + node.height / 2;
+    const h = Math.max(0.2, node.size * 0.1);
+    map.set(node.path, [x, h, z]);
+  } else if (node.children) {
+    for (const child of node.children) buildPositionMap(child, map);
+  }
+  return map;
+}
+
+export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minDate, maxDate, deps }) => {
   const cx = data.width / 2;
   const cz = data.height / 2;
   const size = Math.max(data.width, data.height);
+
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+
+  const handleHover = useCallback((path: string | null) => setHoveredPath(path), []);
+
+  const positionMap = useMemo(() => buildPositionMap(data), [data]);
 
   return (
     <Canvas
@@ -44,8 +66,15 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
         root={data}
         changedPaths={changedPaths}
         onSelect={onSelect}
+        onHover={handleHover}
         minDate={minDate}
         maxDate={maxDate}
+      />
+
+      <DependencyArcs
+        hoveredPath={hoveredPath}
+        deps={deps}
+        positionMap={positionMap}
       />
 
       <gridHelper args={[size * 2, 40, '#1a1a30', '#111120']} position={[cx, -0.6, cz]} />
