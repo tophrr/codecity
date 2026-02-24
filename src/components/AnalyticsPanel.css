@@ -1,0 +1,340 @@
+/* ── Slide-in panel ───────────────────────────────────────────────────────── */
+.ap-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100vh;
+  background: rgba(10, 10, 22, 0.97);
+  border-left: 1px solid rgba(100, 100, 180, 0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  font-family: inherit;
+  color: #c8c8e8;
+}
+
+.ap-panel--open {
+  transform: translateX(0);
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.ap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(100, 100, 180, 0.2);
+  flex-shrink: 0;
+}
+
+.ap-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8888ff;
+}
+
+.ap-close {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: color 0.15s;
+}
+.ap-close:hover { color: #fff; }
+
+/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+.ap-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(100, 100, 180, 0.2);
+  flex-shrink: 0;
+}
+
+.ap-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 8px 4px;
+  text-align: center;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.ap-tab:hover { color: #aaa; }
+
+.ap-tab--active {
+  color: #8888ff;
+  border-bottom-color: #8888ff;
+}
+
+/* ── Scrollable body ──────────────────────────────────────────────────────── */
+.ap-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333355 transparent;
+}
+
+.ap-section {
+  padding: 12px 14px;
+}
+
+.ap-section-hint {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #555588;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* ── Gauges ───────────────────────────────────────────────────────────────── */
+.ap-gauges-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+
+.ap-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ap-gauge-label {
+  font-size: 10px;
+  color: #666688;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Stat grid ────────────────────────────────────────────────────────────── */
+.ap-stat-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.ap-stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(100,100,180,0.12);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ap-stat-label {
+  font-size: 9px;
+  color: #555588;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ap-stat-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #aaaaff;
+}
+
+/* ── Formula blocks ───────────────────────────────────────────────────────── */
+.ap-formulas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ap-formulas-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #444466;
+  margin-bottom: 2px;
+}
+
+.ap-metric-block {
+  border-left: 2px solid rgba(100, 100, 180, 0.3);
+  padding-left: 10px;
+}
+
+.ap-metric-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8888cc;
+  margin-bottom: 5px;
+}
+
+.ap-formula {
+  margin-bottom: 5px;
+}
+
+.ap-formula-eq {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #c0c0ff;
+  background: rgba(255,255,255,0.04);
+  padding: 3px 6px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+
+.ap-formula-desc {
+  font-size: 10px;
+  color: #555577;
+}
+
+/* ── District rows ────────────────────────────────────────────────────────── */
+.ap-district-row {
+  border-bottom: 1px solid rgba(100,100,180,0.1);
+  margin-bottom: 2px;
+}
+
+.ap-district-header {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  color: #aaaacc;
+  font-size: 12px;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.ap-district-header:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.ap-district-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ap-chevron {
+  font-size: 9px;
+  color: #555;
+}
+
+.ap-district-detail {
+  padding: 4px 6px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ap-kv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #777799;
+}
+
+.ap-kv > span:last-child {
+  color: #aaaabb;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── File rows ────────────────────────────────────────────────────────────── */
+.ap-file-row {
+  border-bottom: 1px solid rgba(100,100,180,0.1);
+  padding: 8px 4px;
+}
+
+.ap-file-name {
+  font-size: 12px;
+  color: #c0c0e0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ap-file-path {
+  font-size: 9px;
+  color: #444466;
+  margin: 2px 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ap-file-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #666688;
+}
+
+.ap-file-stats strong {
+  color: #aaaacc;
+}
+
+/* ── Badges ───────────────────────────────────────────────────────────────── */
+.ap-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.ap-badge--good { background: rgba(74,240,122,0.15); color: #4af07a; }
+.ap-badge--warn { background: rgba(240,201,74,0.15); color: #f0c94a; }
+.ap-badge--bad  { background: rgba(240,74,74,0.15);  color: #f04a4a; }
+
+/* ── Colour helpers ───────────────────────────────────────────────────────── */
+.ap-good { color: #4af07a !important; }
+.ap-warn { color: #f0c94a !important; }
+
+.ap-empty {
+  font-size: 12px;
+  color: #444466;
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Trigger button (floating) ────────────────────────────────────────────── */
+.ap-trigger {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  writing-mode: vertical-lr;
+  background: rgba(30, 30, 60, 0.92);
+  border: 1px solid rgba(100,100,180,0.3);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  color: #8888ff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 12px 6px;
+  z-index: 199;
+  transition: background 0.15s, color 0.15s;
+  backdrop-filter: blur(8px);
+}
+
+.ap-trigger:hover {
+  background: rgba(50, 50, 100, 0.95);
+  color: #aaaaff;
+}

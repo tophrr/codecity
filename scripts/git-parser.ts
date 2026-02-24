@@ -12,7 +12,7 @@ const REPO_PATH = 'C:\\Users\\LENOVO\\Documents\\go\\typego';
 const git = simpleGit(REPO_PATH);
 const outputDir = path.resolve(__dirname, '../src/data');
 const outputFile = path.join(outputDir, 'commits.json');
-const depsFile   = path.join(outputDir, 'deps.json');
+const depsFile = path.join(outputDir, 'deps.json');
 
 const BLACKLIST_EXTENSIONS = ['.d.ts', '.lock', '.json', '.md'];
 const BLACKLIST_PATHS = ['node_modules/', '.typego/'];
@@ -20,6 +20,37 @@ const BLACKLIST_PATHS = ['node_modules/', '.typego/'];
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// ─── Git rename path resolver ────────────────────────────────────────────────
+
+/**
+ * Expand git's brace rename notation to just the destination path.
+ *
+ * Examples:
+ *   "bridge/{buffer.go => core/arraybuffer.go}"  → "bridge/core/arraybuffer.go"
+ *   "{cmd/typego => pkg/cli}/build.go"            → "pkg/cli/build.go"
+ *   "bridge/{ => modules/net}/http.go"            → "bridge/modules/net/http.go"
+ *   "bridge/{polyfills.go => polyfills/process.go}"→ "bridge/polyfills/process.go"
+ *
+ * Returns null if the path does not contain rename notation.
+ */
+function expandRenamePath(raw: string): string | null {
+    const braceStart = raw.indexOf('{');
+    const braceEnd   = raw.indexOf('}');
+    if (braceStart === -1 || braceEnd === -1) return null;
+
+    const inside = raw.slice(braceStart + 1, braceEnd);
+    const arrowIdx = inside.indexOf('=>');
+    if (arrowIdx === -1) return null;
+
+    const prefix = raw.slice(0, braceStart);          // e.g. "bridge/"
+    const suffix = raw.slice(braceEnd + 1);            // e.g. "/http.go"
+    const rhs    = inside.slice(arrowIdx + 2).trim();  // e.g. "modules/net"
+
+    // Normalise: collapse duplicate slashes, strip leading slash from result
+    const joined = (prefix + rhs + suffix).replace(/\/+/g, '/').replace(/^\//, '');
+    return joined;
 }
 
 // ─── Language extractors ────────────────────────────────────────────────────
@@ -124,7 +155,7 @@ async function parseDeps(liveFiles: string[]): Promise<Record<string, string[]>>
     for (const filePath of liveFiles) {
         const ext = filePath.split('.').pop() ?? '';
         const isTsJs = ['ts', 'tsx', 'js', 'jsx'].includes(ext);
-        const isGo   = ext === 'go';
+        const isGo = ext === 'go';
 
         if (!isTsJs && !isGo) continue;
 
@@ -205,7 +236,12 @@ async function run() {
             } else if (currentCommit) {
                 const numstatMatch = line.match(/^(\d+|-)\s+(\d+|-)\s+(.+)$/);
                 if (numstatMatch) {
-                    const filePath = numstatMatch[3];
+                    const rawPath = numstatMatch[3];
+
+                    // Expand git rename notation to destination path
+                    const isRename = rawPath.includes('=>');
+                    const filePath = isRename ? (expandRenamePath(rawPath) ?? rawPath) : rawPath;
+
                     const shouldSkip =
                         BLACKLIST_EXTENSIONS.some(ext => filePath.endsWith(ext)) ||
                         BLACKLIST_PATHS.some(p => filePath.includes(p));
@@ -213,7 +249,7 @@ async function run() {
 
                     const added   = numstatMatch[1] === '-' ? 0 : parseInt(numstatMatch[1], 10);
                     const deleted = numstatMatch[2] === '-' ? 0 : parseInt(numstatMatch[2], 10);
-                    currentCommit.files.push({ path: filePath, added, deleted, status: 'M' });
+                    currentCommit.files.push({ path: filePath, added, deleted, status: isRename ? 'R' : 'M' });
                     continue;
                 }
 
