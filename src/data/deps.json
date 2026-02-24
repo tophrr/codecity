@@ -1,12 +1,12 @@
 {
   "cmd/typego/main.go": [
-    "pkg/cli/install.go"
+    "pkg/cli/build.go"
   ],
   "compiler/compiler.go": [
     "compiler/plugins/defer.go"
   ],
   "engine/engine.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
     "bridge/intrinsics/intrinsics.go",
     "bridge/stdlib/memory/memory.go",
     "bridge/stdlib/worker/worker.go",
@@ -29,11 +29,19 @@
     "eventloop/eventloop.go"
   ],
   "bridge/modules/fmt/fmt.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/net/http.go": [
+    "bridge/core/arraybuffer.go",
+    "eventloop/eventloop.go"
+  ],
+  "bridge/modules/os/os.go": [
+    "bridge/core/arraybuffer.go",
     "eventloop/eventloop.go"
   ],
   "bridge/modules/sync/sync.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
     "eventloop/eventloop.go"
   ],
   "bridge/stdlib/memory/memory.go": [
@@ -52,20 +60,12 @@
   "tests/integration/harness.go": [
     "engine/engine.go"
   ],
-  "bridge/modules/net/http.go": [
-    "bridge/core/registry.go",
-    "eventloop/eventloop.go"
-  ],
-  "bridge/modules/os/os.go": [
-    "bridge/core/registry.go",
-    "eventloop/eventloop.go"
-  ],
   "bridge/modules/json/json.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
     "eventloop/eventloop.go"
   ],
   "bridge/modules/crypto/crypto.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
     "eventloop/eventloop.go"
   ],
   "bridge/modules/net/server.go": [
@@ -78,14 +78,22 @@
     "internal/linker/fetcher.go"
   ],
   "pkg/cli/root.go": [
-    "pkg/cli/cmd/doc.go",
+    "pkg/cli/cmd/build.go",
     "pkg/cli/pkg/add.go"
   ],
   "pkg/cli/internal/config.go": [
     "internal/ecosystem/ast/extractor.go"
   ],
   "pkg/cli/pkg/add.go": [
-    "pkg/cli/cmd/doc.go",
+    "pkg/cli/cmd/build.go",
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/clean.go": [
+    "internal/ecosystem/ast/extractor.go",
+    "pkg/cli/internal/config.go"
+  ],
+  "pkg/cli/pkg/install.go": [
+    "internal/ecosystem/installer/install.go",
     "pkg/cli/internal/config.go"
   ],
   "pkg/cli/pkg/list.go": [
@@ -120,7 +128,7 @@
     "internal/linker/fetcher.go"
   ],
   "pkg/cli/cmd/types.go": [
-    "bridge/core/registry.go",
+    "bridge/core/arraybuffer.go",
     "bridge/intrinsics/intrinsics.go",
     "bridge/modules/crypto/crypto.go",
     "bridge/modules/net/http.go",
@@ -142,5 +150,9 @@
   ],
   "internal/transformer/visitors/iota_visitor.go": [
     "internal/transformer/core/transformer.go"
+  ],
+  "examples/projects/link-shortener/src/handlers/links.ts": [
+    "examples/projects/link-shortener/src/db/store.ts",
+    "examples/projects/link-shortener/src/utils/shortid.ts"
   ]
 }

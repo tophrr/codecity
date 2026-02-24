@@ -460,10 +460,10 @@
         "status": "A"
       },
       {
-        "path": "bridge/{polyfills.go => polyfills/process.go}",
+        "path": "bridge/polyfills/process.go",
         "added": 4,
         "deleted": 4,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "bridge/polyfills/timers.go",
@@ -1179,16 +1179,16 @@
         "status": "M"
       },
       {
-        "path": "bridge/{buffer.go => core/arraybuffer.go}",
+        "path": "bridge/core/arraybuffer.go",
         "added": 7,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "bridge/{ => core}/reflection.go",
+        "path": "bridge/core/reflection.go",
         "added": 1,
         "deleted": 1,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "bridge/core/registry.go",
@@ -1227,16 +1227,16 @@
         "status": "A"
       },
       {
-        "path": "bridge/{ => modules/net}/http.go",
+        "path": "bridge/modules/net/http.go",
         "added": 26,
         "deleted": 9,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "bridge/{ => modules/os}/os.go",
+        "path": "bridge/modules/os/os.go",
         "added": 26,
         "deleted": 15,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "bridge/modules/sync/sync.go",
@@ -1536,10 +1536,10 @@
     "message": "refactor(bridge): relocate console bindings to core package",
     "files": [
       {
-        "path": "bridge/{ => core}/console.go",
+        "path": "bridge/core/console.go",
         "added": 1,
         "deleted": 1,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "cmd/typego/build.go",
@@ -2366,22 +2366,22 @@
         "status": "M"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/build.go",
+        "path": "pkg/cli/build.go",
         "added": 3,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/dev.go",
+        "path": "pkg/cli/dev.go",
         "added": 26,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/init.go",
+        "path": "pkg/cli/init.go",
         "added": 17,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/install.go",
@@ -2390,10 +2390,10 @@
         "status": "A"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/interpreter.go",
+        "path": "pkg/cli/interpreter.go",
         "added": 2,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/root.go",
@@ -2402,22 +2402,22 @@
         "status": "A"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/run.go",
+        "path": "pkg/cli/run.go",
         "added": 27,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/types.go",
+        "path": "pkg/cli/types.go",
         "added": 2,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{cmd/typego => pkg/cli}/watch.go",
+        "path": "pkg/cli/watch.go",
         "added": 2,
         "deleted": 2,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "tests/ecosystem_test_project/src/index.ts",
@@ -2654,10 +2654,10 @@
         "status": "M"
       },
       {
-        "path": "examples/{08-external-module.ts => 07-external-module.ts}",
+        "path": "examples/07-external-module.ts",
         "added": 0,
         "deleted": 1,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "examples/07-struct-binding.ts",
@@ -2666,22 +2666,22 @@
         "status": "D"
       },
       {
-        "path": "examples/{09-nested-structs.ts => 08-nested-structs.ts}",
+        "path": "examples/08-nested-structs.ts",
         "added": 0,
         "deleted": 1,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "examples/{10-typego-stdlib.ts => 09-typego-stdlib.ts}",
+        "path": "examples/09-typego-stdlib.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "examples/{11-http-server.ts => 10-http-server.ts}",
+        "path": "examples/10-http-server.ts",
         "added": 1,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "tests/dx/types_test.go",
@@ -2723,10 +2723,10 @@
         "status": "A"
       },
       {
-        "path": "pkg/cli/{ => pkg}/clean.go",
+        "path": "pkg/cli/pkg/clean.go",
         "added": 7,
         "deleted": 10,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/pkg/doc.go",
@@ -2735,10 +2735,10 @@
         "status": "A"
       },
       {
-        "path": "pkg/cli/{ => pkg}/install.go",
+        "path": "pkg/cli/pkg/install.go",
         "added": 7,
         "deleted": 10,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/pkg/list.go",
@@ -2807,16 +2807,16 @@
         "status": "M"
       },
       {
-        "path": "pkg/cli/{ => cmd}/build.go",
+        "path": "pkg/cli/cmd/build.go",
         "added": 6,
         "deleted": 6,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "pkg/cli/{ => cmd}/dev.go",
+        "path": "pkg/cli/cmd/dev.go",
         "added": 3,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/cmd/doc.go",
@@ -2831,28 +2831,28 @@
         "status": "A"
       },
       {
-        "path": "pkg/cli/{ => cmd}/interpreter.go",
+        "path": "pkg/cli/cmd/interpreter.go",
         "added": 4,
         "deleted": 1,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "pkg/cli/{ => cmd}/run.go",
+        "path": "pkg/cli/cmd/run.go",
         "added": 4,
         "deleted": 4,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "pkg/cli/{ => cmd}/types.go",
+        "path": "pkg/cli/cmd/types.go",
         "added": 3,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "pkg/cli/{ => cmd}/watch.go",
+        "path": "pkg/cli/cmd/watch.go",
         "added": 3,
         "deleted": 3,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "pkg/cli/init.go",
@@ -3512,10 +3512,10 @@
         "status": "A"
       },
       {
-        "path": "bridge/{polyfills => intrinsics}/process.go",
+        "path": "bridge/intrinsics/process.go",
         "added": 6,
         "deleted": 6,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "bridge/intrinsics/recover.go",
@@ -3536,10 +3536,10 @@
         "status": "A"
       },
       {
-        "path": "bridge/{polyfills => intrinsics}/timers.go",
+        "path": "bridge/intrinsics/timers.go",
         "added": 11,
         "deleted": 12,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "bridge/intrinsics/types.go",
@@ -3584,10 +3584,10 @@
         "status": "M"
       },
       {
-        "path": "examples/{02-go-concurrency.ts => 02-concurrency-basics.ts}",
+        "path": "examples/02-concurrency-basics.ts",
         "added": 8,
         "deleted": 7,
-        "status": "M"
+        "status": "R"
       },
       {
         "path": "examples/11-concurrency-advanced.ts",
@@ -3677,40 +3677,40 @@
         "status": "A"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/.gitignore",
+        "path": "examples/projects/link-shortener/.gitignore",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/db/store.ts",
+        "path": "examples/projects/link-shortener/src/db/store.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/handlers/links.ts",
+        "path": "examples/projects/link-shortener/src/handlers/links.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/index.ts",
+        "path": "examples/projects/link-shortener/src/index.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/middleware/logger.ts",
+        "path": "examples/projects/link-shortener/src/middleware/logger.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       },
       {
-        "path": "{sandbox-test/sandbox => examples/projects/link-shortener}/src/utils/shortid.ts",
+        "path": "examples/projects/link-shortener/src/utils/shortid.ts",
         "added": 0,
         "deleted": 0,
-        "status": "M"
+        "status": "R"
       }
     ]
   },

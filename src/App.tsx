@@ -1,14 +1,16 @@
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { Scene } from './components/Scene';
+import { AnalyticsPanel } from './components/AnalyticsPanel';
 import { buildCityAtCommit, getCommitChangedPaths } from './utils/cityBuilder';
 import { computeLayout } from './utils/layout';
+import { computeCityMetrics } from './analytics';
 import CommitsData from './data/commits.json';
 import DepsData from './data/deps.json';
 import type { Commit, LayoutNode } from './types';
+import './App.css';
 
 const deps = DepsData as Record<string, string[]>;
-import './App.css';
 
 const commits = CommitsData as unknown as Commit[];
 
@@ -23,6 +25,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playSpeed, setPlaySpeed] = useState('1×');
   const [selectedBuilding, setSelectedBuilding] = useState<LayoutNode | null>(null);
+  const [analyticsOpen, setAnalyticsOpen] = useState(false);
 
   // Advance time while playing
   useEffect(() => {
@@ -50,6 +53,11 @@ function App() {
     [timeIndex]
   );
 
+  const cityMetrics = useMemo(
+    () => cityLayout ? computeCityMetrics(cityLayout, deps) : null,
+    [cityLayout]
+  );
+
   const currentCommit = commits[timeIndex];
 
   const handleSelect = useCallback((node: LayoutNode) => {
@@ -58,6 +66,19 @@ function App() {
 
   return (
     <div className="app-container" onClick={() => setSelectedBuilding(null)}>
+      {/* Analytics slide-in trigger */}
+      <button className="ap-trigger" onClick={e => { e.stopPropagation(); setAnalyticsOpen(o => !o); }}>
+        {analyticsOpen ? 'Close' : 'Analytics'}
+      </button>
+
+      {/* Analytics panel */}
+      {cityMetrics && (
+        <AnalyticsPanel
+          metrics={cityMetrics}
+          isOpen={analyticsOpen}
+          onClose={() => setAnalyticsOpen(false)}
+        />
+      )}
       {/* 3D Scene */}
       <div className="scene-container">
         {cityLayout && (
