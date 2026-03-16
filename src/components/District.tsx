@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Text } from '@react-three/drei';
 import type { LayoutNode } from '../types';
 
 interface DistrictProps {
@@ -29,6 +30,9 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
 
   const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
 
+  // Only render labels for reasonably sized districts to avoid clutter
+  const showLabel = depth > 0 && depth < 4 && w > 4 && d > 4;
+
   return (
     <group>
       {/* Lot surface — exact footprint only, raised above the global road plane */}
@@ -39,6 +43,21 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
           roughness={0.9}
         />
       </mesh>
+
+      {/* District Label placed on the top-left edge of the district lot */}
+      {showLabel && (
+        <Text
+          position={[node.x + 0.5, lotY + lotH / 2 + 0.01, node.y + 0.5]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          fontSize={Math.min(1.5, Math.max(0.4, w * 0.05))}
+          color="#8888aa"
+          anchorX="left"
+          anchorY="top"
+          fillOpacity={0.6}
+        >
+          {node.name}
+        </Text>
+      )}
 
       {node.children?.map((child) => (
         child.type === 'directory' && (

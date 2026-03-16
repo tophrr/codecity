@@ -11,11 +11,14 @@ interface LayoutConfig {
 export function computeLayout(root: CityNode, config: LayoutConfig = { width: 1000, height: 1000, padding: 2 }): LayoutNode {
     // Create hierarchy
     const hierarchy = d3.hierarchy(root)
-        .sum((d) => d.type === 'file' ? d.size : 0) // Only files have size in treemap leaf nodes
-        .sort((a, b) => (b.value || 0) - (a.value || 0)); // Sort by size for stability
+        // Give minimum size (e.g., 10) to prevent 0-size files from vanishing and shifting layout
+        .sum((d) => d.type === 'file' ? Math.max(10, d.size) : 0)
+        // Sort alphabetically by name for layout stability ("Stable Treemap")
+        .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-    // Create treemap layout
+    // Create treemap layout using Resquarify for better stability across updates
     const layout = d3.treemap<CityNode>()
+        .tile(d3.treemapResquarify)
         .size([config.width, config.height])
         .paddingOuter(config.padding)
         .paddingInner(config.padding)
