@@ -1,158 +1,158 @@
 {
-  "cmd/typego/main.go": [
-    "pkg/cli/build.go"
+  "typego/cmd/typego/main.go": [
+    "typego/pkg/cli/build.go"
   ],
-  "compiler/compiler.go": [
-    "compiler/plugins/defer.go"
+  "typego/compiler/compiler.go": [
+    "typego/compiler/plugins/defer.go"
   ],
-  "engine/engine.go": [
-    "bridge/core/arraybuffer.go",
-    "bridge/intrinsics/intrinsics.go",
-    "bridge/stdlib/memory/memory.go",
-    "bridge/stdlib/worker/worker.go",
-    "eventloop/eventloop.go",
-    "bridge/modules/crypto/crypto.go",
-    "bridge/modules/fmt/fmt.go",
-    "bridge/modules/json/errors.go",
-    "bridge/modules/net/http.go",
-    "bridge/modules/os/os.go",
-    "bridge/modules/sync/sync.go"
+  "typego/engine/engine.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/bridge/intrinsics/intrinsics.go",
+    "typego/bridge/stdlib/memory/memory.go",
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/eventloop/eventloop.go",
+    "typego/bridge/modules/crypto/crypto.go",
+    "typego/bridge/modules/fmt/fmt.go",
+    "typego/bridge/modules/json/errors.go",
+    "typego/bridge/modules/net/http.go",
+    "typego/bridge/modules/os/os.go",
+    "typego/bridge/modules/sync/sync.go"
   ],
-  "engine/worker.go": [
-    "bridge/stdlib/worker/worker.go",
-    "compiler/compiler.go"
+  "typego/engine/worker.go": [
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/compiler/compiler.go"
   ],
-  "internal/builder/templates.go": [
-    "engine/engine.go"
+  "typego/internal/builder/templates.go": [
+    "typego/engine/engine.go"
   ],
-  "bridge/core/registry.go": [
-    "eventloop/eventloop.go"
+  "typego/bridge/core/registry.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/fmt/fmt.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/fmt/fmt.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/net/http.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/net/http.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/os/os.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/os/os.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/sync/sync.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/sync/sync.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/stdlib/memory/memory.go": [
-    "bridge/modules/sync/sync.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/stdlib/memory/memory.go": [
+    "typego/bridge/modules/sync/sync.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/stdlib/worker/worker.go": [
-    "eventloop/eventloop.go"
+  "typego/bridge/stdlib/worker/worker.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "engine/engine_test.go": [
-    "engine/engine.go"
+  "typego/engine/engine_test.go": [
+    "typego/engine/engine.go"
   ],
-  "internal/builder/builder_test.go": [
-    "internal/builder/doc.go"
+  "typego/internal/builder/builder_test.go": [
+    "typego/internal/builder/doc.go"
   ],
-  "tests/integration/harness.go": [
-    "engine/engine.go"
+  "typego/tests/integration/harness.go": [
+    "typego/engine/engine.go"
   ],
-  "bridge/modules/json/json.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/json/json.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/crypto/crypto.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/crypto/crypto.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "bridge/modules/net/server.go": [
-    "eventloop/eventloop.go"
+  "typego/bridge/modules/net/server.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "internal/ecosystem/installer/install.go": [
-    "internal/ecosystem/ast/extractor.go",
-    "internal/ecosystem/builder/compile.go",
-    "internal/ecosystem/resolver/toolchain.go",
-    "internal/linker/fetcher.go"
+  "typego/internal/ecosystem/installer/install.go": [
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/ecosystem/builder/compile.go",
+    "typego/internal/ecosystem/resolver/toolchain.go",
+    "typego/internal/linker/fetcher.go"
   ],
-  "pkg/cli/root.go": [
-    "pkg/cli/cmd/build.go",
-    "pkg/cli/pkg/add.go"
+  "typego/pkg/cli/root.go": [
+    "typego/pkg/cli/cmd/build.go",
+    "typego/pkg/cli/pkg/add.go"
   ],
-  "pkg/cli/internal/config.go": [
-    "internal/ecosystem/ast/extractor.go"
+  "typego/pkg/cli/internal/config.go": [
+    "typego/internal/ecosystem/ast/extractor.go"
   ],
-  "pkg/cli/pkg/add.go": [
-    "pkg/cli/cmd/build.go",
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/add.go": [
+    "typego/pkg/cli/cmd/build.go",
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/clean.go": [
-    "internal/ecosystem/ast/extractor.go",
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/clean.go": [
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/install.go": [
-    "internal/ecosystem/installer/install.go",
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/install.go": [
+    "typego/internal/ecosystem/installer/install.go",
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/list.go": [
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/list.go": [
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/remove.go": [
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/remove.go": [
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/outdated.go": [
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/outdated.go": [
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/pkg/update.go": [
-    "pkg/cli/internal/config.go"
+  "typego/pkg/cli/pkg/update.go": [
+    "typego/pkg/cli/internal/config.go"
   ],
-  "pkg/cli/cmd/build.go": [
-    "compiler/compiler.go",
-    "internal/builder/doc.go",
-    "internal/ecosystem/ast/extractor.go",
-    "internal/linker/fetcher.go"
+  "typego/pkg/cli/cmd/build.go": [
+    "typego/compiler/compiler.go",
+    "typego/internal/builder/doc.go",
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/linker/fetcher.go"
   ],
-  "pkg/cli/cmd/dev.go": [
-    "internal/ecosystem/ast/extractor.go"
+  "typego/pkg/cli/cmd/dev.go": [
+    "typego/internal/ecosystem/ast/extractor.go"
   ],
-  "pkg/cli/cmd/interpreter.go": [
-    "compiler/compiler.go",
-    "engine/engine.go"
+  "typego/pkg/cli/cmd/interpreter.go": [
+    "typego/compiler/compiler.go",
+    "typego/engine/engine.go"
   ],
-  "pkg/cli/cmd/run.go": [
-    "compiler/compiler.go",
-    "internal/builder/doc.go",
-    "internal/ecosystem/ast/extractor.go",
-    "internal/linker/fetcher.go"
+  "typego/pkg/cli/cmd/run.go": [
+    "typego/compiler/compiler.go",
+    "typego/internal/builder/doc.go",
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/linker/fetcher.go"
   ],
-  "pkg/cli/cmd/types.go": [
-    "bridge/core/arraybuffer.go",
-    "bridge/intrinsics/intrinsics.go",
-    "bridge/modules/crypto/crypto.go",
-    "bridge/modules/net/http.go",
-    "bridge/modules/sync/sync.go",
-    "bridge/stdlib/memory/memory.go",
-    "bridge/stdlib/worker/worker.go",
-    "compiler/compiler.go",
-    "internal/linker/fetcher.go"
+  "typego/pkg/cli/cmd/types.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/bridge/intrinsics/intrinsics.go",
+    "typego/bridge/modules/crypto/crypto.go",
+    "typego/bridge/modules/net/http.go",
+    "typego/bridge/modules/sync/sync.go",
+    "typego/bridge/stdlib/memory/memory.go",
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/compiler/compiler.go",
+    "typego/internal/linker/fetcher.go"
   ],
-  "bridge/intrinsics/intrinsics.go": [
-    "eventloop/eventloop.go"
+  "typego/bridge/intrinsics/intrinsics.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "compiler/plugins/defer.go": [
-    "internal/transformer/core/transformer.go",
-    "internal/transformer/visitors/defer_visitor.go"
+  "typego/compiler/plugins/defer.go": [
+    "typego/internal/transformer/core/transformer.go",
+    "typego/internal/transformer/visitors/defer_visitor.go"
   ],
-  "internal/transformer/visitors/defer_visitor.go": [
-    "internal/transformer/core/transformer.go"
+  "typego/internal/transformer/visitors/defer_visitor.go": [
+    "typego/internal/transformer/core/transformer.go"
   ],
-  "internal/transformer/visitors/iota_visitor.go": [
-    "internal/transformer/core/transformer.go"
+  "typego/internal/transformer/visitors/iota_visitor.go": [
+    "typego/internal/transformer/core/transformer.go"
   ],
-  "examples/projects/link-shortener/src/handlers/links.ts": [
-    "examples/projects/link-shortener/src/db/store.ts",
-    "examples/projects/link-shortener/src/utils/shortid.ts"
+  "typego/examples/projects/link-shortener/src/handlers/links.ts": [
+    "typego/examples/projects/link-shortener/src/db/store.ts",
+    "typego/examples/projects/link-shortener/src/utils/shortid.ts"
   ]
 }

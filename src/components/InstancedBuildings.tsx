@@ -13,9 +13,29 @@ interface InstancedBuildingsProps {
   maxDate: number;
 }
 
-const COLD = new THREE.Color('#3a6b9e');
-const HOT = new THREE.Color('#ff5500');
-const HIGHLIGHT = new THREE.Color('#ff8800');
+const MAGMA_COLORS = [
+  new THREE.Color('#000004'), // 0.0 - very dark purple/black
+  new THREE.Color('#3b0f70'), // 0.2
+  new THREE.Color('#8c2981'), // 0.4
+  new THREE.Color('#de4968'), // 0.6
+  new THREE.Color('#fe9f6d'), // 0.8
+  new THREE.Color('#fcfdbf')  // 1.0 - bright yellow
+];
+
+function getMagmaColor(t: number, target: THREE.Color) {
+  const scaledT = Math.max(0, Math.min(1, t)) * (MAGMA_COLORS.length - 1);
+  const index = Math.floor(scaledT);
+  const fraction = scaledT - index;
+  
+  if (index >= MAGMA_COLORS.length - 1) {
+    target.copy(MAGMA_COLORS[MAGMA_COLORS.length - 1]);
+    return;
+  }
+  
+  target.copy(MAGMA_COLORS[index]).lerp(MAGMA_COLORS[index + 1], fraction);
+}
+
+const HIGHLIGHT = new THREE.Color('#ffffff'); // Stand out from magma
 
 export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
   nodes,
@@ -74,18 +94,16 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
       const isHovered = hoveredIdxRef.current === i;
 
       if (isHovered) {
-        tempColor.set('#ffffff');
+        tempColor.set('#00ffff'); // Cyan highlight for hover stands out against magma
       } else if (isChanged) {
         // Simple pulsing or highlighting logic could be applied here via instance colors
-        // For accurate emissive pulsing per-instance, custom shaders are ideal, 
-        // but for now we manipulate base color
         const pulse = 0.4 + 0.3 * Math.sin(Date.now() * 0.005);
         tempColor.copy(HIGHLIGHT).lerp(HIGHLIGHT, pulse); // Placeholder for highlight
       } else {
         const dateMs = node.lastModified ? new Date(node.lastModified).getTime() : minDate;
         const range = maxDate - minDate || 1;
         const recency = Math.max(0, Math.min(1, (dateMs - minDate) / range));
-        tempColor.copy(COLD).lerp(HOT, recency);
+        getMagmaColor(recency, tempColor);
       }
       meshRef.current.setColorAt(i, tempColor);
     });
