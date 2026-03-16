@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import type { LayoutNode } from '../types';
 
@@ -27,6 +28,10 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
   const meshRef = useRef<THREE.InstancedMesh>(null!);
   const tempMatrix = new THREE.Matrix4();
   const tempColor = new THREE.Color();
+  
+  // Track hovered instance for rendering tooltip and white color
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const hoveredIdxRef = useRef<number | null>(null);
 
   // Use refs for animation states
   const currentHeights = useRef<Float32Array>(new Float32Array(nodes.length));
@@ -66,7 +71,11 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
       meshRef.current.setMatrixAt(i, tempMatrix);
       
       const isChanged = changedPaths.has(node.path);
-      if (isChanged) {
+      const isHovered = hoveredIdxRef.current === i;
+
+      if (isHovered) {
+        tempColor.set('#ffffff');
+      } else if (isChanged) {
         // Simple pulsing or highlighting logic could be applied here via instance colors
         // For accurate emissive pulsing per-instance, custom shaders are ideal, 
         // but for now we manipulate base color
@@ -83,6 +92,13 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
 
     meshRef.current.instanceMatrix.needsUpdate = true;
     if (meshRef.current.instanceColor) meshRef.current.instanceColor.needsUpdate = true;
+    
+    // R3F / Three.js needs an updated bounding sphere for raycasting to work properly
+    // Overriding it with a giant sphere avoids expensive per-frame recalculations 
+    // and guarantees raycasting never arbitrarily skips this mesh.
+    if (!meshRef.current.boundingSphere) {
+      meshRef.current.boundingSphere = new THREE.Sphere(new THREE.Vector3(0, 0, 0), 100000);
+    }
   });
 
   const handleClick = (e: any) => {
@@ -95,26 +111,66 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
   const handlePointerOver = (e: any) => {
     e.stopPropagation();
     if (e.instanceId !== undefined) {
+      hoveredIdxRef.current = e.instanceId;
+      setHoveredIdx(e.instanceId);
+      onHover(nodes[e.instanceId].path);
+    }
+  };
+
+  const handlePointerMove = (e: any) => {
+    e.stopPropagation();
+    if (e.instanceId !== undefined && hoveredIdxRef.current !== e.instanceId) {
+      hoveredIdxRef.current = e.instanceId;
+      setHoveredIdx(e.instanceId);
       onHover(nodes[e.instanceId].path);
     }
   };
 
   const handlePointerOut = () => {
+    hoveredIdxRef.current = null;
+    setHoveredIdx(null);
     onHover(null);
   };
 
   return (
-    <instancedMesh
-      ref={meshRef}
-      args={[undefined, undefined, nodes.length]}
-      onClick={handleClick}
-      onPointerOver={handlePointerOver}
-      onPointerOut={handlePointerOut}
-      castShadow
-      receiveShadow
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial />
-    </instancedMesh>
+    <group>
+      <instancedMesh
+        ref={meshRef}
+        args={[undefined, undefined, nodes.length]}
+        onClick={handleClick}
+        onPointerOver={handlePointerOver}
+        onPointerMove={handlePointerMove}
+        onPointerOut={handlePointerOut}
+        castShadow
+        receiveShadow
+      >
+        <boxGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial />
+      </instancedMesh>
+      
+      {hoveredIdx !== null && nodes[hoveredIdx] && (
+        <Html
+          position={[
+            nodes[hoveredIdx].x + nodes[hoveredIdx].width / 2, 
+            Math.max(0.2, nodes[hoveredIdx].size * 0.1) / 2 + 0.5, 
+            nodes[hoveredIdx].y + nodes[hoveredIdx].height / 2
+          ]}
+          center
+          style={{ pointerEvents: 'none' }}
+        >
+          <div style={{
+            background: 'rgba(0,0,0,0.8)',
+            color: '#fff',
+            padding: '3px 8px',
+            borderRadius: 4,
+            fontSize: 11,
+            whiteSpace: 'nowrap',
+            border: '1px solid rgba(255,255,255,0.2)',
+          }}>
+            {nodes[hoveredIdx].name}
+          </div>
+        </Html>
+      )}
+    </group>
   );
 };

@@ -12,16 +12,37 @@ import './App.css';
 
 const deps = DepsData as Record<string, string[]>;
 
-const commits = CommitsData as unknown as Commit[];
-
 const PLAY_SPEEDS: Record<string, number> = { '0.5×': 2000, '1×': 1000, '2×': 500, '4×': 250 };
 
-// Compute global date range from all commits (used for recency color)
-const minDate = commits.length ? new Date(commits[0].date).getTime() : 0;
-const maxDate = commits.length ? new Date(commits[commits.length - 1].date).getTime() : 1;
-
 function App() {
-  const [timeIndex, setTimeIndex] = useState(commits.length - 1);
+  const [commits, setCommits] = useState<Commit[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load commits 
+  useEffect(() => {
+    async function loadCommits() {
+      const data: any = CommitsData;
+      if (data.isChunked) {
+        let allCommits: Commit[] = [];
+        for (const chunkMeta of data.chunks) {
+          // Dynamic import chunk via Vite URL or fetch
+          const res = await fetch(`/src/data/${chunkMeta.file}`);
+          const chunkData = await res.json();
+          allCommits = allCommits.concat(chunkData);
+        }
+        setCommits(allCommits);
+      } else {
+        setCommits(data as Commit[]);
+      }
+      setIsLoading(false);
+    }
+    loadCommits();
+  }, []);
+
+  const minDate = useMemo(() => commits.length ? new Date(commits[0].date).getTime() : 0, [commits]);
+  const maxDate = useMemo(() => commits.length ? new Date(commits[commits.length - 1].date).getTime() : 1, [commits]);
+
+  const [timeIndex, setTimeIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playSpeed, setPlaySpeed] = useState('1×');
   const [selectedBuilding, setSelectedBuilding] = useState<LayoutNode | null>(null);
@@ -29,7 +50,7 @@ function App() {
 
   // Advance time while playing
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || commits.length === 0) return;
     const interval = setInterval(() => {
       setTimeIndex(prev => {
         if (prev >= commits.length - 1) {
@@ -40,17 +61,17 @@ function App() {
       });
     }, PLAY_SPEEDS[playSpeed]);
     return () => clearInterval(interval);
-  }, [isPlaying, playSpeed]);
+  }, [isPlaying, playSpeed, commits.length]);
 
   const cityLayout = useMemo(() => {
     if (commits.length === 0) return null;
     const city = buildCityAtCommit(commits, timeIndex);
     return computeLayout(city, { width: 100, height: 100, padding: 1 });
-  }, [timeIndex]);
+  }, [commits, timeIndex]);
 
   const changedPaths = useMemo(
-    () => getCommitChangedPaths(commits, timeIndex),
-    [timeIndex]
+    () => commits.length ? getCommitChangedPaths(commits, timeIndex) : new Set<string>(),
+    [commits, timeIndex]
   );
 
   const cityMetrics = useMemo(
@@ -63,6 +84,17 @@ function App() {
   const handleSelect = useCallback((node: LayoutNode) => {
     setSelectedBuilding(prev => (prev?.path === node.path ? null : node));
   }, []);
+
+  // Set initial time index once commits load
+  useEffect(() => {
+    if (commits.length > 0 && timeIndex === 0 && !isPlaying) {
+      setTimeIndex(commits.length - 1);
+    }
+  }, [commits.length]);
+
+  if (isLoading) {
+    return <div className="app-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Loading Git History...</div>;
+  }
 
   return (
     <div className="app-container" onClick={() => setSelectedBuilding(null)}>

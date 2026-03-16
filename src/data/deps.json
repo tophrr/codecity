@@ -1,158 +1,80 @@
 {
-  "cmd/typego/main.go": [
-    "pkg/cli/build.go"
+  "src/App.tsx": [
+    "src/components/Scene.tsx",
+    "src/components/AnalyticsPanel.tsx",
+    "src/utils/cityBuilder.ts",
+    "src/utils/layout.ts",
+    "src/analytics/index.ts",
+    "src/types/index.ts",
+    "src/App.css"
   ],
-  "compiler/compiler.go": [
-    "compiler/plugins/defer.go"
+  "src/main.tsx": [
+    "src/index.css",
+    "src/App.tsx"
   ],
-  "engine/engine.go": [
-    "bridge/core/arraybuffer.go",
-    "bridge/intrinsics/intrinsics.go",
-    "bridge/stdlib/memory/memory.go",
-    "bridge/stdlib/worker/worker.go",
-    "eventloop/eventloop.go",
-    "bridge/modules/crypto/crypto.go",
-    "bridge/modules/fmt/fmt.go",
-    "bridge/modules/json/errors.go",
-    "bridge/modules/net/http.go",
-    "bridge/modules/os/os.go",
-    "bridge/modules/sync/sync.go"
+  "scripts/validate-city-builder.ts": [
+    "src/utils/cityBuilder.ts"
   ],
-  "engine/worker.go": [
-    "bridge/stdlib/worker/worker.go",
-    "compiler/compiler.go"
+  "scripts/validate-layout.ts": [
+    "src/utils/cityBuilder.ts",
+    "src/utils/layout.ts"
   ],
-  "internal/builder/templates.go": [
-    "engine/engine.go"
+  "src/components/Building.tsx": [
+    "src/types/index.ts"
   ],
-  "bridge/core/registry.go": [
-    "eventloop/eventloop.go"
+  "src/components/City.tsx": [
+    "src/types/index.ts",
+    "src/components/District.tsx",
+    "src/components/Building.tsx"
   ],
-  "bridge/modules/fmt/fmt.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/components/District.tsx": [
+    "src/types/index.ts",
+    "src/components/Building.tsx"
   ],
-  "bridge/modules/net/http.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/components/Scene.tsx": [
+    "src/components/City.tsx",
+    "src/components/DependencyArcs.tsx",
+    "src/types/index.ts"
   ],
-  "bridge/modules/os/os.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/utils/cityBuilder.ts": [
+    "src/types/index.ts"
   ],
-  "bridge/modules/sync/sync.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/utils/layout.ts": [
+    "src/types/index.ts"
   ],
-  "bridge/stdlib/memory/memory.go": [
-    "bridge/modules/sync/sync.go",
-    "eventloop/eventloop.go"
+  "src/analytics/abandonedZones.ts": [
+    "src/analytics/types.ts"
   ],
-  "bridge/stdlib/worker/worker.go": [
-    "eventloop/eventloop.go"
+  "src/analytics/churnDensity.ts": [
+    "src/analytics/types.ts"
   ],
-  "engine/engine_test.go": [
-    "engine/engine.go"
+  "src/analytics/couplingRadius.ts": [
+    "src/analytics/types.ts"
   ],
-  "internal/builder/builder_test.go": [
-    "internal/builder/doc.go"
+  "src/analytics/hubDetection.ts": [
+    "src/analytics/types.ts"
   ],
-  "tests/integration/harness.go": [
-    "engine/engine.go"
+  "src/analytics/index.ts": [
+    "src/types/index.ts",
+    "src/analytics/types.ts",
+    "src/analytics/skylineRoughness.ts",
+    "src/analytics/couplingRadius.ts",
+    "src/analytics/modularityIndex.ts",
+    "src/analytics/hubDetection.ts",
+    "src/analytics/abandonedZones.ts",
+    "src/analytics/churnDensity.ts"
   ],
-  "bridge/modules/json/json.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/analytics/modularityIndex.ts": [
+    "src/analytics/types.ts"
   ],
-  "bridge/modules/crypto/crypto.go": [
-    "bridge/core/arraybuffer.go",
-    "eventloop/eventloop.go"
+  "src/analytics/skylineRoughness.ts": [
+    "src/analytics/types.ts"
   ],
-  "bridge/modules/net/server.go": [
-    "eventloop/eventloop.go"
+  "src/analytics/types.ts": [
+    "src/types/index.ts"
   ],
-  "internal/ecosystem/installer/install.go": [
-    "internal/ecosystem/ast/extractor.go",
-    "internal/ecosystem/builder/compile.go",
-    "internal/ecosystem/resolver/toolchain.go",
-    "internal/linker/fetcher.go"
-  ],
-  "pkg/cli/root.go": [
-    "pkg/cli/cmd/build.go",
-    "pkg/cli/pkg/add.go"
-  ],
-  "pkg/cli/internal/config.go": [
-    "internal/ecosystem/ast/extractor.go"
-  ],
-  "pkg/cli/pkg/add.go": [
-    "pkg/cli/cmd/build.go",
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/clean.go": [
-    "internal/ecosystem/ast/extractor.go",
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/install.go": [
-    "internal/ecosystem/installer/install.go",
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/list.go": [
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/remove.go": [
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/outdated.go": [
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/pkg/update.go": [
-    "pkg/cli/internal/config.go"
-  ],
-  "pkg/cli/cmd/build.go": [
-    "compiler/compiler.go",
-    "internal/builder/doc.go",
-    "internal/ecosystem/ast/extractor.go",
-    "internal/linker/fetcher.go"
-  ],
-  "pkg/cli/cmd/dev.go": [
-    "internal/ecosystem/ast/extractor.go"
-  ],
-  "pkg/cli/cmd/interpreter.go": [
-    "compiler/compiler.go",
-    "engine/engine.go"
-  ],
-  "pkg/cli/cmd/run.go": [
-    "compiler/compiler.go",
-    "internal/builder/doc.go",
-    "internal/ecosystem/ast/extractor.go",
-    "internal/linker/fetcher.go"
-  ],
-  "pkg/cli/cmd/types.go": [
-    "bridge/core/arraybuffer.go",
-    "bridge/intrinsics/intrinsics.go",
-    "bridge/modules/crypto/crypto.go",
-    "bridge/modules/net/http.go",
-    "bridge/modules/sync/sync.go",
-    "bridge/stdlib/memory/memory.go",
-    "bridge/stdlib/worker/worker.go",
-    "compiler/compiler.go",
-    "internal/linker/fetcher.go"
-  ],
-  "bridge/intrinsics/intrinsics.go": [
-    "eventloop/eventloop.go"
-  ],
-  "compiler/plugins/defer.go": [
-    "internal/transformer/core/transformer.go",
-    "internal/transformer/visitors/defer_visitor.go"
-  ],
-  "internal/transformer/visitors/defer_visitor.go": [
-    "internal/transformer/core/transformer.go"
-  ],
-  "internal/transformer/visitors/iota_visitor.go": [
-    "internal/transformer/core/transformer.go"
-  ],
-  "examples/projects/link-shortener/src/handlers/links.ts": [
-    "examples/projects/link-shortener/src/db/store.ts",
-    "examples/projects/link-shortener/src/utils/shortid.ts"
+  "src/components/AnalyticsPanel.tsx": [
+    "src/analytics/index.ts",
+    "src/components/AnalyticsPanel.css"
   ]
 }

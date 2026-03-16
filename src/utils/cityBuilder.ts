@@ -1,4 +1,5 @@
 
+import cloneDeep from 'lodash.clonedeep';
 import type { Commit, CityNode } from '../types';
 
 /**
@@ -13,21 +14,62 @@ export function getCommitChangedPaths(commits: Commit[], commitIndex: number): S
     );
 }
 
-/**
- * Builds the city state at a specific commit index.
- * @param commits List of all commits sorted chronologically (oldest to newest)
- * @param commitIndex Index of the commit to build state for (inclusive)
- * @returns The root CityNode representing the file tree
- */
-export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityNode {
-    const root: CityNode = {
+const SNAPSHOT_INTERVAL = 50;
+let cachedCommitsRef: Commit[] | null = null;
+let snapshots = new Map<number, CityNode>();
+
+function generateFreshRoot(): CityNode {
+    return {
         name: 'root',
         path: '',
         type: 'directory',
         size: 0,
         children: []
     };
+}
 
+/**
+ * Builds the city state at a specific commit index.
+ * Uses snapshot caching to avoid rebuilding from scratch when scrubbing.
+ * @param commits List of all commits sorted chronologically
+ * @param commitIndex Index of the commit to build state for
+ * @returns The root CityNode representing the file tree
+ */
+export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityNode {
+    if (commits !== cachedCommitsRef) {
+        cachedCommitsRef = commits;
+        snapshots.clear();
+        snapshots.set(-1, generateFreshRoot());
+    }
+
+    const targetIndex = Math.max(0, Math.min(commitIndex, commits.length - 1));
+
+    // Find the closest snapshot before or equal to targetIndex
+    let nearestSnapshotIdx = -1;
+    for (let i = targetIndex; i >= -1; i--) {
+        if (snapshots.has(i)) {
+            nearestSnapshotIdx = i;
+            break;
+        }
+    }
+
+    // Start with a clone of that snapshot
+    const root = cloneDeep(snapshots.get(nearestSnapshotIdx)!);
+
+    // Apply commits from nearestSnapshot + 1 up to targetIndex
+    for (let i = nearestSnapshotIdx + 1; i <= targetIndex; i++) {
+        applyCommit(root, commits[i]);
+        
+        // Save a snapshot if needed
+        if (i % SNAPSHOT_INTERVAL === 0 && !snapshots.has(i)) {
+            snapshots.set(i, cloneDeep(root));
+        }
+    }
+
+    return root;
+}
+
+function applyCommit(root: CityNode, commit: Commit) {
     // Helper to find or create directory
     const ensureDirectory = (pathParts: string[]): CityNode => {
         let current = root;
@@ -85,43 +127,37 @@ export function buildCityAtCommit(commits: Commit[], commitIndex: number): CityN
     };
 
     // Apply commits
-    const targetCommits = commits.slice(0, commitIndex + 1);
+    for (const file of commit.files) {
+        const parts = file.path.split('/');
+        const fileName = parts.pop();
+        const dirParts = parts;
 
-    for (const commit of targetCommits) {
-        for (const file of commit.files) {
-            const parts = file.path.split('/');
-            const fileName = parts.pop();
-            const dirParts = parts;
+        if (!fileName) continue;
 
-            if (!fileName) continue;
+        if (file.status === 'D') {
+            removeFile(file.path);
+        } else {
+            const dirNode = ensureDirectory(dirParts);
 
-            if (file.status === 'D') {
-                removeFile(file.path);
-            } else {
-                const dirNode = ensureDirectory(dirParts);
-
-                let fileNode = dirNode.children?.find(c => c.name === fileName);
-                if (!fileNode) {
-                    fileNode = {
-                        name: fileName,
-                        path: file.path,
-                        type: 'file',
-                        size: 0,
-                        lastModified: commit.date,
-                        totalAdded: 0,
-                        totalDeleted: 0,
-                    };
-                    dirNode.children = dirNode.children || [];
-                    dirNode.children.push(fileNode);
-                }
-
-                fileNode.size = Math.max(0, fileNode.size + file.added - file.deleted);
-                fileNode.lastModified = commit.date;
-                fileNode.totalAdded = (fileNode.totalAdded ?? 0) + file.added;
-                fileNode.totalDeleted = (fileNode.totalDeleted ?? 0) + file.deleted;
+            let fileNode = dirNode.children?.find(c => c.name === fileName);
+            if (!fileNode) {
+                fileNode = {
+                    name: fileName,
+                    path: file.path,
+                    type: 'file',
+                    size: 0,
+                    lastModified: commit.date,
+                    totalAdded: 0,
+                    totalDeleted: 0,
+                };
+                dirNode.children = dirNode.children || [];
+                dirNode.children.push(fileNode);
             }
+
+            fileNode.size = Math.max(0, fileNode.size + file.added - file.deleted);
+            fileNode.lastModified = commit.date;
+            fileNode.totalAdded = (fileNode.totalAdded ?? 0) + file.added;
+            fileNode.totalDeleted = (fileNode.totalDeleted ?? 0) + file.deleted;
         }
     }
-
-    return root;
 }
