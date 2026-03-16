@@ -7,13 +7,13 @@
     "message": "Initial commit",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "LICENSE",
+        "path": "typego/LICENSE",
         "added": 21,
         "deleted": 0,
         "status": "A"
@@ -28,7 +28,7 @@
     "message": "chore: add gitignore",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 30,
         "deleted": 0,
         "status": "A"
@@ -43,157 +43,157 @@
     "message": "feat: initial project structure",
     "files": [
       {
-        "path": "bridge/buffer.go",
+        "path": "typego/bridge/buffer.go",
         "added": 23,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/console.go",
+        "path": "typego/bridge/console.go",
         "added": 41,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/fmt.go",
+        "path": "typego/bridge/fmt.go",
         "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/http.go",
+        "path": "typego/bridge/http.go",
         "added": 77,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/memory.go",
+        "path": "typego/bridge/memory.go",
         "added": 40,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/memory_factory.go",
+        "path": "typego/bridge/memory_factory.go",
         "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/mutex.go",
+        "path": "typego/bridge/mutex.go",
         "added": 53,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/os.go",
+        "path": "typego/bridge/os.go",
         "added": 59,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/reflection.go",
+        "path": "typego/bridge/reflection.go",
         "added": 87,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/sync.go",
+        "path": "typego/bridge/sync.go",
         "added": 84,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/worker.go",
+        "path": "typego/bridge/worker.go",
         "added": 62,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 170,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/init.go",
+        "path": "typego/cmd/typego/init.go",
         "added": 89,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/main.go",
+        "path": "typego/cmd/typego/main.go",
         "added": 30,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 76,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 40,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 71,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 66,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 87,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "eventloop/eventloop.go",
+        "path": "typego/eventloop/eventloop.go",
         "added": 104,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/demo.ts",
+        "path": "typego/examples/demo.ts",
         "added": 53,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/guarded_memory.ts",
+        "path": "typego/examples/guarded_memory.ts",
         "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/workers/main.ts",
+        "path": "typego/examples/workers/main.ts",
         "added": 50,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/workers/worker.ts",
+        "path": "typego/examples/workers/worker.ts",
         "added": 28,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 19,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "test-project/src/index.ts",
+        "path": "typego/test-project/src/index.ts",
         "added": 10,
         "deleted": 0,
         "status": "A"
@@ -208,49 +208,49 @@
     "message": "feat(core): implement Hyper-Linker and Two-Pass Build",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 75,
         "deleted": 15,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 25,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 7,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "internal/linker/fetcher.go",
+        "path": "typego/internal/linker/fetcher.go",
         "added": 44,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 51,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 86,
         "deleted": 0,
         "status": "A"
@@ -265,7 +265,7 @@
     "message": "feat(cli): implement additive type registration",
     "files": [
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 70,
         "deleted": 4,
         "status": "M"
@@ -280,13 +280,13 @@
     "message": "test: add dynamic import examples",
     "files": [
       {
-        "path": "examples/demo_color.ts",
+        "path": "typego/examples/demo_color.ts",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/imports.ts",
+        "path": "typego/examples/imports.ts",
         "added": 3,
         "deleted": 0,
         "status": "A"
@@ -301,13 +301,13 @@
     "message": "feat(npm): enable node_modules bundling and fix shim imports",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 6,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "examples/demo_npm.ts",
+        "path": "typego/examples/demo_npm.ts",
         "added": 7,
         "deleted": 0,
         "status": "A"
@@ -322,19 +322,19 @@
     "message": "feat(node): implement process and Buffer polyfills",
     "files": [
       {
-        "path": "bridge/polyfills.go",
+        "path": "typego/bridge/polyfills.go",
         "added": 41,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 4,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "examples/demo_env.ts",
+        "path": "typego/examples/demo_env.ts",
         "added": 16,
         "deleted": 0,
         "status": "A"
@@ -349,7 +349,7 @@
     "message": "feat(node): fix build syntax and verify with chalk",
     "files": [
       {
-        "path": "examples/demo_chalk.ts",
+        "path": "typego/examples/demo_chalk.ts",
         "added": 7,
         "deleted": 0,
         "status": "A"
@@ -364,7 +364,7 @@
     "message": "fix(node): enable FORCE_COLOR and esModuleInterop for NPM support",
     "files": [
       {
-        "path": "bridge/polyfills.go",
+        "path": "typego/bridge/polyfills.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
@@ -379,7 +379,7 @@
     "message": "feat(cli): update init to support NPM and Node.js types",
     "files": [
       {
-        "path": "cmd/typego/init.go",
+        "path": "typego/cmd/typego/init.go",
         "added": 26,
         "deleted": 1,
         "status": "M"
@@ -394,7 +394,7 @@
     "message": "fix(run): implementation JIT compilation to support dynamic imports and NPM",
     "files": [
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 93,
         "deleted": 39,
         "status": "M"
@@ -409,25 +409,25 @@
     "message": "feat(demo): add Cluster Demo with chalk, setTimeout polyfill, and makeShared",
     "files": [
       {
-        "path": "bridge/memory_factory.go",
+        "path": "typego/bridge/memory_factory.go",
         "added": 22,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/worker.go",
+        "path": "typego/bridge/worker.go",
         "added": 9,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 23,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "examples/cluster/main.ts",
+        "path": "typego/examples/cluster/main.ts",
         "added": 35,
         "deleted": 0,
         "status": "A"
@@ -442,37 +442,37 @@
     "message": "refactor(polyfills): move polyfills to dedicated folder for maintainability",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 2,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/buffer.go",
+        "path": "typego/bridge/polyfills/buffer.go",
         "added": 26,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/polyfills/polyfills.go",
+        "path": "typego/bridge/polyfills/polyfills.go",
         "added": 14,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/polyfills/process.go",
+        "path": "typego/bridge/polyfills/process.go",
         "added": 4,
         "deleted": 4,
         "status": "R"
       },
       {
-        "path": "bridge/polyfills/timers.go",
+        "path": "typego/bridge/polyfills/timers.go",
         "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 3,
         "deleted": 19,
         "status": "M"
@@ -487,7 +487,7 @@
     "message": "chore: ignore local typego.exe builds",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 0,
         "deleted": 0,
         "status": "M"
@@ -526,55 +526,55 @@
     "message": "docs: add comprehensive GoDoc comments to all packages",
     "files": [
       {
-        "path": "bridge/buffer.go",
+        "path": "typego/bridge/buffer.go",
         "added": 20,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/doc.go",
+        "path": "typego/bridge/doc.go",
         "added": 36,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/mutex.go",
+        "path": "typego/bridge/mutex.go",
         "added": 24,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/doc.go",
+        "path": "typego/bridge/polyfills/doc.go",
         "added": 52,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/reflection.go",
+        "path": "typego/bridge/reflection.go",
         "added": 28,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "compiler/doc.go",
+        "path": "typego/compiler/doc.go",
         "added": 43,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "engine/doc.go",
+        "path": "typego/engine/doc.go",
         "added": 38,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "eventloop/doc.go",
+        "path": "typego/eventloop/doc.go",
         "added": 48,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/linker/doc.go",
+        "path": "typego/internal/linker/doc.go",
         "added": 59,
         "deleted": 0,
         "status": "A"
@@ -589,7 +589,7 @@
     "message": "examples: add hybrid NPM + Go module demo",
     "files": [
       {
-        "path": "examples/demo_hybrid.ts",
+        "path": "typego/examples/demo_hybrid.ts",
         "added": 70,
         "deleted": 0,
         "status": "A"
@@ -612,13 +612,13 @@
     "message": "fix(cli): use GitHub module instead of local replace for portable builds",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 3,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 4,
         "deleted": 6,
         "status": "M"
@@ -633,13 +633,13 @@
     "message": "fix(cli): use go get @latest for dynamic module resolution",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 6,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 6,
         "deleted": 1,
         "status": "M"
@@ -654,13 +654,13 @@
     "message": "fix(cli): fetch all subpackages with GOPROXY=direct for reliable module resolution",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 15,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 18,
         "deleted": 10,
         "status": "M"
@@ -675,7 +675,7 @@
     "message": "fix(types): generate default go.d.ts instead of requiring master file",
     "files": [
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 24,
         "deleted": 7,
         "status": "M"
@@ -690,7 +690,7 @@
     "message": "feat(types): scan all TS files when no argument provided",
     "files": [
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 58,
         "deleted": 34,
         "status": "M"
@@ -705,7 +705,7 @@
     "message": "fix(types): deduplicate files and suppress scan warnings",
     "files": [
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 7,
         "deleted": 17,
         "status": "M"
@@ -720,19 +720,19 @@
     "message": "feat(memory): expose makeShared in go/memory and cleanup legacy types",
     "files": [
       {
-        "path": "bridge/memory.go",
+        "path": "typego/bridge/memory.go",
         "added": 34,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 2,
         "deleted": 4,
         "status": "M"
@@ -747,7 +747,7 @@
     "message": "feat(engine): implement memory monitoring and lifecycle management",
     "files": [
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 55,
         "deleted": 1,
         "status": "M"
@@ -762,7 +762,7 @@
     "message": "feat(http): add timeouts and response body size limits",
     "files": [
       {
-        "path": "bridge/http.go",
+        "path": "typego/bridge/http.go",
         "added": 36,
         "deleted": 13,
         "status": "M"
@@ -777,19 +777,19 @@
     "message": "feat(cli): add --memory-limit flag and parameterize build shim",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 5,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "cmd/typego/main.go",
+        "path": "typego/cmd/typego/main.go",
         "added": 6,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -804,13 +804,13 @@
     "message": "test(resource-guardrails): add memory and http verification scripts",
     "files": [
       {
-        "path": "examples/verify_http.ts",
+        "path": "typego/examples/verify_http.ts",
         "added": 27,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/verify_memory.ts",
+        "path": "typego/examples/verify_memory.ts",
         "added": 23,
         "deleted": 0,
         "status": "A"
@@ -825,25 +825,25 @@
     "message": "feat(sandbox): implement secure fs jail and environment filtering",
     "files": [
       {
-        "path": "bridge/http.go",
+        "path": "typego/bridge/http.go",
         "added": 8,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/os.go",
+        "path": "typego/bridge/os.go",
         "added": 54,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/process.go",
+        "path": "typego/bridge/polyfills/process.go",
         "added": 15,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -858,7 +858,7 @@
     "message": "fix(cli): point shim to local source for correct development testing",
     "files": [
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 8,
         "deleted": 1,
         "status": "M"
@@ -873,109 +873,109 @@
     "message": "docs(examples): refactor examples into professional showcase",
     "files": [
       {
-        "path": "examples/01-hello-world.ts",
+        "path": "typego/examples/01-hello-world.ts",
         "added": 20,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/02-go-concurrency.ts",
+        "path": "typego/examples/02-go-concurrency.ts",
         "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/03-multithreading-workers.ts",
+        "path": "typego/examples/03-multithreading-workers.ts",
         "added": 33,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/04-secure-network.ts",
+        "path": "typego/examples/04-secure-network.ts",
         "added": 38,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/05-secure-fs.ts",
+        "path": "typego/examples/05-secure-fs.ts",
         "added": 44,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/06-process-env.ts",
+        "path": "typego/examples/06-process-env.ts",
         "added": 30,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/demo.ts",
+        "path": "typego/examples/demo.ts",
         "added": 0,
         "deleted": 53,
         "status": "D"
       },
       {
-        "path": "examples/demo_chalk.ts",
+        "path": "typego/examples/demo_chalk.ts",
         "added": 0,
         "deleted": 7,
         "status": "D"
       },
       {
-        "path": "examples/demo_color.ts",
+        "path": "typego/examples/demo_color.ts",
         "added": 0,
         "deleted": 6,
         "status": "D"
       },
       {
-        "path": "examples/demo_env.ts",
+        "path": "typego/examples/demo_env.ts",
         "added": 0,
         "deleted": 16,
         "status": "D"
       },
       {
-        "path": "examples/demo_hybrid.ts",
+        "path": "typego/examples/demo_hybrid.ts",
         "added": 0,
         "deleted": 70,
         "status": "D"
       },
       {
-        "path": "examples/demo_npm.ts",
+        "path": "typego/examples/demo_npm.ts",
         "added": 0,
         "deleted": 7,
         "status": "D"
       },
       {
-        "path": "examples/guarded_memory.ts",
+        "path": "typego/examples/guarded_memory.ts",
         "added": 0,
         "deleted": 64,
         "status": "D"
       },
       {
-        "path": "examples/imports.ts",
+        "path": "typego/examples/imports.ts",
         "added": 0,
         "deleted": 3,
         "status": "D"
       },
       {
-        "path": "examples/verify_http.ts",
+        "path": "typego/examples/verify_http.ts",
         "added": 0,
         "deleted": 27,
         "status": "D"
       },
       {
-        "path": "examples/verify_memory.ts",
+        "path": "typego/examples/verify_memory.ts",
         "added": 0,
         "deleted": 23,
         "status": "D"
       },
       {
-        "path": "examples/workers/main.ts",
+        "path": "typego/examples/workers/main.ts",
         "added": 0,
         "deleted": 50,
         "status": "D"
       },
       {
-        "path": "examples/workers/worker.ts",
+        "path": "typego/examples/workers/worker.ts",
         "added": 0,
         "deleted": 28,
         "status": "D"
@@ -998,13 +998,13 @@
     "message": "feat(types): make type scanning recursive across project root",
     "files": [
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 26,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 1,
         "deleted": 0,
         "status": "M"
@@ -1019,7 +1019,7 @@
     "message": "fix(cli): conditionally apply go.mod replacement in dev mode",
     "files": [
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 15,
         "deleted": 4,
         "status": "M"
@@ -1042,25 +1042,25 @@
     "message": "refactor(cli): extract shimTemplate to internal/builder package",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 2,
         "deleted": 80,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 3,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "internal/builder/doc.go",
+        "path": "typego/internal/builder/doc.go",
         "added": 4,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 11,
         "deleted": 0,
         "status": "A"
@@ -1075,13 +1075,13 @@
     "message": "feat(linker): add struct and method inspection with TypeScript generation",
     "files": [
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 90,
         "deleted": 16,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 205,
         "deleted": 24,
         "status": "M"
@@ -1096,13 +1096,13 @@
     "message": "feat(bridge): add recursive struct binding with nested fields and callbacks",
     "files": [
       {
-        "path": "bridge/reflection.go",
+        "path": "typego/bridge/reflection.go",
         "added": 198,
         "deleted": 64,
         "status": "M"
       },
       {
-        "path": "examples/07-struct-binding.ts",
+        "path": "typego/examples/07-struct-binding.ts",
         "added": 16,
         "deleted": 0,
         "status": "A"
@@ -1117,7 +1117,7 @@
     "message": "feat(linker): add struct constructor generation to shim",
     "files": [
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 9,
         "deleted": 0,
         "status": "M"
@@ -1140,25 +1140,25 @@
     "message": "fix(linker): only attach methods to actual struct types + add nested struct tests",
     "files": [
       {
-        "path": "examples/08-external-module.ts",
+        "path": "typego/examples/08-external-module.ts",
         "added": 19,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/09-nested-structs.ts",
+        "path": "typego/examples/09-nested-structs.ts",
         "added": 33,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 4,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 3,
         "deleted": 5,
         "status": "M"
@@ -1173,229 +1173,229 @@
     "message": "v1.2.0: Interpreter mode, modular stdlib, performance optimization",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 0,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/core/arraybuffer.go",
+        "path": "typego/bridge/core/arraybuffer.go",
         "added": 7,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 1,
         "deleted": 1,
         "status": "R"
       },
       {
-        "path": "bridge/core/registry.go",
+        "path": "typego/bridge/core/registry.go",
         "added": 35,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/doc.go",
+        "path": "typego/bridge/doc.go",
         "added": 12,
         "deleted": 23,
         "status": "M"
       },
       {
-        "path": "bridge/fmt.go",
+        "path": "typego/bridge/fmt.go",
         "added": 0,
         "deleted": 32,
         "status": "D"
       },
       {
-        "path": "bridge/memory.go",
+        "path": "typego/bridge/memory.go",
         "added": 0,
         "deleted": 72,
         "status": "D"
       },
       {
-        "path": "bridge/memory_factory.go",
+        "path": "typego/bridge/memory_factory.go",
         "added": 0,
         "deleted": 86,
         "status": "D"
       },
       {
-        "path": "bridge/modules/fmt/fmt.go",
+        "path": "typego/bridge/modules/fmt/fmt.go",
         "added": 59,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 26,
         "deleted": 9,
         "status": "R"
       },
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 26,
         "deleted": 15,
         "status": "R"
       },
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 153,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/mutex.go",
+        "path": "typego/bridge/mutex.go",
         "added": 0,
         "deleted": 77,
         "status": "D"
       },
       {
-        "path": "bridge/polyfills/encoding.go",
+        "path": "typego/bridge/polyfills/encoding.go",
         "added": 64,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/polyfills/init.go",
+        "path": "typego/bridge/polyfills/init.go",
         "added": 19,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/polyfills/polyfills.go",
+        "path": "typego/bridge/polyfills/polyfills.go",
         "added": 0,
         "deleted": 14,
         "status": "D"
       },
       {
-        "path": "bridge/stdlib/memory/memory.go",
+        "path": "typego/bridge/stdlib/memory/memory.go",
         "added": 107,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 74,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/sync.go",
+        "path": "typego/bridge/sync.go",
         "added": 0,
         "deleted": 84,
         "status": "D"
       },
       {
-        "path": "bridge/worker.go",
+        "path": "typego/bridge/worker.go",
         "added": 0,
         "deleted": 71,
         "status": "D"
       },
       {
-        "path": "cmd/typego/interpreter.go",
+        "path": "typego/cmd/typego/interpreter.go",
         "added": 48,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 157,
         "deleted": 121,
         "status": "M"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 89,
         "deleted": 19,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 23,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 20,
         "deleted": 11,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "examples/01-hello-world.ts",
+        "path": "typego/examples/01-hello-world.ts",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "examples/02-go-concurrency.ts",
+        "path": "typego/examples/02-go-concurrency.ts",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "examples/03-multithreading-workers.ts",
+        "path": "typego/examples/03-multithreading-workers.ts",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "examples/04-secure-network.ts",
+        "path": "typego/examples/04-secure-network.ts",
         "added": 11,
         "deleted": 12,
         "status": "M"
       },
       {
-        "path": "examples/05-secure-fs.ts",
+        "path": "typego/examples/05-secure-fs.ts",
         "added": 8,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "examples/06-process-env.ts",
+        "path": "typego/examples/06-process-env.ts",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "examples/09-nested-structs.ts",
+        "path": "typego/examples/09-nested-structs.ts",
         "added": 23,
         "deleted": 17,
         "status": "M"
       },
       {
-        "path": "examples/10-typego-stdlib.ts",
+        "path": "typego/examples/10-typego-stdlib.ts",
         "added": 29,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 67,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 93,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 74,
         "deleted": 16,
         "status": "M"
       },
       {
-        "path": "test-project/src/index.ts",
+        "path": "typego/test-project/src/index.ts",
         "added": 0,
         "deleted": 10,
         "status": "D"
@@ -1410,7 +1410,7 @@
     "message": "chore: cleanup examples, update README",
     "files": [
       {
-        "path": "examples/cluster/main.ts",
+        "path": "typego/examples/cluster/main.ts",
         "added": 0,
         "deleted": 35,
         "status": "D"
@@ -1433,79 +1433,79 @@
     "message": "chore(release): v1.2.1 - implement professional testing pipeline and dev experience",
     "files": [
       {
-        "path": ".github/workflows/test.yml",
+        "path": "typego/.github/workflows/test.yml",
         "added": 34,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "Makefile",
+        "path": "typego/Makefile",
         "added": 28,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 30,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "cmd/typego/watch.go",
+        "path": "typego/cmd/typego/watch.go",
         "added": 108,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "compiler/cache.go",
+        "path": "typego/compiler/cache.go",
         "added": 108,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 12,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "engine/engine_test.go",
+        "path": "typego/engine/engine_test.go",
         "added": 68,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "eventloop/eventloop.go",
+        "path": "typego/eventloop/eventloop.go",
         "added": 16,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "internal/builder/builder_test.go",
+        "path": "typego/internal/builder/builder_test.go",
         "added": 44,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tests/e2e/e2e_test.go",
+        "path": "typego/tests/e2e/e2e_test.go",
         "added": 110,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tests/integration/bridge_test.go",
+        "path": "typego/tests/integration/bridge_test.go",
         "added": 44,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tests/integration/harness.go",
+        "path": "typego/tests/integration/harness.go",
         "added": 100,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tests/integration/http_test.go",
+        "path": "typego/tests/integration/http_test.go",
         "added": 36,
         "deleted": 0,
         "status": "A"
@@ -1536,19 +1536,19 @@
     "message": "refactor(bridge): relocate console bindings to core package",
     "files": [
       {
-        "path": "bridge/core/console.go",
+        "path": "typego/bridge/core/console.go",
         "added": 1,
         "deleted": 1,
         "status": "R"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 1,
         "deleted": 2,
         "status": "M"
@@ -1563,13 +1563,13 @@
     "message": "fix(ci): track go.sum and fix gitignore to resolve CI dependency error",
     "files": [
       {
-        "path": ".gitignore",
+        "path": "typego/.gitignore",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "go.sum",
+        "path": "typego/go.sum",
         "added": 37,
         "deleted": 0,
         "status": "A"
@@ -1592,13 +1592,13 @@
     "message": "fix(ci): upgrade to go 1.23 and official linter action to resolve goarch versioning error",
     "files": [
       {
-        "path": ".github/workflows/test.yml",
+        "path": "typego/.github/workflows/test.yml",
         "added": 8,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -1613,55 +1613,55 @@
     "message": "fix(bridge): address unchecked return values in bridge modules to satisfy linter",
     "files": [
       {
-        "path": "bridge/core/console.go",
+        "path": "typego/bridge/core/console.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/modules/fmt/fmt.go",
+        "path": "typego/bridge/modules/fmt/fmt.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 9,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 5,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/process.go",
+        "path": "typego/bridge/polyfills/process.go",
         "added": 8,
         "deleted": 8,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/timers.go",
+        "path": "typego/bridge/polyfills/timers.go",
         "added": 4,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/memory/memory.go",
+        "path": "typego/bridge/stdlib/memory/memory.go",
         "added": 10,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 7,
         "deleted": 7,
         "status": "M"
@@ -1676,49 +1676,49 @@
     "message": "fix: resolve remaining unchecked return values identified by golangci-lint",
     "files": [
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 3,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "cmd/typego/init.go",
+        "path": "typego/cmd/typego/init.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "cmd/typego/main.go",
+        "path": "typego/cmd/typego/main.go",
         "added": 1,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 1,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 1,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "tests/integration/http_test.go",
+        "path": "typego/tests/integration/http_test.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -1733,7 +1733,7 @@
     "message": "refactor(engine): wrap Go panics as JS Error objects",
     "files": [
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 46,
         "deleted": 0,
         "status": "M"
@@ -1748,7 +1748,7 @@
     "message": "feat(eventloop): add graceful shutdown with context",
     "files": [
       {
-        "path": "eventloop/eventloop.go",
+        "path": "typego/eventloop/eventloop.go",
         "added": 40,
         "deleted": 2,
         "status": "M"
@@ -1763,7 +1763,7 @@
     "message": "test(engine): add error propagation tests",
     "files": [
       {
-        "path": "engine/engine_test.go",
+        "path": "typego/engine/engine_test.go",
         "added": 91,
         "deleted": 0,
         "status": "M"
@@ -1778,7 +1778,7 @@
     "message": "docs(engine): document error handling behavior",
     "files": [
       {
-        "path": "engine/doc.go",
+        "path": "typego/engine/doc.go",
         "added": 37,
         "deleted": 0,
         "status": "M"
@@ -1793,13 +1793,13 @@
     "message": "feat(bridge): add go:encoding/json module",
     "files": [
       {
-        "path": "bridge/modules/json/errors.go",
+        "path": "typego/bridge/modules/json/errors.go",
         "added": 8,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/modules/json/json.go",
+        "path": "typego/bridge/modules/json/json.go",
         "added": 87,
         "deleted": 0,
         "status": "A"
@@ -1814,7 +1814,7 @@
     "message": "feat(os): expand environment and process bindings",
     "files": [
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 73,
         "deleted": 0,
         "status": "M"
@@ -1829,7 +1829,7 @@
     "message": "feat(bridge): implement crypto primitives (sha256, hmac, rand)",
     "files": [
       {
-        "path": "bridge/modules/crypto/crypto.go",
+        "path": "typego/bridge/modules/crypto/crypto.go",
         "added": 99,
         "deleted": 0,
         "status": "A"
@@ -1844,7 +1844,7 @@
     "message": "chore(engine): register json and crypto modules",
     "files": [
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
@@ -1859,13 +1859,13 @@
     "message": "feat(http): add ListenAndServe with JS callback",
     "files": [
       {
-        "path": "bridge/modules/net/helpers.go",
+        "path": "typego/bridge/modules/net/helpers.go",
         "added": 12,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 225,
         "deleted": 0,
         "status": "A"
@@ -1880,7 +1880,7 @@
     "message": "feat(http): support custom headers in Post",
     "files": [
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 93,
         "deleted": 0,
         "status": "M"
@@ -1895,13 +1895,13 @@
     "message": "feat(dx): implement typego dev command",
     "files": [
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 29,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "cmd/typego/dev.go",
+        "path": "typego/cmd/typego/dev.go",
         "added": 160,
         "deleted": 0,
         "status": "A"
@@ -1932,79 +1932,79 @@
     "message": "feat: overhaul type generation dx",
     "files": [
       {
-        "path": "Makefile",
+        "path": "typego/Makefile",
         "added": 3,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/core/global.go",
+        "path": "typego/bridge/core/global.go",
         "added": 31,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/core/types.go",
+        "path": "typego/bridge/core/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/types.go",
+        "path": "typego/bridge/modules/net/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/modules/sync/types.go",
+        "path": "typego/bridge/modules/sync/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/stdlib/memory/types.go",
+        "path": "typego/bridge/stdlib/memory/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/stdlib/worker/types.go",
+        "path": "typego/bridge/stdlib/worker/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 35,
         "deleted": 62,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 1,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "examples/11-http-server.ts",
+        "path": "typego/examples/11-http-server.ts",
         "added": 79,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "tests/dx/types_test.go",
+        "path": "typego/tests/dx/types_test.go",
         "added": 100,
         "deleted": 0,
         "status": "A"
@@ -2035,7 +2035,7 @@
     "message": "feat: add consumer simulation workflow",
     "files": [
       {
-        "path": ".github/workflows/consumer_sim.yml",
+        "path": "typego/.github/workflows/consumer_sim.yml",
         "added": 133,
         "deleted": 0,
         "status": "A"
@@ -2050,13 +2050,13 @@
     "message": "fix(dx): properly decentralized go:crypto types",
     "files": [
       {
-        "path": "bridge/modules/crypto/types.go",
+        "path": "typego/bridge/modules/crypto/types.go",
         "added": 6,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 3,
         "deleted": 1,
         "status": "M"
@@ -2071,7 +2071,7 @@
     "message": "fix(compiler): register go:crypto internal module",
     "files": [
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 3,
         "deleted": 1,
         "status": "M"
@@ -2086,7 +2086,7 @@
     "message": "fix(ci): remove invalid assignment to import in worker.ts",
     "files": [
       {
-        "path": ".github/workflows/consumer_sim.yml",
+        "path": "typego/.github/workflows/consumer_sim.yml",
         "added": 3,
         "deleted": 1,
         "status": "M"
@@ -2101,7 +2101,7 @@
     "message": "fix(ci): use self.onmessage and implicit build target",
     "files": [
       {
-        "path": ".github/workflows/consumer_sim.yml",
+        "path": "typego/.github/workflows/consumer_sim.yml",
         "added": 3,
         "deleted": 3,
         "status": "M"
@@ -2116,7 +2116,7 @@
     "message": "fix: removed unreliable workflow",
     "files": [
       {
-        "path": ".github/workflows/consumer_sim.yml",
+        "path": "typego/.github/workflows/consumer_sim.yml",
         "added": 0,
         "deleted": 135,
         "status": "D"
@@ -2147,139 +2147,139 @@
     "message": "chore: migrate ownership from repyh3 to repyh",
     "files": [
       {
-        "path": "bridge/core/registry.go",
+        "path": "typego/bridge/core/registry.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/modules/crypto/crypto.go",
+        "path": "typego/bridge/modules/crypto/crypto.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/modules/fmt/fmt.go",
+        "path": "typego/bridge/modules/fmt/fmt.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/modules/json/json.go",
+        "path": "typego/bridge/modules/json/json.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/init.go",
+        "path": "typego/bridge/polyfills/init.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/timers.go",
+        "path": "typego/bridge/polyfills/timers.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/memory/memory.go",
+        "path": "typego/bridge/stdlib/memory/memory.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "cmd/typego/build.go",
+        "path": "typego/cmd/typego/build.go",
         "added": 9,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "cmd/typego/interpreter.go",
+        "path": "typego/cmd/typego/interpreter.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "cmd/typego/run.go",
+        "path": "typego/cmd/typego/run.go",
         "added": 6,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "cmd/typego/types.go",
+        "path": "typego/cmd/typego/types.go",
         "added": 9,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 10,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "engine/engine_test.go",
+        "path": "typego/engine/engine_test.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "internal/builder/builder_test.go",
+        "path": "typego/internal/builder/builder_test.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "tests/integration/harness.go",
+        "path": "typego/tests/integration/harness.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -2294,133 +2294,133 @@
     "message": "feat(ecosystem): implement jit modules installer and CLI refactor (Phase 1 & 2)",
     "files": [
       {
-        "path": "cmd/typego/main.go",
+        "path": "typego/cmd/typego/main.go",
         "added": 2,
         "deleted": 28,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 19,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 15,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/ast/extractor.go",
+        "path": "typego/internal/ecosystem/ast/extractor.go",
         "added": 55,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/ast/parser.go",
+        "path": "typego/internal/ecosystem/ast/parser.go",
         "added": 65,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/builder/compile.go",
+        "path": "typego/internal/ecosystem/builder/compile.go",
         "added": 32,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/builder/scaffold.go",
+        "path": "typego/internal/ecosystem/builder/scaffold.go",
         "added": 45,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/builder/templates/main.tmpl",
+        "path": "typego/internal/ecosystem/builder/templates/main.tmpl",
         "added": 27,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/config.go",
+        "path": "typego/internal/ecosystem/config.go",
         "added": 50,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 203,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/ecosystem/resolver/toolchain.go",
+        "path": "typego/internal/ecosystem/resolver/toolchain.go",
         "added": 56,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 16,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "pkg/cli/build.go",
+        "path": "typego/pkg/cli/build.go",
         "added": 3,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "pkg/cli/dev.go",
+        "path": "typego/pkg/cli/dev.go",
         "added": 26,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "pkg/cli/init.go",
+        "path": "typego/pkg/cli/init.go",
         "added": 17,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "pkg/cli/install.go",
+        "path": "typego/pkg/cli/install.go",
         "added": 35,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/interpreter.go",
+        "path": "typego/pkg/cli/interpreter.go",
         "added": 2,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "pkg/cli/root.go",
+        "path": "typego/pkg/cli/root.go",
         "added": 31,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/run.go",
+        "path": "typego/pkg/cli/run.go",
         "added": 27,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "pkg/cli/types.go",
+        "path": "typego/pkg/cli/types.go",
         "added": 2,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "pkg/cli/watch.go",
+        "path": "typego/pkg/cli/watch.go",
         "added": 2,
         "deleted": 2,
         "status": "R"
       },
       {
-        "path": "tests/ecosystem_test_project/src/index.ts",
+        "path": "typego/tests/ecosystem_test_project/src/index.ts",
         "added": 4,
         "deleted": 0,
         "status": "A"
@@ -2435,7 +2435,7 @@
     "message": "feat(ecosystem): implement JIT binary detection utility (Phase 3)",
     "files": [
       {
-        "path": "internal/ecosystem/utils.go",
+        "path": "typego/internal/ecosystem/utils.go",
         "added": 32,
         "deleted": 0,
         "status": "A"
@@ -2450,25 +2450,25 @@
     "message": "feat(ecosystem): implement reliability features and clean command (Phase 4)",
     "files": [
       {
-        "path": "internal/ecosystem/config.go",
+        "path": "typego/internal/ecosystem/config.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 11,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/utils.go",
+        "path": "typego/internal/ecosystem/utils.go",
         "added": 82,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/clean.go",
+        "path": "typego/pkg/cli/clean.go",
         "added": 36,
         "deleted": 0,
         "status": "A"
@@ -2483,25 +2483,25 @@
     "message": "fix(e2e): implement robust repo root detection for local dev replacements",
     "files": [
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 9,
         "deleted": 14,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/utils.go",
+        "path": "typego/internal/ecosystem/utils.go",
         "added": 20,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "pkg/cli/build.go",
+        "path": "typego/pkg/cli/build.go",
         "added": 5,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "pkg/cli/run.go",
+        "path": "typego/pkg/cli/run.go",
         "added": 4,
         "deleted": 10,
         "status": "M"
@@ -2516,7 +2516,7 @@
     "message": "fix: update readme and fix install",
     "files": [
       {
-        "path": "test_project/src/index.ts",
+        "path": "typego/test_project/src/index.ts",
         "added": 18,
         "deleted": 0,
         "status": "A"
@@ -2531,19 +2531,19 @@
     "message": "fix: update readme and install",
     "files": [
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 5,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "test_project/src/index.ts",
+        "path": "typego/test_project/src/index.ts",
         "added": 0,
         "deleted": 18,
         "status": "D"
       },
       {
-        "path": "tests/ecosystem_test_project/src/index.ts",
+        "path": "typego/tests/ecosystem_test_project/src/index.ts",
         "added": 0,
         "deleted": 4,
         "status": "D"
@@ -2558,133 +2558,133 @@
     "message": "chore: clean unnecessary comments",
     "files": [
       {
-        "path": "bridge/core/global.go",
+        "path": "typego/bridge/core/global.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 0,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "bridge/modules/crypto/crypto.go",
+        "path": "typego/bridge/modules/crypto/crypto.go",
         "added": 3,
         "deleted": 8,
         "status": "M"
       },
       {
-        "path": "bridge/modules/json/errors.go",
+        "path": "typego/bridge/modules/json/errors.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/modules/json/json.go",
+        "path": "typego/bridge/modules/json/json.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/process.go",
+        "path": "typego/bridge/polyfills/process.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/memory/memory.go",
+        "path": "typego/bridge/stdlib/memory/memory.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "compiler/cache.go",
+        "path": "typego/compiler/cache.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 8,
         "deleted": 18,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 2,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "engine/engine_test.go",
+        "path": "typego/engine/engine_test.go",
         "added": 0,
         "deleted": 8,
         "status": "M"
       },
       {
-        "path": "examples/02-go-concurrency.ts",
+        "path": "typego/examples/02-go-concurrency.ts",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "examples/03-multithreading-workers.ts",
+        "path": "typego/examples/03-multithreading-workers.ts",
         "added": 1,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "examples/06-process-env.ts",
+        "path": "typego/examples/06-process-env.ts",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "examples/07-external-module.ts",
+        "path": "typego/examples/07-external-module.ts",
         "added": 0,
         "deleted": 1,
         "status": "R"
       },
       {
-        "path": "examples/07-struct-binding.ts",
+        "path": "typego/examples/07-struct-binding.ts",
         "added": 0,
         "deleted": 16,
         "status": "D"
       },
       {
-        "path": "examples/08-nested-structs.ts",
+        "path": "typego/examples/08-nested-structs.ts",
         "added": 0,
         "deleted": 1,
         "status": "R"
       },
       {
-        "path": "examples/09-typego-stdlib.ts",
+        "path": "typego/examples/09-typego-stdlib.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/10-http-server.ts",
+        "path": "typego/examples/10-http-server.ts",
         "added": 1,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "tests/dx/types_test.go",
+        "path": "typego/tests/dx/types_test.go",
         "added": 0,
         "deleted": 8,
         "status": "M"
@@ -2699,61 +2699,61 @@
     "message": "feat(cli): modular restructuring with package manager commands",
     "files": [
       {
-        "path": "pkg/cli/internal/config.go",
+        "path": "typego/pkg/cli/internal/config.go",
         "added": 54,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/internal/doc.go",
+        "path": "typego/pkg/cli/internal/doc.go",
         "added": 2,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/internal/output.go",
+        "path": "typego/pkg/cli/internal/output.go",
         "added": 47,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/pkg/add.go",
+        "path": "typego/pkg/cli/pkg/add.go",
         "added": 68,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/pkg/clean.go",
+        "path": "typego/pkg/cli/pkg/clean.go",
         "added": 7,
         "deleted": 10,
         "status": "R"
       },
       {
-        "path": "pkg/cli/pkg/doc.go",
+        "path": "typego/pkg/cli/pkg/doc.go",
         "added": 2,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/pkg/install.go",
+        "path": "typego/pkg/cli/pkg/install.go",
         "added": 7,
         "deleted": 10,
         "status": "R"
       },
       {
-        "path": "pkg/cli/pkg/list.go",
+        "path": "typego/pkg/cli/pkg/list.go",
         "added": 67,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/pkg/remove.go",
+        "path": "typego/pkg/cli/pkg/remove.go",
         "added": 55,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/root.go",
+        "path": "typego/pkg/cli/root.go",
         "added": 8,
         "deleted": 0,
         "status": "M"
@@ -2768,19 +2768,19 @@
     "message": "feat(cli): add update and outdated commands",
     "files": [
       {
-        "path": "pkg/cli/pkg/outdated.go",
+        "path": "typego/pkg/cli/pkg/outdated.go",
         "added": 87,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/pkg/update.go",
+        "path": "typego/pkg/cli/pkg/update.go",
         "added": 129,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/root.go",
+        "path": "typego/pkg/cli/root.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
@@ -2795,127 +2795,127 @@
     "message": "fix(ecosystem): restore external module shim generation in JIT installer",
     "files": [
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 24,
         "deleted": 42,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/utils.go",
+        "path": "typego/internal/ecosystem/utils.go",
         "added": 9,
         "deleted": 16,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/build.go",
+        "path": "typego/pkg/cli/cmd/build.go",
         "added": 6,
         "deleted": 6,
         "status": "R"
       },
       {
-        "path": "pkg/cli/cmd/dev.go",
+        "path": "typego/pkg/cli/cmd/dev.go",
         "added": 3,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "pkg/cli/cmd/doc.go",
+        "path": "typego/pkg/cli/cmd/doc.go",
         "added": 2,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/cmd/init.go",
+        "path": "typego/pkg/cli/cmd/init.go",
         "added": 150,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/cmd/interpreter.go",
+        "path": "typego/pkg/cli/cmd/interpreter.go",
         "added": 4,
         "deleted": 1,
         "status": "R"
       },
       {
-        "path": "pkg/cli/cmd/run.go",
+        "path": "typego/pkg/cli/cmd/run.go",
         "added": 4,
         "deleted": 4,
         "status": "R"
       },
       {
-        "path": "pkg/cli/cmd/types.go",
+        "path": "typego/pkg/cli/cmd/types.go",
         "added": 3,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "pkg/cli/cmd/watch.go",
+        "path": "typego/pkg/cli/cmd/watch.go",
         "added": 3,
         "deleted": 3,
         "status": "R"
       },
       {
-        "path": "pkg/cli/init.go",
+        "path": "typego/pkg/cli/init.go",
         "added": 0,
         "deleted": 129,
         "status": "D"
       },
       {
-        "path": "pkg/cli/pkg/outdated.go",
+        "path": "typego/pkg/cli/pkg/outdated.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/update.go",
+        "path": "typego/pkg/cli/pkg/update.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "pkg/cli/root.go",
+        "path": "typego/pkg/cli/root.go",
         "added": 11,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "sandbox-test/sandbox/.gitignore",
+        "path": "typego/sandbox-test/sandbox/.gitignore",
         "added": 1,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/server.log",
+        "path": "typego/sandbox-test/sandbox/server.log",
         "added": 0,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/src/db/store.ts",
+        "path": "typego/sandbox-test/sandbox/src/db/store.ts",
         "added": 24,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/src/handlers/links.ts",
+        "path": "typego/sandbox-test/sandbox/src/handlers/links.ts",
         "added": 77,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/src/index.ts",
+        "path": "typego/sandbox-test/sandbox/src/index.ts",
         "added": 126,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/src/middleware/logger.ts",
+        "path": "typego/sandbox-test/sandbox/src/middleware/logger.ts",
         "added": 13,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "sandbox-test/sandbox/src/utils/shortid.ts",
+        "path": "typego/sandbox-test/sandbox/src/utils/shortid.ts",
         "added": 10,
         "deleted": 0,
         "status": "A"
@@ -2930,37 +2930,37 @@
     "message": "feat: release v1.4.0 - typego package ecosystem & smarter linker",
     "files": [
       {
-        "path": "internal/ecosystem/config.go",
+        "path": "typego/internal/ecosystem/config.go",
         "added": 20,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/installer/install.go",
+        "path": "typego/internal/ecosystem/installer/install.go",
         "added": 74,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 46,
         "deleted": 23,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 29,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/add.go",
+        "path": "typego/pkg/cli/pkg/add.go",
         "added": 9,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "sandbox-test/sandbox/server.log",
+        "path": "typego/sandbox-test/sandbox/server.log",
         "added": 0,
         "deleted": 0,
         "status": "D"
@@ -2975,7 +2975,7 @@
     "message": "chore: remove unused functions in generator to satisfy linter",
     "files": [
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 0,
         "deleted": 12,
         "status": "M"
@@ -2998,151 +2998,151 @@
     "message": "chore: sanitize redundant comments and AI-fluff",
     "files": [
       {
-        "path": "bridge/core/console.go",
+        "path": "typego/bridge/core/console.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/core/global.go",
+        "path": "typego/bridge/core/global.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/core/registry.go",
+        "path": "typego/bridge/core/registry.go",
         "added": 0,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "bridge/modules/crypto/crypto.go",
+        "path": "typego/bridge/modules/crypto/crypto.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/modules/fmt/fmt.go",
+        "path": "typego/bridge/modules/fmt/fmt.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/modules/json/json.go",
+        "path": "typego/bridge/modules/json/json.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 0,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 0,
         "deleted": 8,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "eventloop/eventloop.go",
+        "path": "typego/eventloop/eventloop.go",
         "added": 0,
         "deleted": 12,
         "status": "M"
       },
       {
-        "path": "examples/10-http-server.ts",
+        "path": "typego/examples/10-http-server.ts",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/utils.go",
+        "path": "typego/internal/ecosystem/utils.go",
         "added": 0,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 0,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/build.go",
+        "path": "typego/pkg/cli/cmd/build.go",
         "added": 1,
         "deleted": 15,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/dev.go",
+        "path": "typego/pkg/cli/cmd/dev.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/interpreter.go",
+        "path": "typego/pkg/cli/cmd/interpreter.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/run.go",
+        "path": "typego/pkg/cli/cmd/run.go",
         "added": 0,
         "deleted": 17,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/types.go",
+        "path": "typego/pkg/cli/cmd/types.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/add.go",
+        "path": "typego/pkg/cli/pkg/add.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/list.go",
+        "path": "typego/pkg/cli/pkg/list.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/remove.go",
+        "path": "typego/pkg/cli/pkg/remove.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
@@ -3165,7 +3165,7 @@
     "message": "feat(bridge/core): optimize reflection binding performance",
     "files": [
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 50,
         "deleted": 18,
         "status": "M"
@@ -3180,7 +3180,7 @@
     "message": "feat(bridge/core): optimize reflection binding performance",
     "files": [
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 4,
         "deleted": 0,
         "status": "M"
@@ -3195,7 +3195,7 @@
     "message": "feat(bridge/core): optimize reflection binding performance",
     "files": [
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 8,
         "deleted": 3,
         "status": "M"
@@ -3218,163 +3218,163 @@
     "message": "feat(engine): migrate from goja to sobek for ES2017+ support",
     "files": [
       {
-        "path": "bridge/core/arraybuffer.go",
+        "path": "typego/bridge/core/arraybuffer.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/core/console.go",
+        "path": "typego/bridge/core/console.go",
         "added": 6,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "bridge/core/global.go",
+        "path": "typego/bridge/core/global.go",
         "added": 5,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 18,
         "deleted": 18,
         "status": "M"
       },
       {
-        "path": "bridge/core/registry.go",
+        "path": "typego/bridge/core/registry.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/modules/crypto/crypto.go",
+        "path": "typego/bridge/modules/crypto/crypto.go",
         "added": 9,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "bridge/modules/fmt/fmt.go",
+        "path": "typego/bridge/modules/fmt/fmt.go",
         "added": 7,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/modules/json/json.go",
+        "path": "typego/bridge/modules/json/json.go",
         "added": 8,
         "deleted": 8,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/http.go",
+        "path": "typego/bridge/modules/net/http.go",
         "added": 11,
         "deleted": 11,
         "status": "M"
       },
       {
-        "path": "bridge/modules/net/server.go",
+        "path": "typego/bridge/modules/net/server.go",
         "added": 19,
         "deleted": 19,
         "status": "M"
       },
       {
-        "path": "bridge/modules/os/os.go",
+        "path": "typego/bridge/modules/os/os.go",
         "added": 21,
         "deleted": 21,
         "status": "M"
       },
       {
-        "path": "bridge/modules/sync/sync.go",
+        "path": "typego/bridge/modules/sync/sync.go",
         "added": 23,
         "deleted": 23,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/buffer.go",
+        "path": "typego/bridge/polyfills/buffer.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/encoding.go",
+        "path": "typego/bridge/polyfills/encoding.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/init.go",
+        "path": "typego/bridge/polyfills/init.go",
         "added": 2,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/process.go",
+        "path": "typego/bridge/polyfills/process.go",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/polyfills/timers.go",
+        "path": "typego/bridge/polyfills/timers.go",
         "added": 11,
         "deleted": 11,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/memory/memory.go",
+        "path": "typego/bridge/stdlib/memory/memory.go",
         "added": 6,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "bridge/stdlib/worker/worker.go",
+        "path": "typego/bridge/stdlib/worker/worker.go",
         "added": 14,
         "deleted": 14,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 6,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 6,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "eventloop/eventloop.go",
+        "path": "typego/eventloop/eventloop.go",
         "added": 4,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "go.mod",
+        "path": "typego/go.mod",
         "added": 3,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "go.sum",
+        "path": "typego/go.sum",
         "added": 8,
         "deleted": 10,
         "status": "M"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 7,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/build.go",
+        "path": "typego/pkg/cli/cmd/build.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "tests/integration/harness.go",
+        "path": "typego/tests/integration/harness.go",
         "added": 10,
         "deleted": 10,
         "status": "M"
@@ -3389,73 +3389,73 @@
     "message": "feat(intrinsics): implement defer keyword, intellisense, and build fixes",
     "files": [
       {
-        "path": "bridge/intrinsics/intrinsics.go",
+        "path": "typego/bridge/intrinsics/intrinsics.go",
         "added": 23,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/panic.go",
+        "path": "typego/bridge/intrinsics/panic.go",
         "added": 26,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/scope.go",
+        "path": "typego/bridge/intrinsics/scope.go",
         "added": 49,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/sizeof.go",
+        "path": "typego/bridge/intrinsics/sizeof.go",
         "added": 68,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "compiler/compiler.go",
+        "path": "typego/compiler/compiler.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "compiler/plugins/defer.go",
+        "path": "typego/compiler/plugins/defer.go",
         "added": 61,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 5,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "examples/test_defer_syntax.ts",
+        "path": "typego/examples/test_defer_syntax.ts",
         "added": 10,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/test_intrinsics.ts",
+        "path": "typego/examples/test_intrinsics.ts",
         "added": 25,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/transformer/core/transformer.go",
+        "path": "typego/internal/transformer/core/transformer.go",
         "added": 43,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/transformer/core/walker.go",
+        "path": "typego/internal/transformer/core/walker.go",
         "added": 114,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "internal/transformer/visitors/defer_visitor.go",
+        "path": "typego/internal/transformer/visitors/defer_visitor.go",
         "added": 115,
         "deleted": 0,
         "status": "A"
@@ -3470,193 +3470,193 @@
     "message": "feat: migrate polyfills to intrinsics and add global codebase index",
     "files": [
       {
-        "path": "bridge/intrinsics/buffer.go",
+        "path": "typego/bridge/intrinsics/buffer.go",
         "added": 52,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/concurrency.go",
+        "path": "typego/bridge/intrinsics/concurrency.go",
         "added": 183,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/encoding.go",
+        "path": "typego/bridge/intrinsics/encoding.go",
         "added": 66,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/globals.go",
+        "path": "typego/bridge/intrinsics/globals.go",
         "added": 49,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/intrinsics.go",
+        "path": "typego/bridge/intrinsics/intrinsics.go",
         "added": 29,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/panic.go",
+        "path": "typego/bridge/intrinsics/panic.go",
         "added": 1,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/pointers.go",
+        "path": "typego/bridge/intrinsics/pointers.go",
         "added": 51,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/process.go",
+        "path": "typego/bridge/intrinsics/process.go",
         "added": 6,
         "deleted": 6,
         "status": "R"
       },
       {
-        "path": "bridge/intrinsics/recover.go",
+        "path": "typego/bridge/intrinsics/recover.go",
         "added": 12,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/scope.go",
+        "path": "typego/bridge/intrinsics/scope.go",
         "added": 63,
         "deleted": 19,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/slices.go",
+        "path": "typego/bridge/intrinsics/slices.go",
         "added": 110,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/timers.go",
+        "path": "typego/bridge/intrinsics/timers.go",
         "added": 11,
         "deleted": 12,
         "status": "R"
       },
       {
-        "path": "bridge/intrinsics/types.go",
+        "path": "typego/bridge/intrinsics/types.go",
         "added": 39,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/polyfills/buffer.go",
+        "path": "typego/bridge/polyfills/buffer.go",
         "added": 0,
         "deleted": 26,
         "status": "D"
       },
       {
-        "path": "bridge/polyfills/doc.go",
+        "path": "typego/bridge/polyfills/doc.go",
         "added": 0,
         "deleted": 52,
         "status": "D"
       },
       {
-        "path": "bridge/polyfills/encoding.go",
+        "path": "typego/bridge/polyfills/encoding.go",
         "added": 0,
         "deleted": 64,
         "status": "D"
       },
       {
-        "path": "bridge/polyfills/init.go",
+        "path": "typego/bridge/polyfills/init.go",
         "added": 0,
         "deleted": 19,
         "status": "D"
       },
       {
-        "path": "compiler/plugins/defer.go",
+        "path": "typego/compiler/plugins/defer.go",
         "added": 1,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "engine/engine.go",
+        "path": "typego/engine/engine.go",
         "added": 9,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "examples/02-concurrency-basics.ts",
+        "path": "typego/examples/02-concurrency-basics.ts",
         "added": 8,
         "deleted": 7,
         "status": "R"
       },
       {
-        "path": "examples/11-concurrency-advanced.ts",
+        "path": "typego/examples/11-concurrency-advanced.ts",
         "added": 54,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/12-memory-management.ts",
+        "path": "typego/examples/12-memory-management.ts",
         "added": 38,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/13-error-handling.ts",
+        "path": "typego/examples/13-error-handling.ts",
         "added": 41,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/14-metaprogramming.ts",
+        "path": "typego/examples/14-metaprogramming.ts",
         "added": 31,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/15-pointers.ts",
+        "path": "typego/examples/15-pointers.ts",
         "added": 36,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/test_defer_syntax.ts",
+        "path": "typego/examples/test_defer_syntax.ts",
         "added": 0,
         "deleted": 10,
         "status": "D"
       },
       {
-        "path": "examples/test_intrinsics.ts",
+        "path": "typego/examples/test_intrinsics.ts",
         "added": 0,
         "deleted": 25,
         "status": "D"
       },
       {
-        "path": "internal/builder/builder_test.go",
+        "path": "typego/internal/builder/builder_test.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "internal/transformer/visitors/iota_visitor.go",
+        "path": "typego/internal/transformer/visitors/iota_visitor.go",
         "added": 52,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "pkg/cli/cmd/interpreter.go",
+        "path": "typego/pkg/cli/cmd/interpreter.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/types.go",
+        "path": "typego/pkg/cli/cmd/types.go",
         "added": 15,
         "deleted": 2,
         "status": "M"
@@ -3671,43 +3671,43 @@
     "message": "chore: moved sandbox and rename as projects in examples",
     "files": [
       {
-        "path": ".github/workflows/validate-examples.yml",
+        "path": "typego/.github/workflows/validate-examples.yml",
         "added": 105,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "examples/projects/link-shortener/.gitignore",
+        "path": "typego/examples/projects/link-shortener/.gitignore",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/projects/link-shortener/src/db/store.ts",
+        "path": "typego/examples/projects/link-shortener/src/db/store.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/projects/link-shortener/src/handlers/links.ts",
+        "path": "typego/examples/projects/link-shortener/src/handlers/links.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/projects/link-shortener/src/index.ts",
+        "path": "typego/examples/projects/link-shortener/src/index.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/projects/link-shortener/src/middleware/logger.ts",
+        "path": "typego/examples/projects/link-shortener/src/middleware/logger.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
       },
       {
-        "path": "examples/projects/link-shortener/src/utils/shortid.ts",
+        "path": "typego/examples/projects/link-shortener/src/utils/shortid.ts",
         "added": 0,
         "deleted": 0,
         "status": "R"
@@ -3722,61 +3722,61 @@
     "message": "docs(intrinsics): examples + docs; feat(bridge): intrinsics & recursive linker updates",
     "files": [
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 56,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/intrinsics.go",
+        "path": "typego/bridge/intrinsics/intrinsics.go",
         "added": 2,
         "deleted": 0,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/io.go",
+        "path": "typego/bridge/intrinsics/io.go",
         "added": 71,
         "deleted": 0,
         "status": "A"
       },
       {
-        "path": "bridge/intrinsics/pointers.go",
+        "path": "typego/bridge/intrinsics/pointers.go",
         "added": 35,
         "deleted": 9,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/timers.go",
+        "path": "typego/bridge/intrinsics/timers.go",
         "added": 33,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "bridge/intrinsics/types.go",
+        "path": "typego/bridge/intrinsics/types.go",
         "added": 10,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "engine/worker.go",
+        "path": "typego/engine/worker.go",
         "added": 73,
         "deleted": 46,
         "status": "M"
       },
       {
-        "path": "internal/linker/generator.go",
+        "path": "typego/internal/linker/generator.go",
         "added": 28,
         "deleted": 13,
         "status": "M"
       },
       {
-        "path": "internal/linker/inspector.go",
+        "path": "typego/internal/linker/inspector.go",
         "added": 29,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/types.go",
+        "path": "typego/pkg/cli/cmd/types.go",
         "added": 38,
         "deleted": 17,
         "status": "M"
@@ -3791,7 +3791,7 @@
     "message": "fix(ci): correct YAML syntax in validate-examples workflow",
     "files": [
       {
-        "path": ".github/workflows/validate-examples.yml",
+        "path": "typego/.github/workflows/validate-examples.yml",
         "added": 1,
         "deleted": 1,
         "status": "M"
@@ -3806,7 +3806,7 @@
     "message": "fix(bridge): resolve SA6002 lint error by using pointer in sync.Pool",
     "files": [
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 7,
         "deleted": 3,
         "status": "M"
@@ -3821,79 +3821,79 @@
     "message": "chore: sanitize redundant comments and AI-fluff",
     "files": [
       {
-        "path": "compiler/doc.go",
+        "path": "typego/compiler/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "engine/doc.go",
+        "path": "typego/engine/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "eventloop/doc.go",
+        "path": "typego/eventloop/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "internal/builder/doc.go",
+        "path": "typego/internal/builder/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/config.go",
+        "path": "typego/internal/ecosystem/config.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "internal/linker/doc.go",
+        "path": "typego/internal/linker/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/dev.go",
+        "path": "typego/pkg/cli/cmd/dev.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/doc.go",
+        "path": "typego/pkg/cli/cmd/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/run.go",
+        "path": "typego/pkg/cli/cmd/run.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/watch.go",
+        "path": "typego/pkg/cli/cmd/watch.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "pkg/cli/internal/doc.go",
+        "path": "typego/pkg/cli/internal/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/doc.go",
+        "path": "typego/pkg/cli/pkg/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
@@ -3908,97 +3908,97 @@
     "message": "Optimize bridge/core and overhaul README documentation",
     "files": [
       {
-        "path": "bridge/core/arraybuffer.go",
+        "path": "typego/bridge/core/arraybuffer.go",
         "added": 0,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "bridge/core/console.go",
+        "path": "typego/bridge/core/console.go",
         "added": 8,
         "deleted": 7,
         "status": "M"
       },
       {
-        "path": "bridge/core/reflection.go",
+        "path": "typego/bridge/core/reflection.go",
         "added": 37,
         "deleted": 5,
         "status": "M"
       },
       {
-        "path": "compiler/doc.go",
+        "path": "typego/compiler/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "engine/doc.go",
+        "path": "typego/engine/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "eventloop/doc.go",
+        "path": "typego/eventloop/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "internal/builder/doc.go",
+        "path": "typego/internal/builder/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "internal/builder/templates.go",
+        "path": "typego/internal/builder/templates.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "internal/ecosystem/config.go",
+        "path": "typego/internal/ecosystem/config.go",
         "added": 0,
         "deleted": 4,
         "status": "M"
       },
       {
-        "path": "internal/linker/doc.go",
+        "path": "typego/internal/linker/doc.go",
         "added": 0,
         "deleted": 2,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/dev.go",
+        "path": "typego/pkg/cli/cmd/dev.go",
         "added": 0,
         "deleted": 6,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/doc.go",
+        "path": "typego/pkg/cli/cmd/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/run.go",
+        "path": "typego/pkg/cli/cmd/run.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/cmd/watch.go",
+        "path": "typego/pkg/cli/cmd/watch.go",
         "added": 0,
         "deleted": 3,
         "status": "M"
       },
       {
-        "path": "pkg/cli/internal/doc.go",
+        "path": "typego/pkg/cli/internal/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"
       },
       {
-        "path": "pkg/cli/pkg/doc.go",
+        "path": "typego/pkg/cli/pkg/doc.go",
         "added": 0,
         "deleted": 1,
         "status": "M"

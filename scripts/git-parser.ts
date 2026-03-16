@@ -9,15 +9,14 @@ import readline from 'readline';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const REPO_PATH = process.env.REPO_PATH || process.cwd();
+const REPO_PATHS = process.env.REPO_PATHS ? process.env.REPO_PATHS.split(',') : [process.cwd()];
 
-const git = simpleGit(REPO_PATH);
 const outputDir = path.resolve(__dirname, '../src/data');
 const outputFile = path.join(outputDir, 'commits.json');
 const depsFile = path.join(outputDir, 'deps.json');
 
 const BLACKLIST_EXTENSIONS = ['.d.ts', '.lock', '.json', '.md'];
-const BLACKLIST_PATHS = ['node_modules/', '.typego/'];
+const BLACKLIST_PATHS = ['node_modules/'];
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {
@@ -128,7 +127,7 @@ function resolveGoSpecifier(specifier: string, goModuleName: string, knownDirs: 
 
 // ─── Go module name auto-detection ──────────────────────────────────────────
 
-async function detectGoModuleName(): Promise<string | null> {
+async function detectGoModuleName(git: ReturnType<typeof simpleGit>): Promise<string | null> {
     try {
         const content = await git.show(['HEAD:go.mod']);
         const m = content.match(/^module\s+(\S+)/m);
@@ -140,7 +139,7 @@ async function detectGoModuleName(): Promise<string | null> {
 
 // ─── Dependency extraction pass ─────────────────────────────────────────────
 
-async function parseDeps(liveFiles: string[]): Promise<Record<string, string[]>> {
+async function parseDeps(liveFiles: string[], git: ReturnType<typeof simpleGit>): Promise<Record<string, string[]>> {
     console.log(`Parsing dependencies for ${liveFiles.length} live files...`);
 
     const knownPaths = new Set(liveFiles);
@@ -148,7 +147,7 @@ async function parseDeps(liveFiles: string[]): Promise<Record<string, string[]>>
     // Build set of known Go directories from live .go files
     const knownGoDirs = new Set(liveFiles.filter(f => f.endsWith('.go')).map(f => path.dirname(f).replace(/\\/g, '/')));
 
-    const goModuleName = await detectGoModuleName();
+    const goModuleName = await detectGoModuleName(git);
     if (goModuleName) console.log(`  Detected Go module: ${goModuleName}`);
 
     const deps: Record<string, string[]> = {};
@@ -206,8 +205,8 @@ async function parseDeps(liveFiles: string[]): Promise<Record<string, string[]>>
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 
-async function run() {
-    console.log(`Parsing Git log from ${REPO_PATH}...`);
+async function runRepo(repoPath: string, repoName: string) {
+    console.log(`Parsing Git log from ${repoPath}...`);
     try {
         const separator = '|||';
         const format = `COMMIT:${separator}%H${separator}%aI${separator}%an${separator}%ae${separator}%s`;
@@ -219,7 +218,7 @@ async function run() {
             '--summary',
             '--no-merges',
             '--reverse'
-        ], { cwd: REPO_PATH });
+        ], { cwd: repoPath });
 
         const rl = readline.createInterface({
             input: gitProcess.stdout,
@@ -256,14 +255,15 @@ async function run() {
 
                     const added   = numstatMatch[1] === '-' ? 0 : parseInt(numstatMatch[1], 10);
                     const deleted = numstatMatch[2] === '-' ? 0 : parseInt(numstatMatch[2], 10);
-                    currentCommit.files.push({ path: filePath, added, deleted, status: isRename ? 'R' : 'M' });
+                    // Use repoName as sub-folder for microservices support
+                    currentCommit.files.push({ path: `${repoName}/${filePath}`, added, deleted, status: isRename ? 'R' : 'M' });
                     continue;
                 }
 
                 const createMatch = line.match(/\s*create mode \d+ (.+)/);
                 if (createMatch) {
                     const expanded = expandRenamePath(createMatch[1]) ?? createMatch[1];
-                    const fe = currentCommit.files.find((f: any) => f.path === expanded);
+                    const fe = currentCommit.files.find((f: any) => f.path === `${repoName}/${expanded}`);
                     if (fe) fe.status = 'A';
                     continue;
                 }
@@ -271,7 +271,7 @@ async function run() {
                 const deleteMatch = line.match(/\s*delete mode \d+ (.+)/);
                 if (deleteMatch) {
                     const expanded = expandRenamePath(deleteMatch[1]) ?? deleteMatch[1];
-                    const fe = currentCommit.files.find((f: any) => f.path === expanded);
+                    const fe = currentCommit.files.find((f: any) => f.path === `${repoName}/${expanded}`);
                     if (fe) fe.status = 'D';
                     continue;
                 }
@@ -279,52 +279,86 @@ async function run() {
         }
         if (currentCommit) commits.push(currentCommit);
 
-        console.log(`Parsed ${commits.length} commits.`);
-
-        const CHUNK_SIZE = 1000;
-        if (commits.length <= CHUNK_SIZE) {
-            fs.writeFileSync(outputFile, JSON.stringify(commits, null, 2));
-            console.log(`Saved commits → ${outputFile}`);
-        } else {
-            // Write chunks to support large repositories
-            let chunkIndex = 0;
-            const indexMeta = [];
-            for (let i = 0; i < commits.length; i += CHUNK_SIZE) {
-                const chunk = commits.slice(i, i + CHUNK_SIZE);
-                const chunkFile = path.join(outputDir, `commits_part${chunkIndex}.json`);
-                fs.writeFileSync(chunkFile, JSON.stringify(chunk, null, 2));
-                indexMeta.push({
-                    file: `commits_part${chunkIndex}.json`,
-                    startIndex: i,
-                    endIndex: i + chunk.length - 1,
-                    count: chunk.length
-                });
-                chunkIndex++;
-            }
-            // For backwards compatibility and index
-            fs.writeFileSync(outputFile, JSON.stringify({ isChunked: true, chunks: indexMeta }, null, 2));
-            console.log(`Saved commits in ${chunkIndex} chunks → ${outputDir}`);
-        }
+        console.log(`Parsed ${commits.length} commits for ${repoName}.`);
+        
+        const gitClient = simpleGit(repoPath);
 
         // ── Dependency pass ──────────────────────────────────────────────────
         // Build the set of live files at HEAD (track adds/deletes)
         const liveSet = new Set<string>();
         for (const commit of commits) {
             for (const file of commit.files) {
-                if (file.status === 'D') liveSet.delete(file.path);
-                else liveSet.add(file.path);
+                // To properly check HEAD, we need the raw filePath without repoName prefix temporarily
+                const rawPath = file.path.replace(`${repoName}/`, '');
+                if (file.status === 'D') liveSet.delete(rawPath);
+                else liveSet.add(rawPath);
             }
         }
         const liveFiles = Array.from(liveSet);
 
-        const deps = await parseDeps(liveFiles);
-        const depCount = Object.keys(deps).length;
-        fs.writeFileSync(depsFile, JSON.stringify(deps, null, 2));
-        console.log(`Saved deps (${depCount} files with imports) → ${depsFile}`);
+        // parse deps with simple-git locally pointing at the target repo
+        const repoDeps = await parseDeps(liveFiles, gitClient);
+        
+        // map repo deps back to namespaced deps
+        const namespacedDeps: Record<string, string[]> = {};
+        for(const [file, depsList] of Object.entries(repoDeps)) {
+            namespacedDeps[`${repoName}/${file}`] = depsList.map(dep => `${repoName}/${dep}`);
+        }
+
+        return { commits, deps: namespacedDeps };
 
     } catch (e) {
-        console.error('Error:', e);
+        console.error(`Error parsing repo ${repoName}:`, e);
+        return { commits: [], deps: {} };
     }
+}
+
+async function run() {
+    console.log(`Starting multi-repo parse for paths: ${REPO_PATHS.join(', ')}`);
+    
+    let allCommits: any[] = [];
+    let allDeps: Record<string, string[]> = {};
+
+    for (const repoPath of REPO_PATHS) {
+        const repoName = path.basename(repoPath);
+        const { commits, deps } = await runRepo(repoPath, repoName);
+        allCommits = allCommits.concat(commits);
+        allDeps = { ...allDeps, ...deps };
+    }
+
+    // Sort all commits globally chronologically
+    allCommits.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+    console.log(`\nTotal parsed multi-repo commits: ${allCommits.length}`);
+
+    const CHUNK_SIZE = 1000;
+    if (allCommits.length <= CHUNK_SIZE) {
+        fs.writeFileSync(outputFile, JSON.stringify(allCommits, null, 2));
+        console.log(`Saved commits → ${outputFile}`);
+    } else {
+        // Write chunks to support large repositories
+        let chunkIndex = 0;
+        const indexMeta = [];
+        for (let i = 0; i < allCommits.length; i += CHUNK_SIZE) {
+            const chunk = allCommits.slice(i, i + CHUNK_SIZE);
+            const chunkFile = path.join(outputDir, `commits_part${chunkIndex}.json`);
+            fs.writeFileSync(chunkFile, JSON.stringify(chunk, null, 2));
+            indexMeta.push({
+                file: `commits_part${chunkIndex}.json`,
+                startIndex: i,
+                endIndex: i + chunk.length - 1,
+                count: chunk.length
+            });
+            chunkIndex++;
+        }
+        // For backwards compatibility and index
+        fs.writeFileSync(outputFile, JSON.stringify({ isChunked: true, chunks: indexMeta }, null, 2));
+        console.log(`Saved commits in ${chunkIndex} chunks → ${outputDir}`);
+    }
+
+    const depCount = Object.keys(allDeps).length;
+    fs.writeFileSync(depsFile, JSON.stringify(allDeps, null, 2));
+    console.log(`Saved aggregated deps (${depCount} files with imports) → ${depsFile}`);
 }
 
 run();

@@ -206,11 +206,10 @@ html {
   flex-shrink: 0;
 }
 
-.swatch.hot { background: #ff5500; }
-.swatch.cold { background: #3a6b9e; }
+.swatch.hot { background: linear-gradient(to right, #000004, #de4968, #fcfdbf); width: 40px; margin-right: 4px; }
 .swatch.changed {
-  background: #ff8800;
-  box-shadow: 0 0 6px #ff8800;
+  background: #ffffff;
+  box-shadow: 0 0 6px #ffffff;
 }
 
 /* ── Building info panel (right) ─────────────────── */

@@ -184,8 +184,7 @@ function App() {
         </div>
 
         <div className="legend">
-          <div className="legend-item"><span className="swatch hot" /> Hot (recent)</div>
-          <div className="legend-item"><span className="swatch cold" /> Cold (old)</div>
+          <div className="legend-item"><span className="swatch hot" /> Cold to Hot (Recency)</div>
           <div className="legend-item"><span className="swatch changed" /> Changed this commit</div>
         </div>
       </div>
