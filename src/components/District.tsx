@@ -1,7 +1,6 @@
 
 import React from 'react';
 import type { LayoutNode } from '../types';
-import { Building } from './Building';
 
 interface DistrictProps {
   node: LayoutNode;
@@ -42,9 +41,7 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
       </mesh>
 
       {node.children?.map((child) => (
-        child.type === 'file' ? (
-          <Building key={child.path} node={child} {...sharedProps} />
-        ) : (
+        child.type === 'directory' && (
           <District key={child.path} node={child} depth={depth + 1} {...sharedProps} />
         )
       ))}

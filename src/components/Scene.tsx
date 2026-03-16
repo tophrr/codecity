@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { City } from './City';
 import { DependencyArcs } from './DependencyArcs';
@@ -87,6 +87,8 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
           mipmapBlur
         />
       </EffectComposer>
+
+      <Stats className="stats-panel" />
     </Canvas>
   );
 };
