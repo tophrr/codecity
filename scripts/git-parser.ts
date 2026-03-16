@@ -3,11 +3,13 @@ import { simpleGit } from 'simple-git';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { spawn } from 'child_process';
+import readline from 'readline';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const REPO_PATH = 'C:\\Users\\LENOVO\\Documents\\go\\typego';
+const REPO_PATH = process.env.REPO_PATH || process.cwd();
 
 const git = simpleGit(REPO_PATH);
 const outputDir = path.resolve(__dirname, '../src/data');
@@ -205,24 +207,29 @@ async function parseDeps(liveFiles: string[]): Promise<Record<string, string[]>>
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function run() {
-    console.log('Parsing Git log...');
+    console.log(`Parsing Git log from ${REPO_PATH}...`);
     try {
         const separator = '|||';
         const format = `COMMIT:${separator}%H${separator}%aI${separator}%an${separator}%ae${separator}%s`;
 
-        const logOutput = await git.raw([
+        const gitProcess = spawn('git', [
             'log',
             `--pretty=format:${format}`,
             '--numstat',
             '--summary',
             '--no-merges',
             '--reverse'
-        ]);
+        ], { cwd: REPO_PATH });
+
+        const rl = readline.createInterface({
+            input: gitProcess.stdout,
+            crlfDelay: Infinity
+        });
 
         const commits: any[] = [];
         let currentCommit: any = null;
 
-        for (const line of logOutput.split('\n')) {
+        for await (const line of rl) {
             if (line.trim() === '') continue;
 
             if (line.startsWith(`COMMIT:${separator}`)) {
@@ -255,14 +262,16 @@ async function run() {
 
                 const createMatch = line.match(/\s*create mode \d+ (.+)/);
                 if (createMatch) {
-                    const fe = currentCommit.files.find((f: any) => f.path === createMatch[1]);
+                    const expanded = expandRenamePath(createMatch[1]) ?? createMatch[1];
+                    const fe = currentCommit.files.find((f: any) => f.path === expanded);
                     if (fe) fe.status = 'A';
                     continue;
                 }
 
                 const deleteMatch = line.match(/\s*delete mode \d+ (.+)/);
                 if (deleteMatch) {
-                    const fe = currentCommit.files.find((f: any) => f.path === deleteMatch[1]);
+                    const expanded = expandRenamePath(deleteMatch[1]) ?? deleteMatch[1];
+                    const fe = currentCommit.files.find((f: any) => f.path === expanded);
                     if (fe) fe.status = 'D';
                     continue;
                 }
@@ -271,8 +280,31 @@ async function run() {
         if (currentCommit) commits.push(currentCommit);
 
         console.log(`Parsed ${commits.length} commits.`);
-        fs.writeFileSync(outputFile, JSON.stringify(commits, null, 2));
-        console.log(`Saved commits → ${outputFile}`);
+
+        const CHUNK_SIZE = 1000;
+        if (commits.length <= CHUNK_SIZE) {
+            fs.writeFileSync(outputFile, JSON.stringify(commits, null, 2));
+            console.log(`Saved commits → ${outputFile}`);
+        } else {
+            // Write chunks to support large repositories
+            let chunkIndex = 0;
+            const indexMeta = [];
+            for (let i = 0; i < commits.length; i += CHUNK_SIZE) {
+                const chunk = commits.slice(i, i + CHUNK_SIZE);
+                const chunkFile = path.join(outputDir, `commits_part${chunkIndex}.json`);
+                fs.writeFileSync(chunkFile, JSON.stringify(chunk, null, 2));
+                indexMeta.push({
+                    file: `commits_part${chunkIndex}.json`,
+                    startIndex: i,
+                    endIndex: i + chunk.length - 1,
+                    count: chunk.length
+                });
+                chunkIndex++;
+            }
+            // For backwards compatibility and index
+            fs.writeFileSync(outputFile, JSON.stringify({ isChunked: true, chunks: indexMeta }, null, 2));
+            console.log(`Saved commits in ${chunkIndex} chunks → ${outputDir}`);
+        }
 
         // ── Dependency pass ──────────────────────────────────────────────────
         // Build the set of live files at HEAD (track adds/deletes)

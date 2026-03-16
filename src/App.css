@@ -298,3 +298,9 @@ html {
 
 .stat-value.additions { color: #55cc77; }
 .stat-value.deletions { color: #ee5555; }
+
+.stats-panel {
+  top: auto !important;
+  bottom: 0px !important;
+  left: 0px !important;
+}
