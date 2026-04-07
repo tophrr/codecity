@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
 import readline from 'readline';
 
-const __filename = fileURLToPath(import.meta.url);
+const __filename =  fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const REPO_PATHS = process.env.REPO_PATHS ? process.env.REPO_PATHS.split(',') : [process.cwd()];

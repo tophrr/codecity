@@ -55,10 +55,18 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
 
   // Use refs for animation states
   const currentHeights = useRef<Float32Array>(new Float32Array(nodes.length));
+  const previousHeightsMap = useRef<Map<string, number>>(new Map());
   
   useEffect(() => {
-    // reset current heights when nodes change completely
-    currentHeights.current = new Float32Array(nodes.length);
+    // Attempt to retain previous height where possible
+    const nextHeights = new Float32Array(nodes.length);
+    nodes.forEach((n, i) => {
+      const prev = previousHeightsMap.current.get(n.path);
+      if (prev !== undefined) {
+        nextHeights[i] = prev;
+      }
+    });
+    currentHeights.current = nextHeights;
   }, [nodes]);
 
   const MIN_FOOTPRINT = 1.0;
@@ -78,6 +86,7 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
       const prevH = currentHeights.current[i];
       const h = prevH + (targetH - prevH) * factor;
       currentHeights.current[i] = Math.max(0.0001, h);
+      previousHeightsMap.current.set(node.path, h);
 
       const w = node.width;
       const d = node.height;

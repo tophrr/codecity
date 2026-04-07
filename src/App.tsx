@@ -40,9 +40,11 @@ function App() {
   }, []);
 
   const minDate = useMemo(() => commits.length ? new Date(commits[0].date).getTime() : 0, [commits]);
-  const maxDate = useMemo(() => commits.length ? new Date(commits[commits.length - 1].date).getTime() : 1, [commits]);
-
+  
   const [timeIndex, setTimeIndex] = useState(0);
+  const currentCommit = commits[timeIndex];
+  const maxDate = currentCommit ? new Date(currentCommit.date).getTime() : 1;
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [playSpeed, setPlaySpeed] = useState('1×');
   const [selectedBuilding, setSelectedBuilding] = useState<LayoutNode | null>(null);
@@ -78,8 +80,6 @@ function App() {
     () => cityLayout ? computeCityMetrics(cityLayout, deps) : null,
     [cityLayout]
   );
-
-  const currentCommit = commits[timeIndex];
 
   const handleSelect = useCallback((node: LayoutNode) => {
     setSelectedBuilding(prev => (prev?.path === node.path ? null : node));
