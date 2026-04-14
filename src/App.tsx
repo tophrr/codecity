@@ -2,6 +2,7 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { Scene } from './components/Scene';
 import { AnalyticsPanel } from './components/AnalyticsPanel';
+import { TimelinePanel } from './components/TimelinePanel';
 import { buildCityAtCommit, getCommitChangedPaths } from './utils/cityBuilder';
 import { computeLayout } from './utils/layout';
 import { computeCityMetrics } from './analytics';
@@ -141,7 +142,7 @@ function App() {
           </div>
         )}
 
-        <div className="controls">
+        <div className="controls" style={{ display: 'none' }}>
           <label>Time Travel:</label>
           <input
             type="range"
@@ -219,6 +220,18 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Timeline Panel */}
+      <TimelinePanel 
+        commits={commits}
+        timeIndex={timeIndex}
+        setTimeIndex={setTimeIndex}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        playSpeed={playSpeed}
+        setPlaySpeed={setPlaySpeed}
+        playSpeeds={PLAY_SPEEDS}
+      />
     </div>
   );
 }
