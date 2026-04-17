@@ -5,7 +5,7 @@ import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { City } from './City';
 import { DependencyArcs } from './DependencyArcs';
-import type { LayoutNode } from '../types';
+import type { LayoutNode, CityConfig } from '../types';
 import type { PositionMap } from './DependencyArcs';
 
 interface SceneProps {
@@ -15,22 +15,23 @@ interface SceneProps {
   minDate: number;
   maxDate: number;
   deps: Record<string, string[]>;
+  config: CityConfig;
 }
 
 /** Walk the layout tree and collect every leaf file's world top-center position. */
-function buildPositionMap(node: LayoutNode, map: PositionMap = new Map()): PositionMap {
+function buildPositionMap(node: LayoutNode, config: CityConfig, map: PositionMap = new Map()): PositionMap {
   if (node.type === 'file') {
     const x = node.x + node.width / 2;
     const z = node.y + node.height / 2;
-    const h = Math.max(0.2, node.size * 0.1);
+    const h = Math.max(0.2, (node.size * 0.1) * config.verticalScale);
     map.set(node.path, [x, h, z]);
   } else if (node.children) {
-    for (const child of node.children) buildPositionMap(child, map);
+    for (const child of node.children) buildPositionMap(child, config, map);
   }
   return map;
 }
 
-export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minDate, maxDate, deps }) => {
+export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minDate, maxDate, deps, config }) => {
   const cx = data.width / 2;
   const cz = data.height / 2;
   const size = Math.max(data.width, data.height);
@@ -39,7 +40,7 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
 
   const handleHover = useCallback((path: string | null) => setHoveredPath(path), []);
 
-  const positionMap = useMemo(() => buildPositionMap(data), [data]);
+  const positionMap = useMemo(() => buildPositionMap(data, config), [data, config.verticalScale]);
 
   return (
     <Canvas
@@ -69,6 +70,7 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
         onHover={handleHover}
         minDate={minDate}
         maxDate={maxDate}
+        config={config}
       />
 
       <DependencyArcs
@@ -81,9 +83,9 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
 
       <EffectComposer>
         <Bloom
-          luminanceThreshold={0.6}
+          luminanceThreshold={config.scene.bloomThreshold}
           luminanceSmoothing={0.3}
-          intensity={0.8}
+          intensity={config.scene.bloomIntensity}
           mipmapBlur
         />
       </EffectComposer>

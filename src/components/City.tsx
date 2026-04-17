@@ -1,6 +1,6 @@
 
 import React, { useMemo } from 'react';
-import type { LayoutNode } from '../types';
+import type { LayoutNode, CityConfig } from '../types';
 import { District } from './District';
 import { InstancedBuildings } from './InstancedBuildings';
 
@@ -11,10 +11,11 @@ interface CityProps {
   onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
+  config: CityConfig;
 }
 
-export const City: React.FC<CityProps> = ({ root, changedPaths, onSelect, onHover, minDate, maxDate }) => {
-  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
+export const City: React.FC<CityProps> = ({ root, changedPaths, onSelect, onHover, minDate, maxDate, config }) => {
+  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate, config };
   
   // Flatten nodes for Instanced Mesh
   const buildings = useMemo(() => {
@@ -37,6 +38,7 @@ export const City: React.FC<CityProps> = ({ root, changedPaths, onSelect, onHove
         onHover={onHover}
         minDate={minDate}
         maxDate={maxDate}
+        config={config}
       />
     </group>
   );

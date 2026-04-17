@@ -15,6 +15,7 @@ import { computeChurnRates } from './churnDensity';
 export function computeCityMetrics(
   root: LayoutNode,
   deps: Record<string, string[]>,
+  analyticsConfig: { abandonedPercentile: number }
 ): CityMetrics {
   // ── 1. Flatten layout tree into file list ──────────────────────────────────
   const allFiles: FlatFile[] = flattenFiles(root);
@@ -51,7 +52,7 @@ export function computeCityMetrics(
   for (const [, targets] of Object.entries(deps)) {
     for (const t of targets) inDegrees.set(t, (inDegrees.get(t) ?? 0) + 1);
   }
-  const abandonedSet = computeAbandonedFlags(allFiles, inDegrees);
+  const abandonedSet = computeAbandonedFlags(allFiles, inDegrees, analyticsConfig);
 
   // ── 8. Assemble per-file metrics ──────────────────────────────────────────
   const fileMetrics: FileMetrics[] = allFiles.map(f => {

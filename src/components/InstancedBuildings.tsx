@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
-import type { LayoutNode } from '../types';
+import type { LayoutNode, CityConfig } from '../types';
 
 interface InstancedBuildingsProps {
   nodes: LayoutNode[];
@@ -11,28 +11,68 @@ interface InstancedBuildingsProps {
   onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
+  config: CityConfig;
 }
 
 const MAGMA_COLORS = [
-  new THREE.Color('#000004'), // 0.0 - very dark purple/black
-  new THREE.Color('#3b0f70'), // 0.2
-  new THREE.Color('#8c2981'), // 0.4
-  new THREE.Color('#de4968'), // 0.6
-  new THREE.Color('#fe9f6d'), // 0.8
-  new THREE.Color('#fcfdbf')  // 1.0 - bright yellow
+  new THREE.Color('#000004'),
+  new THREE.Color('#3b0f70'),
+  new THREE.Color('#8c2981'),
+  new THREE.Color('#de4968'),
+  new THREE.Color('#fe9f6d'),
+  new THREE.Color('#fcfdbf')
 ];
 
-function getMagmaColor(t: number, target: THREE.Color) {
-  const scaledT = Math.max(0, Math.min(1, t)) * (MAGMA_COLORS.length - 1);
+const PLASMA_COLORS = [
+  new THREE.Color('#0d0887'),
+  new THREE.Color('#6a00a8'),
+  new THREE.Color('#b12a90'),
+  new THREE.Color('#e16462'),
+  new THREE.Color('#fca636'),
+  new THREE.Color('#f0f921')
+];
+
+const VIRIDIS_COLORS = [
+  new THREE.Color('#440154'),
+  new THREE.Color('#414487'),
+  new THREE.Color('#2a788e'),
+  new THREE.Color('#22a884'),
+  new THREE.Color('#7ad151'),
+  new THREE.Color('#fde725')
+];
+
+const INFERNO_COLORS = [
+  new THREE.Color('#000004'),
+  new THREE.Color('#420a68'),
+  new THREE.Color('#932667'),
+  new THREE.Color('#dd513a'),
+  new THREE.Color('#fca50a'),
+  new THREE.Color('#fcffa4')
+];
+
+function getPalette(palette: string) {
+  switch (palette) {
+    case 'plasma': return PLASMA_COLORS;
+    case 'viridis': return VIRIDIS_COLORS;
+    case 'inferno': return INFERNO_COLORS;
+    case 'magma':
+    default:
+      return MAGMA_COLORS;
+  }
+}
+
+function getColor(t: number, target: THREE.Color, palette: string) {
+  const colors = getPalette(palette);
+  const scaledT = Math.max(0, Math.min(1, t)) * (colors.length - 1);
   const index = Math.floor(scaledT);
   const fraction = scaledT - index;
   
-  if (index >= MAGMA_COLORS.length - 1) {
-    target.copy(MAGMA_COLORS[MAGMA_COLORS.length - 1]);
+  if (index >= colors.length - 1) {
+    target.copy(colors[colors.length - 1]);
     return;
   }
   
-  target.copy(MAGMA_COLORS[index]).lerp(MAGMA_COLORS[index + 1], fraction);
+  target.copy(colors[index]).lerp(colors[index + 1], fraction);
 }
 
 const HIGHLIGHT = new THREE.Color('#ffffff'); // Stand out from magma
@@ -44,6 +84,7 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
   onHover,
   minDate,
   maxDate,
+  config,
 }) => {
   const meshRef = useRef<THREE.InstancedMesh>(null!);
   const tempMatrix = new THREE.Matrix4();
@@ -82,7 +123,7 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
     const factor = 1 - Math.exp(-delta * LERP_SPEED);
 
     nodes.forEach((node, i) => {
-      const targetH = Math.max(0.2, node.size * 0.1);
+      const targetH = Math.max(0.2, (node.size * 0.1) * config.verticalScale);
       const prevH = currentHeights.current[i];
       const h = prevH + (targetH - prevH) * factor;
       currentHeights.current[i] = Math.max(0.0001, h);
@@ -112,7 +153,7 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
         const dateMs = node.lastModified ? new Date(node.lastModified).getTime() : minDate;
         const range = maxDate - minDate || 1;
         const recency = Math.max(0, Math.min(1, (dateMs - minDate) / range));
-        getMagmaColor(recency, tempColor);
+        getColor(recency, tempColor, config.colorPalette);
       }
       meshRef.current.setColorAt(i, tempColor);
     });
@@ -179,7 +220,7 @@ export const InstancedBuildings: React.FC<InstancedBuildingsProps> = ({
         <Html
           position={[
             nodes[hoveredIdx].x + nodes[hoveredIdx].width / 2, 
-            Math.max(0.2, nodes[hoveredIdx].size * 0.1) / 2 + 0.5, 
+            Math.max(0.2, (nodes[hoveredIdx].size * 0.1) * config.verticalScale) / 2 + 0.5, 
             nodes[hoveredIdx].y + nodes[hoveredIdx].height / 2
           ]}
           center

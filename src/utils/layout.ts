@@ -1,14 +1,9 @@
 
-import type { CityNode, LayoutNode } from '../types';
+import type { CityNode, LayoutNode, LayoutConfig } from '../types';
 import * as d3 from 'd3-hierarchy';
 
-interface LayoutConfig {
-    width: number;
-    height: number;
-    padding: number;
-}
-
 export function computeLayout(root: CityNode, config: LayoutConfig = { width: 1000, height: 1000, padding: 2 }): LayoutNode {
+
     // Create hierarchy
     const hierarchy = d3.hierarchy(root)
         // Give minimum size (e.g., 10) to prevent 0-size files from vanishing and shifting layout

@@ -3,12 +3,13 @@ import { useState, useMemo, useEffect, useCallback } from 'react';
 import { Scene } from './components/Scene';
 import { AnalyticsPanel } from './components/AnalyticsPanel';
 import { TimelinePanel } from './components/TimelinePanel';
+import { SettingsPanel } from './components/SettingsPanel';
 import { buildCityAtCommit, getCommitChangedPaths } from './utils/cityBuilder';
 import { computeLayout } from './utils/layout';
 import { computeCityMetrics } from './analytics';
 import CommitsData from './data/commits.json';
 import DepsData from './data/deps.json';
-import type { Commit, LayoutNode } from './types';
+import type { Commit, LayoutNode, CityConfig } from './types';
 import './App.css';
 
 const deps = DepsData as Record<string, string[]>;
@@ -50,6 +51,15 @@ function App() {
   const [playSpeed, setPlaySpeed] = useState('1×');
   const [selectedBuilding, setSelectedBuilding] = useState<LayoutNode | null>(null);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [config, setConfig] = useState<CityConfig>({
+    layout: { width: 100, height: 100, padding: 1 },
+    verticalScale: 1,
+    colorPalette: 'magma',
+    district: { lotHeight: 0.04, lotDepthStep: 0.015 },
+    scene: { bloomIntensity: 0.8, bloomThreshold: 0.6 },
+    analytics: { abandonedPercentile: 0.25 }
+  });
 
   // Advance time while playing
   useEffect(() => {
@@ -69,8 +79,8 @@ function App() {
   const cityLayout = useMemo(() => {
     if (commits.length === 0) return null;
     const city = buildCityAtCommit(commits, timeIndex);
-    return computeLayout(city, { width: 100, height: 100, padding: 1 });
-  }, [commits, timeIndex]);
+    return computeLayout(city, config.layout);
+  }, [commits, timeIndex, config.layout]);
 
   const changedPaths = useMemo(
     () => commits.length ? getCommitChangedPaths(commits, timeIndex) : new Set<string>(),
@@ -78,8 +88,8 @@ function App() {
   );
 
   const cityMetrics = useMemo(
-    () => cityLayout ? computeCityMetrics(cityLayout, deps) : null,
-    [cityLayout]
+    () => cityLayout ? computeCityMetrics(cityLayout, deps, config.analytics) : null,
+    [cityLayout, config.analytics]
   );
 
   const handleSelect = useCallback((node: LayoutNode) => {
@@ -101,8 +111,24 @@ function App() {
     <div className="app-container" onClick={() => setSelectedBuilding(null)}>
       {/* Analytics slide-in trigger */}
       <button className="ap-trigger" onClick={e => { e.stopPropagation(); setAnalyticsOpen(o => !o); }}>
-        {analyticsOpen ? 'Close' : 'Analytics'}
+        {analyticsOpen ? 'Close Analytics' : 'Analytics'}
       </button>
+
+      {/* Settings trigger */}
+      {!settingsOpen && (
+        <button className="sp-trigger" onClick={e => { e.stopPropagation(); setSettingsOpen(true); }}>
+          Settings
+        </button>
+      )}
+
+      {/* Settings panel */}
+      {settingsOpen && (
+        <SettingsPanel
+          config={config}
+          onChange={setConfig}
+          onClose={() => setSettingsOpen(false)}
+        />
+      )}
 
       {/* Analytics panel */}
       {cityMetrics && (
@@ -122,6 +148,7 @@ function App() {
             minDate={minDate}
             maxDate={maxDate}
             deps={deps}
+            config={config}
           />
         )}
       </div>

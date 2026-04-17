@@ -14,6 +14,7 @@ import type { FlatFile } from './types';
 export function computeAbandonedFlags(
   files: FlatFile[],
   inDegrees: Map<string, number>,
+  config: { abandonedPercentile: number }
 ): Set<string> {
   // Build 75th-percentile cutoff of lastModified (older = smaller timestamp)
   const timestamps = files
@@ -21,8 +22,8 @@ export function computeAbandonedFlags(
     .map(f => new Date(f.lastModified!).getTime())
     .sort((a, b) => a - b);
 
-  const p25Index = Math.floor(timestamps.length * 0.25);
-  const ageCutoff = timestamps[p25Index] ?? 0; // files modified before this are "old"
+  const pIndex = Math.floor(timestamps.length * config.abandonedPercentile);
+  const ageCutoff = timestamps[pIndex] ?? 0; // files modified before this are "old"
 
   const abandoned = new Set<string>();
   for (const f of files) {

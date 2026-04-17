@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Text } from '@react-three/drei';
-import type { LayoutNode } from '../types';
+import type { LayoutNode, CityConfig } from '../types';
 
 interface DistrictProps {
   node: LayoutNode;
@@ -11,24 +11,25 @@ interface DistrictProps {
   onHover: (path: string | null) => void;
   minDate: number;
   maxDate: number;
+  config: CityConfig;
 }
 
 // Lot surface color per depth — sits above the global road plane
 const LOT_COLOR = ['#1a1a30', '#161628', '#121220'];
 
-export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, onHover, minDate, maxDate }) => {
+export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, onHover, minDate, maxDate, config }) => {
   const w = node.width;
   const d = node.height;
   const x = node.x + w / 2;
   const z = node.y + d / 2;
 
-  // Each depth level raises the lot slightly above the global ground plane.
+  // Each depth level raises the lot slightly above the global road plane.
   // This means gaps in the treemap expose the lot of the parent (or the road ground at depth 0).
   // No padding — no overlap possible.
-  const lotY = 0.01 + depth * 0.015;
-  const lotH = 0.04;
+  const lotY = 0.01 + depth * config.district.lotDepthStep;
+  const lotH = config.district.lotHeight;
 
-  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate };
+  const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate, config };
 
   // Only render labels for reasonably sized districts to avoid clutter
   const showLabel = depth > 0 && depth < 4 && w > 4 && d > 4;

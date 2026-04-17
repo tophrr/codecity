@@ -33,3 +33,26 @@ export interface LayoutNode extends CityNode {
     height: number;
     children?: LayoutNode[];
 }
+
+export interface LayoutConfig {
+    width: number;
+    height: number;
+    padding: number;
+}
+
+export interface CityConfig {
+    layout: LayoutConfig;
+    verticalScale: number;
+    colorPalette: string;
+    district: {
+        lotHeight: number;
+        lotDepthStep: number;
+    };
+    scene: {
+        bloomIntensity: number;
+        bloomThreshold: number;
+    };
+    analytics: {
+        abandonedPercentile: number;
+    };
+}
