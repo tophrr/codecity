@@ -361,4 +361,9 @@ async function run() {
     console.log(`Saved aggregated deps (${depCount} files with imports) → ${depsFile}`);
 }
 
-run();
+// Export run for external wrapper
+import { pathToFileURL } from 'url';
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+    run();
+}
+export { runRepo, parseDeps, run };

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "express",
+    "commits": 2542,
+    "depsCount": 47,
+    "timeMs": 3087.23,
+    "memoryMb": 7.98
+  },
+  {
+    "name": "react",
+    "commits": 1000,
+    "depsCount": 1042,
+    "timeMs": 40147.53,
+    "memoryMb": 6.65
+  }
+]
