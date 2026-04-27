@@ -64,6 +64,8 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
             type="number"
             value={config.layout.width}
             onChange={e => onChange({ ...config, layout: { ...config.layout, width: parseInt(e.target.value, 10) } })}
+            min="100"
+            step="20"
           />
         </label>
 
@@ -73,6 +75,8 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
             type="number"
             value={config.layout.height}
             onChange={e => onChange({ ...config, layout: { ...config.layout, height: parseInt(e.target.value, 10) } })}
+            min="100"
+            step="20"
           />
         </label>
 
@@ -81,7 +85,10 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <input
             type="number"
             value={config.layout.padding}
-            onChange={e => onChange({ ...config, layout: { ...config.layout, padding: parseInt(e.target.value, 10) } })}
+            onChange={e => onChange({ ...config, layout: { ...config.layout, padding: parseFloat(e.target.value) } })}
+            min="0"
+            max="3"
+            step="0.5"
           />
         </label>
 

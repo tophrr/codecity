@@ -240,7 +240,7 @@ function App() {
   const collectProfilerRef = useRef(false);
   const profilerBufferRef = useRef(createEmptyRuntimeResults().reactProfiler);
   const [config, setConfig] = useState<CityConfig>({
-    layout: { width: 100, height: 100, padding: 1 },
+    layout: { width: 200, height: 200, padding: 1 },
     verticalScale: 1,
     colorPalette: 'magma',
     district: { lotHeight: 0.22, lotDepthStep: 0.09 },
