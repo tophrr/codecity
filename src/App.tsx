@@ -241,7 +241,7 @@ function App() {
     layout: { width: 100, height: 100, padding: 1 },
     verticalScale: 1,
     colorPalette: 'magma',
-    district: { lotHeight: 0.04, lotDepthStep: 0.015 },
+    district: { lotHeight: 0.22, lotDepthStep: 0.09 },
     scene: { bloomIntensity: 0.8, bloomThreshold: 0.6 },
     analytics: { abandonedPercentile: 0.25 }
   });

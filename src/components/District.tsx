@@ -14,8 +14,22 @@ interface DistrictProps {
   config: CityConfig;
 }
 
-// Lot surface color per depth — sits above the global road plane
-const LOT_COLOR = ['#1a1a30', '#161628', '#121220'];
+const LOT_DEPTH_COLORS = [
+  '#0f172a',
+  '#12324a',
+  '#195568',
+  '#2a776b',
+  '#4a8f5e',
+  '#7a9b52',
+  '#b28d4b',
+  '#c1734a',
+  '#a3573f',
+];
+
+const getLotColorForDepth = (depth: number): string => {
+  const clampedDepth = Math.min(depth, LOT_DEPTH_COLORS.length - 1);
+  return LOT_DEPTH_COLORS[clampedDepth];
+};
 
 export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPaths, onSelect, onHover, minDate, maxDate, config }) => {
   const w = node.width;
@@ -23,11 +37,9 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
   const x = node.x + w / 2;
   const z = node.y + d / 2;
 
-  // Each depth level raises the lot slightly above the global road plane.
-  // This means gaps in the treemap expose the lot of the parent (or the road ground at depth 0).
-  // No padding — no overlap possible.
-  const lotY = 0.01 + depth * config.district.lotDepthStep;
   const lotH = config.district.lotHeight;
+  // Make depth layering obvious by lifting each lot by its own half-height plus depth step.
+  const lotY = 0.01 + lotH / 2 + depth * config.district.lotDepthStep;
 
   const sharedProps = { changedPaths, onSelect, onHover, minDate, maxDate, config };
 
@@ -40,7 +52,7 @@ export const District: React.FC<DistrictProps> = ({ node, depth = 0, changedPath
       <mesh position={[x, lotY, z]} receiveShadow>
         <boxGeometry args={[w, lotH, d]} />
         <meshStandardMaterial
-          color={LOT_COLOR[Math.min(depth, 2)]}
+          color={getLotColorForDepth(depth)}
           roughness={0.9}
         />
       </mesh>

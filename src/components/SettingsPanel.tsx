@@ -91,9 +91,9 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <span>District lot height</span>
           <input
             type="range"
-            min="0.01"
-            max="0.2"
-            step="0.01"
+            min="0.02"
+            max="1.2"
+            step="0.02"
             value={config.district.lotHeight}
             onChange={e => onChange({ ...config, district: { ...config.district, lotHeight: parseFloat(e.target.value) } })}
           />
@@ -103,9 +103,9 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <span>District depth step</span>
           <input
             type="range"
-            min="0.005"
-            max="0.05"
-            step="0.005"
+            min="0.01"
+            max="0.4"
+            step="0.01"
             value={config.district.lotDepthStep}
             onChange={e => onChange({ ...config, district: { ...config.district, lotDepthStep: parseFloat(e.target.value) } })}
           />
