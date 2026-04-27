@@ -9,8 +9,12 @@ const __dirname = path.dirname(__filename);
 const tempDir = path.resolve(__dirname, '../.benchmark_repos');
 
 const REPOS_TO_TEST = [
-    { url: 'https://github.com/expressjs/express.git', name: 'express' }, // Small/Medium
-    { url: 'https://github.com/facebook/react.git', name: 'react' },      // Large
+    { url: 'https://github.com/expressjs/express.git', name: 'express' }, // Small/Medium JS
+    { url: 'https://github.com/axios/axios.git', name: 'axios' },         // Small JS
+    { url: 'https://github.com/facebook/react.git', name: 'react' },      // Large JS/TS
+    { url: 'https://github.com/vuejs/core.git', name: 'vue' },            // Medium JS/TS
+    { url: 'https://github.com/gin-gonic/gin.git', name: 'gin' },         // Small/Medium Go
+    { url: 'https://github.com/gohugoio/hugo.git', name: 'hugo' },        // Large Go
 ];
 
 if (!fs.existsSync(tempDir)) {

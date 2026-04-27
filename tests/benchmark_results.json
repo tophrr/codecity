@@ -3,14 +3,42 @@
     "name": "express",
     "commits": 2542,
     "depsCount": 47,
-    "timeMs": 3087.23,
-    "memoryMb": 7.98
+    "timeMs": 2027.61,
+    "memoryMb": 12.12
+  },
+  {
+    "name": "axios",
+    "commits": 1784,
+    "depsCount": 110,
+    "timeMs": 4336.68,
+    "memoryMb": 14.54
   },
   {
     "name": "react",
     "commits": 1000,
     "depsCount": 1042,
-    "timeMs": 40147.53,
-    "memoryMb": 6.65
+    "timeMs": 35270.68,
+    "memoryMb": 10.48
+  },
+  {
+    "name": "vue",
+    "commits": 1403,
+    "depsCount": 339,
+    "timeMs": 5106.72,
+    "memoryMb": 11.89
+  },
+  {
+    "name": "gin",
+    "commits": 1000,
+    "depsCount": 21,
+    "timeMs": 1188.56,
+    "memoryMb": 10.21
+  },
+  {
+    "name": "hugo",
+    "commits": 1017,
+    "depsCount": 573,
+    "timeMs": 8025.52,
+    "memoryMb": 15.4
   }
 ]
