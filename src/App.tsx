@@ -230,6 +230,7 @@ function App() {
   const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const [benchmarkTick, setBenchmarkTick] = useState(0);
   const [benchmarkStatus, setBenchmarkStatus] = useState<'idle' | 'running' | 'done' | 'error'>('idle');
   const [benchmarkResults, setBenchmarkResults] = useState<RuntimePerformanceResults | null>(null);
@@ -312,6 +313,19 @@ function App() {
       if (copyTimeoutRef.current) window.clearTimeout(copyTimeoutRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (!aboutOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setAboutOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [aboutOpen]);
 
   const selectedFileDetails = useMemo<SelectedFileDetails | null>(() => {
     if (!selectedBuilding) return null;
@@ -563,6 +577,11 @@ function App() {
         </button>
       )}
 
+      {/* About trigger */}
+      <button className="about-trigger" onClick={e => { e.stopPropagation(); setAboutOpen(true); }}>
+        About Us
+      </button>
+
       {/* Settings panel */}
       {settingsOpen && (
         <SettingsPanel
@@ -584,6 +603,47 @@ function App() {
           isOpen={analyticsOpen}
           onClose={() => setAnalyticsOpen(false)}
         />
+      )}
+
+      {aboutOpen && (
+        <div className="about-modal-backdrop" onClick={() => setAboutOpen(false)}>
+          <div
+            className="about-modal"
+            onClick={e => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="about-title"
+          >
+            <button className="about-close" onClick={() => setAboutOpen(false)} aria-label="Close about modal">✕</button>
+            <h2 id="about-title">About Temporal Code City</h2>
+
+            <p>
+              Temporal Code City is a 3D software visualization tool that shows repository evolution over time using a city metaphor.
+              Buildings represent files, districts represent folders/packages, and curved arcs represent dependencies.
+            </p>
+
+            <p>
+              The project is designed for large Git histories, combining stable treemap layout, instanced WebGL rendering,
+              and analytics metrics such as modularity index, coupling radius, hub detection, abandoned zones,
+              and skyline roughness.
+            </p>
+
+            <div className="about-section">
+              <h3>Authors</h3>
+              <ul>
+                <li>Christopher Gijoh</li>
+                <li>Evan Laluan</li>
+                <li>Christian Oroh</li>
+              </ul>
+              <p>S1 Informatika, Universitas Pelita Harapan. Developed to fulfill the final project of Computer Graphics course.</p>
+            </div>
+
+            <div className="about-section">
+              <h3>Tech Stack</h3>
+              <p>React, Three.js, @react-three/fiber, @react-three/drei, TypeScript, Node.js, d3-hierarchy.</p>
+            </div>
+          </div>
+        </div>
       )}
       {/* 3D Scene */}
       <Profiler id="Scene" onRender={handleProfilerRender}>

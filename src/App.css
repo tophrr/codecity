@@ -512,3 +512,131 @@ html {
   bottom: 0px !important;
   left: 0px !important;
 }
+
+.about-trigger {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 60, 0.92);
+  border: 1px solid rgba(100, 100, 180, 0.3);
+  border-radius: 6px;
+  color: #8888ff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  z-index: 199;
+  transition: background 0.15s, color 0.15s;
+  backdrop-filter: blur(8px);
+}
+
+.about-trigger:hover {
+  background: rgba(50, 50, 100, 0.95);
+  color: #aaaaff;
+}
+
+.about-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 20, 0.72);
+  backdrop-filter: blur(3px);
+  padding: 20px;
+}
+
+.about-modal {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(14, 18, 38, 0.97), rgba(10, 12, 28, 0.97));
+  border: 1px solid rgba(130, 140, 220, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 20px 48px rgba(2, 4, 12, 0.75);
+  padding: 22px;
+  color: #d7defd;
+  animation: aboutFadeIn 0.16s ease-out;
+}
+
+.about-modal h2 {
+  margin: 0 34px 12px 0;
+  font-size: 1.1rem;
+  color: #c5cffb;
+}
+
+.about-modal h3 {
+  margin: 0 0 8px;
+  font-size: 0.83rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9faadf;
+}
+
+.about-modal p {
+  margin: 0 0 10px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #c5cef2;
+}
+
+.about-section {
+  margin-top: 14px;
+  border-top: 1px solid rgba(140, 150, 220, 0.22);
+  padding-top: 12px;
+}
+
+.about-section ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #d7defd;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.about-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #8591c6;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.about-close:hover {
+  color: #bac5ff;
+}
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .about-trigger {
+    top: 14px;
+    padding: 7px 10px;
+  }
+
+  .about-modal-backdrop {
+    padding: 12px;
+  }
+
+  .about-modal {
+    padding: 16px;
+  }
+}
