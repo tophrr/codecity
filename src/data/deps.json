@@ -1,97 +1,158 @@
 {
-  "SawitDB/src/SawitServer.js": [
-    "SawitDB/src/server/auth/AuthManager.js",
-    "SawitDB/src/server/DatabaseRegistry.js",
-    "SawitDB/src/server/router/RequestRouter.js",
-    "SawitDB/src/server/session/ClientSession.js",
-    "SawitDB/src/modules/ClusterManager.js"
+  "typego/cmd/typego/main.go": [
+    "typego/pkg/cli/build.go"
   ],
-  "SawitDB/src/WowoEngine.js": [
-    "SawitDB/src/modules/Pager.js",
-    "SawitDB/src/modules/QueryParser.js",
-    "SawitDB/src/modules/WAL.js",
-    "SawitDB/src/services/event/DBEventHandler.js",
-    "SawitDB/src/services/event/DBEvent.js",
-    "SawitDB/src/services/TableManager.js",
-    "SawitDB/src/services/IndexManager.js",
-    "SawitDB/src/services/logic/ConditionEvaluator.js",
-    "SawitDB/src/services/TransactionManager.js",
-    "SawitDB/src/services/ViewManager.js",
-    "SawitDB/src/services/TriggerManager.js",
-    "SawitDB/src/services/ProcedureManager.js",
-    "SawitDB/src/services/ReplicationManager.js",
-    "SawitDB/src/services/SearchManager.js",
-    "SawitDB/src/services/SecurityManager.js",
-    "SawitDB/src/services/executors/SelectExecutor.js",
-    "SawitDB/src/services/executors/InsertExecutor.js",
-    "SawitDB/src/services/executors/DeleteExecutor.js",
-    "SawitDB/src/services/executors/UpdateExecutor.js",
-    "SawitDB/src/services/executors/AggregateExecutor.js"
+  "typego/compiler/compiler.go": [
+    "typego/compiler/plugins/defer.go"
   ],
-  "SawitDB/cli/local.js": [
-    "SawitDB/src/WowoEngine.js"
+  "typego/engine/engine.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/bridge/intrinsics/intrinsics.go",
+    "typego/bridge/stdlib/memory/memory.go",
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/eventloop/eventloop.go",
+    "typego/bridge/modules/crypto/crypto.go",
+    "typego/bridge/modules/fmt/fmt.go",
+    "typego/bridge/modules/json/errors.go",
+    "typego/bridge/modules/net/http.go",
+    "typego/bridge/modules/os/os.go",
+    "typego/bridge/modules/sync/sync.go"
   ],
-  "SawitDB/cli/test.js": [
-    "SawitDB/src/WowoEngine.js",
-    "SawitDB/src/SawitClient.js"
+  "typego/engine/worker.go": [
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/compiler/compiler.go"
   ],
-  "SawitDB/cli/remote.js": [
-    "SawitDB/src/SawitClient.js"
+  "typego/internal/builder/templates.go": [
+    "typego/engine/engine.go"
   ],
-  "SawitDB/bin/sawit-server.js": [
-    "SawitDB/src/SawitServer.js"
+  "typego/bridge/core/registry.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/cli/benchmark.js": [
-    "SawitDB/src/WowoEngine.js",
-    "SawitDB/src/SawitClient.js"
+  "typego/bridge/modules/fmt/fmt.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/SawitWorker.js": [
-    "SawitDB/src/WowoEngine.js"
+  "typego/bridge/modules/net/http.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/examples/dbevent.js": [
-    "SawitDB/src/WowoEngine.js",
-    "SawitDB/src/modules/Env.js",
-    "SawitDB/examples/dbeventHandlerExample.js"
+  "typego/bridge/modules/os/os.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/examples/dbeventHandlerExample.js": [
-    "SawitDB/src/services/event/DBEvent.js"
+  "typego/bridge/modules/sync/sync.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/services/event/DBEventHandler.js": [
-    "SawitDB/src/services/event/DBEvent.js"
+  "typego/bridge/stdlib/memory/memory.go": [
+    "typego/bridge/modules/sync/sync.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/server/DatabaseRegistry.js": [
-    "SawitDB/src/WowoEngine.js"
+  "typego/bridge/stdlib/worker/worker.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/services/IndexManager.js": [
-    "SawitDB/src/modules/BTreeIndex.js"
+  "typego/engine/engine_test.go": [
+    "typego/engine/engine.go"
   ],
-  "SawitDB/src/services/TableManager.js": [
-    "SawitDB/src/modules/Pager.js"
+  "typego/internal/builder/builder_test.go": [
+    "typego/internal/builder/doc.go"
   ],
-  "SawitDB/src/services/executors/AggregateExecutor.js": [
-    "SawitDB/src/services/QueryExecutor.js",
-    "SawitDB/src/services/executors/SelectExecutor.js"
+  "typego/tests/integration/harness.go": [
+    "typego/engine/engine.go"
   ],
-  "SawitDB/src/services/executors/DeleteExecutor.js": [
-    "SawitDB/src/services/QueryExecutor.js",
-    "SawitDB/src/services/logic/ConditionEvaluator.js"
+  "typego/bridge/modules/json/json.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/services/executors/InsertExecutor.js": [
-    "SawitDB/src/services/QueryExecutor.js",
-    "SawitDB/src/modules/Pager.js"
+  "typego/bridge/modules/crypto/crypto.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/services/executors/SelectExecutor.js": [
-    "SawitDB/src/services/QueryExecutor.js",
-    "SawitDB/src/services/logic/JoinProcessor.js",
-    "SawitDB/src/services/logic/ConditionEvaluator.js"
+  "typego/bridge/modules/net/server.go": [
+    "typego/eventloop/eventloop.go"
   ],
-  "SawitDB/src/services/executors/UpdateExecutor.js": [
-    "SawitDB/src/services/QueryExecutor.js",
-    "SawitDB/src/services/logic/ConditionEvaluator.js",
-    "SawitDB/src/services/executors/InsertExecutor.js",
-    "SawitDB/src/services/executors/DeleteExecutor.js"
+  "typego/internal/ecosystem/installer/install.go": [
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/ecosystem/builder/compile.go",
+    "typego/internal/ecosystem/resolver/toolchain.go",
+    "typego/internal/linker/fetcher.go"
   ],
-  "SawitDB/examples/example_v3_features.js": [
-    "SawitDB/src/WowoEngine.js"
+  "typego/pkg/cli/root.go": [
+    "typego/pkg/cli/cmd/build.go",
+    "typego/pkg/cli/pkg/add.go"
+  ],
+  "typego/pkg/cli/internal/config.go": [
+    "typego/internal/ecosystem/ast/extractor.go"
+  ],
+  "typego/pkg/cli/pkg/add.go": [
+    "typego/pkg/cli/cmd/build.go",
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/clean.go": [
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/install.go": [
+    "typego/internal/ecosystem/installer/install.go",
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/list.go": [
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/remove.go": [
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/outdated.go": [
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/pkg/update.go": [
+    "typego/pkg/cli/internal/config.go"
+  ],
+  "typego/pkg/cli/cmd/build.go": [
+    "typego/compiler/compiler.go",
+    "typego/internal/builder/doc.go",
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/linker/fetcher.go"
+  ],
+  "typego/pkg/cli/cmd/dev.go": [
+    "typego/internal/ecosystem/ast/extractor.go"
+  ],
+  "typego/pkg/cli/cmd/interpreter.go": [
+    "typego/compiler/compiler.go",
+    "typego/engine/engine.go"
+  ],
+  "typego/pkg/cli/cmd/run.go": [
+    "typego/compiler/compiler.go",
+    "typego/internal/builder/doc.go",
+    "typego/internal/ecosystem/ast/extractor.go",
+    "typego/internal/linker/fetcher.go"
+  ],
+  "typego/pkg/cli/cmd/types.go": [
+    "typego/bridge/core/arraybuffer.go",
+    "typego/bridge/intrinsics/intrinsics.go",
+    "typego/bridge/modules/crypto/crypto.go",
+    "typego/bridge/modules/net/http.go",
+    "typego/bridge/modules/sync/sync.go",
+    "typego/bridge/stdlib/memory/memory.go",
+    "typego/bridge/stdlib/worker/worker.go",
+    "typego/compiler/compiler.go",
+    "typego/internal/linker/fetcher.go"
+  ],
+  "typego/bridge/intrinsics/intrinsics.go": [
+    "typego/eventloop/eventloop.go"
+  ],
+  "typego/compiler/plugins/defer.go": [
+    "typego/internal/transformer/core/transformer.go",
+    "typego/internal/transformer/visitors/defer_visitor.go"
+  ],
+  "typego/internal/transformer/visitors/defer_visitor.go": [
+    "typego/internal/transformer/core/transformer.go"
+  ],
+  "typego/internal/transformer/visitors/iota_visitor.go": [
+    "typego/internal/transformer/core/transformer.go"
+  ],
+  "typego/examples/projects/link-shortener/src/handlers/links.ts": [
+    "typego/examples/projects/link-shortener/src/db/store.ts",
+    "typego/examples/projects/link-shortener/src/utils/shortid.ts"
   ]
 }
