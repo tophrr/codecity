@@ -222,7 +222,9 @@ html {
   backdrop-filter: blur(14px);
   padding: 20px;
   border-radius: 10px;
-  width: 260px;
+  width: 340px;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
   border: 1px solid rgba(100, 100, 200, 0.25);
   box-shadow: 0 4px 30px rgba(0, 0, 60, 0.7);
   animation: slideIn 0.18s ease-out;
@@ -258,17 +260,103 @@ html {
 }
 
 .panel-path {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 0.7rem;
   color: #556688;
   word-break: break-all;
   font-family: 'JetBrains Mono', monospace;
 }
 
+.panel-path-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.panel-path-row .panel-path {
+  flex: 1;
+}
+
+.copy-btn {
+  border: 1px solid rgba(160, 170, 255, 0.35);
+  background: rgba(90, 100, 190, 0.2);
+  color: #c6ceff;
+  border-radius: 6px;
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  cursor: pointer;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: rgba(120, 130, 220, 0.28);
+}
+
+.copy-btn.compact {
+  padding: 3px 6px;
+  font-size: 0.62rem;
+}
+
+.panel-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(180, 190, 255, 0.2);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #aeb8ff;
+  background: rgba(95, 105, 180, 0.14);
+}
+
+.meta-pill.meta-hot {
+  border-color: rgba(255, 150, 60, 0.45);
+  color: #ffb46a;
+  background: rgba(255, 120, 20, 0.16);
+}
+
+.panel-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: 1px solid rgba(150, 160, 255, 0.18);
+  background: rgba(80, 90, 150, 0.12);
+  color: #8f98c9;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  border-color: rgba(150, 170, 255, 0.5);
+  background: rgba(120, 140, 255, 0.22);
+  color: #d6ddff;
+}
+
 .panel-stats {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .stat {
@@ -295,8 +383,129 @@ html {
   font-family: 'JetBrains Mono', monospace;
 }
 
+.stat-col {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.stat-value.wrapped {
+  white-space: normal;
+  word-break: break-word;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.directory-value,
+.breadcrumb-value {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .stat-value.additions { color: #55cc77; }
 .stat-value.deletions { color: #ee5555; }
+
+.history-list,
+.deps-section {
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(12, 14, 30, 0.4);
+}
+
+.history-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-hash {
+  color: #c9d1ff;
+}
+
+.history-status {
+  margin-left: auto;
+  font-size: 0.64rem;
+  color: #9ba7dd;
+  border: 1px solid rgba(140, 150, 230, 0.35);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
+.history-meta {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  color: #8490be;
+}
+
+.history-message {
+  margin-top: 6px;
+  font-size: 0.73rem;
+  color: #b9c2ec;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.history-delta {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.73rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.deps-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dep-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+  padding: 5px 6px;
+  background: rgba(13, 15, 32, 0.34);
+}
+
+.dep-path {
+  flex: 1;
+  font-size: 0.67rem;
+  color: #a8b2dc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empty-state {
+  font-size: 0.72rem;
+  color: #7682b8;
+  border: 1px dashed rgba(130, 140, 210, 0.3);
+  border-radius: 7px;
+  padding: 10px;
+}
 
 .stats-panel {
   top: auto !important;

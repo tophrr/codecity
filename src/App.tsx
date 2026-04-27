@@ -36,6 +36,34 @@ type RuntimePerformanceResults = {
   error: string | null;
 };
 
+type FileCommitDetail = {
+  commitIndex: number;
+  hash: string;
+  date: string;
+  author: string;
+  message: string;
+  status: 'A' | 'M' | 'D' | 'R';
+  added: number;
+  deleted: number;
+};
+
+type SelectedFileDetails = {
+  path: string;
+  extension: string;
+  directory: string;
+  breadcrumbs: string[];
+  changeCount: number;
+  firstSeen: string | null;
+  lastTouched: FileCommitDetail | null;
+  recentHistory: FileCommitDetail[];
+  totalAddedAtSnapshot: number;
+  totalDeletedAtSnapshot: number;
+  isChangedInSnapshotCommit: boolean;
+  statusAtSnapshot: 'A' | 'M' | 'D' | 'R' | null;
+  outgoingDeps: string[];
+  incomingDeps: string[];
+};
+
 function createEmptyRuntimeResults(): RuntimePerformanceResults {
   return {
     renderTime: [],
@@ -135,6 +163,35 @@ function exportRuntimePerformanceAsJson(
   URL.revokeObjectURL(objectUrl);
 }
 
+function getFileExtension(path: string): string {
+  const base = path.split('/').pop() ?? path;
+  const dot = base.lastIndexOf('.');
+  if (dot <= 0 || dot === base.length - 1) return 'none';
+  return base.slice(dot + 1).toLowerCase();
+}
+
+function getFileDirectory(path: string): string {
+  const idx = path.lastIndexOf('/');
+  if (idx <= 0) return '/';
+  return path.slice(0, idx);
+}
+
+function formatRelativeTime(dateIso: string): string {
+  const date = new Date(dateIso).getTime();
+  if (Number.isNaN(date)) return 'unknown';
+
+  const seconds = Math.round((date - Date.now()) / 1000);
+  const abs = Math.abs(seconds);
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' });
+
+  if (abs < 60) return rtf.format(seconds, 'second');
+  if (abs < 3600) return rtf.format(Math.round(seconds / 60), 'minute');
+  if (abs < 86400) return rtf.format(Math.round(seconds / 3600), 'hour');
+  if (abs < 86400 * 30) return rtf.format(Math.round(seconds / 86400), 'day');
+  if (abs < 86400 * 365) return rtf.format(Math.round(seconds / (86400 * 30)), 'month');
+  return rtf.format(Math.round(seconds / (86400 * 365)), 'year');
+}
+
 function App() {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -169,6 +226,8 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playSpeed, setPlaySpeed] = useState('1×');
   const [selectedBuilding, setSelectedBuilding] = useState<LayoutNode | null>(null);
+  const [buildingTab, setBuildingTab] = useState<'overview' | 'history' | 'deps'>('overview');
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [benchmarkTick, setBenchmarkTick] = useState(0);
@@ -218,8 +277,94 @@ function App() {
   );
 
   const handleSelect = useCallback((node: LayoutNode) => {
+    setBuildingTab('overview');
     setSelectedBuilding(prev => (prev?.path === node.path ? null : node));
   }, []);
+
+  const copyTimeoutRef = useRef<number | null>(null);
+
+  const handleCopy = useCallback(async (label: string, value: string) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = value;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+      }
+
+      setCopiedLabel(label);
+      if (copyTimeoutRef.current) window.clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = window.setTimeout(() => setCopiedLabel(null), 1200);
+    } catch {
+      setCopiedLabel(null);
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) window.clearTimeout(copyTimeoutRef.current);
+    };
+  }, []);
+
+  const selectedFileDetails = useMemo<SelectedFileDetails | null>(() => {
+    if (!selectedBuilding) return null;
+
+    const history: FileCommitDetail[] = [];
+
+    for (let i = 0; i <= timeIndex; i++) {
+      const commit = commits[i];
+      if (!commit) continue;
+      for (const file of commit.files) {
+        if (file.path !== selectedBuilding.path) continue;
+        history.push({
+          commitIndex: i,
+          hash: commit.hash,
+          date: commit.date,
+          author: commit.author_name,
+          message: commit.message,
+          status: file.status,
+          added: file.added,
+          deleted: file.deleted,
+        });
+      }
+    }
+
+    const firstSeen = history.length > 0 ? history[0].date : null;
+    const lastTouched = history.length > 0 ? history[history.length - 1] : null;
+    const recentHistory = [...history].reverse().slice(0, 8);
+
+    const totalAddedAtSnapshot = history.reduce((sum, h) => sum + h.added, 0);
+    const totalDeletedAtSnapshot = history.reduce((sum, h) => sum + h.deleted, 0);
+
+    const outgoingDeps = deps[selectedBuilding.path] ?? [];
+    const incomingDeps = Object.entries(deps)
+      .filter(([, targets]) => targets.includes(selectedBuilding.path))
+      .map(([source]) => source);
+
+    return {
+      path: selectedBuilding.path,
+      extension: getFileExtension(selectedBuilding.path),
+      directory: getFileDirectory(selectedBuilding.path),
+      breadcrumbs: selectedBuilding.path.split('/').filter(Boolean),
+      changeCount: history.length,
+      firstSeen,
+      lastTouched,
+      recentHistory,
+      totalAddedAtSnapshot,
+      totalDeletedAtSnapshot,
+      isChangedInSnapshotCommit: changedPaths.has(selectedBuilding.path),
+      statusAtSnapshot: lastTouched?.status ?? null,
+      outgoingDeps,
+      incomingDeps,
+    };
+  }, [selectedBuilding, timeIndex, commits, changedPaths]);
 
   const handleProfilerRender = useCallback(
     (
@@ -400,7 +545,12 @@ function App() {
   }
 
   return (
-    <div className="app-container" onClick={() => setSelectedBuilding(null)}>
+    <div
+      className="app-container"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) setSelectedBuilding(null);
+      }}
+    >
       {/* Analytics slide-in trigger */}
       <button className="ap-trigger" onClick={e => { e.stopPropagation(); setAnalyticsOpen(o => !o); }}>
         {analyticsOpen ? 'Close Analytics' : 'Analytics'}
@@ -522,29 +672,192 @@ function App() {
         <div className="building-panel" onClick={e => e.stopPropagation()}>
           <button className="panel-close" onClick={() => setSelectedBuilding(null)}>✕</button>
           <h2 className="panel-title">{selectedBuilding.name}</h2>
-          <p className="panel-path">{selectedBuilding.path}</p>
-          <div className="panel-stats">
-            <div className="stat">
-              <span className="stat-label">Lines of Code</span>
-              <span className="stat-value">{selectedBuilding.size.toLocaleString()}</span>
-            </div>
-            <div className="stat">
-              <span className="stat-label">Last Modified</span>
-              <span className="stat-value">
-                {selectedBuilding.lastModified
-                  ? new Date(selectedBuilding.lastModified).toLocaleDateString()
-                  : '—'}
-              </span>
-            </div>
-            <div className="stat">
-              <span className="stat-label">Total Additions</span>
-              <span className="stat-value additions">+{(selectedBuilding.totalAdded ?? 0).toLocaleString()}</span>
-            </div>
-            <div className="stat">
-              <span className="stat-label">Total Deletions</span>
-              <span className="stat-value deletions">-{(selectedBuilding.totalDeleted ?? 0).toLocaleString()}</span>
-            </div>
+          <div className="panel-path-row">
+            <p className="panel-path">{selectedBuilding.path}</p>
+            <button
+              className="copy-btn"
+              onClick={() => handleCopy('path', selectedBuilding.path)}
+              title="Copy file path"
+            >
+              {copiedLabel === 'path' ? 'Copied' : 'Copy'}
+            </button>
           </div>
+
+          <div className="panel-meta-row">
+            <span className="meta-pill">.{selectedFileDetails?.extension ?? 'none'}</span>
+            <span className="meta-pill">{selectedFileDetails?.statusAtSnapshot ?? '—'}</span>
+            <span className={`meta-pill ${selectedFileDetails?.isChangedInSnapshotCommit ? 'meta-hot' : ''}`}>
+              {selectedFileDetails?.isChangedInSnapshotCommit ? 'changed now' : 'unchanged now'}
+            </span>
+          </div>
+
+          <div className="panel-tabs" role="tablist" aria-label="Building details tabs">
+            <button
+              className={`tab-btn ${buildingTab === 'overview' ? 'active' : ''}`}
+              onClick={() => setBuildingTab('overview')}
+            >
+              Overview
+            </button>
+            <button
+              className={`tab-btn ${buildingTab === 'history' ? 'active' : ''}`}
+              onClick={() => setBuildingTab('history')}
+            >
+              History
+            </button>
+            <button
+              className={`tab-btn ${buildingTab === 'deps' ? 'active' : ''}`}
+              onClick={() => setBuildingTab('deps')}
+            >
+              Dependencies
+            </button>
+          </div>
+
+          {buildingTab === 'overview' && (
+            <div className="panel-stats">
+              <div className="stat">
+                <span className="stat-label">Lines of Code</span>
+                <span className="stat-value">{selectedBuilding.size.toLocaleString()}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Last Modified</span>
+                <span className="stat-value">
+                  {selectedBuilding.lastModified
+                    ? new Date(selectedBuilding.lastModified).toLocaleDateString()
+                    : '—'}
+                </span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Total Additions</span>
+                <span className="stat-value additions">+{(selectedBuilding.totalAdded ?? 0).toLocaleString()}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Total Deletions</span>
+                <span className="stat-value deletions">-{(selectedBuilding.totalDeleted ?? 0).toLocaleString()}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Changed up to Snapshot</span>
+                <span className="stat-value">{selectedFileDetails?.changeCount.toLocaleString() ?? '0'}x</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Snapshot Additions</span>
+                <span className="stat-value additions">+{(selectedFileDetails?.totalAddedAtSnapshot ?? 0).toLocaleString()}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Snapshot Deletions</span>
+                <span className="stat-value deletions">-{(selectedFileDetails?.totalDeletedAtSnapshot ?? 0).toLocaleString()}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Directory</span>
+                <span className="stat-value directory-value" title={selectedFileDetails?.directory}>{selectedFileDetails?.directory ?? '/'}</span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Breadcrumbs</span>
+                <span className="stat-value breadcrumb-value" title={selectedFileDetails?.breadcrumbs.join(' / ')}>
+                  {selectedFileDetails?.breadcrumbs.join(' / ') || '—'}
+                </span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">First Seen</span>
+                <span className="stat-value">
+                  {selectedFileDetails?.firstSeen
+                    ? `${new Date(selectedFileDetails.firstSeen).toLocaleDateString()} (${formatRelativeTime(selectedFileDetails.firstSeen)})`
+                    : '—'}
+                </span>
+              </div>
+              <div className="stat">
+                <span className="stat-label">Last Commit</span>
+                <span className="stat-value">
+                  {selectedFileDetails?.lastTouched
+                    ? new Date(selectedFileDetails.lastTouched.date).toLocaleDateString()
+                    : '—'}
+                </span>
+              </div>
+              {selectedFileDetails?.lastTouched && (
+                <>
+                  <div className="stat">
+                    <span className="stat-label">Last Author</span>
+                    <span className="stat-value">{selectedFileDetails.lastTouched.author}</span>
+                  </div>
+                  <div className="stat stat-col">
+                    <span className="stat-label">Last Message</span>
+                    <span className="stat-value wrapped">{selectedFileDetails.lastTouched.message}</span>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+
+          {buildingTab === 'history' && (
+            <div className="history-list">
+              {selectedFileDetails?.recentHistory.length ? selectedFileDetails.recentHistory.map(item => (
+                <div className="history-item" key={`${item.hash}-${item.commitIndex}`}>
+                  <div className="history-head">
+                    <span className="history-hash mono">{item.hash.slice(0, 7)}</span>
+                    <button
+                      className="copy-btn compact"
+                      onClick={() => handleCopy(`hash-${item.hash}`, item.hash)}
+                      title="Copy commit hash"
+                    >
+                      {copiedLabel === `hash-${item.hash}` ? 'Copied' : 'Copy'}
+                    </button>
+                    <span className="history-status">{item.status}</span>
+                  </div>
+                  <div className="history-meta">
+                    {new Date(item.date).toLocaleString()} · {item.author}
+                  </div>
+                  <div className="history-message">{item.message}</div>
+                  <div className="history-delta">
+                    <span className="additions">+{item.added.toLocaleString()}</span>
+                    <span className="deletions">-{item.deleted.toLocaleString()}</span>
+                  </div>
+                </div>
+              )) : (
+                <div className="empty-state">No commits found for this file at current snapshot.</div>
+              )}
+            </div>
+          )}
+
+          {buildingTab === 'deps' && (
+            <div className="deps-section">
+              <div className="stat">
+                <span className="stat-label">Outgoing</span>
+                <span className="stat-value">{selectedFileDetails?.outgoingDeps.length ?? 0}</span>
+              </div>
+              <div className="deps-list">
+                {(selectedFileDetails?.outgoingDeps.length ?? 0) > 0 ? (
+                  selectedFileDetails?.outgoingDeps.slice(0, 20).map(depPath => (
+                    <div className="dep-item" key={`out-${depPath}`}>
+                      <span className="dep-path mono" title={depPath}>{depPath}</span>
+                      <button className="copy-btn compact" onClick={() => handleCopy(`dep-${depPath}`, depPath)}>
+                        {copiedLabel === `dep-${depPath}` ? 'Copied' : 'Copy'}
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <div className="empty-state">No outgoing dependencies mapped.</div>
+                )}
+              </div>
+
+              <div className="stat">
+                <span className="stat-label">Incoming</span>
+                <span className="stat-value">{selectedFileDetails?.incomingDeps.length ?? 0}</span>
+              </div>
+              <div className="deps-list">
+                {(selectedFileDetails?.incomingDeps.length ?? 0) > 0 ? (
+                  selectedFileDetails?.incomingDeps.slice(0, 20).map(depPath => (
+                    <div className="dep-item" key={`in-${depPath}`}>
+                      <span className="dep-path mono" title={depPath}>{depPath}</span>
+                      <button className="copy-btn compact" onClick={() => handleCopy(`dep-${depPath}`, depPath)}>
+                        {copiedLabel === `dep-${depPath}` ? 'Copied' : 'Copy'}
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <div className="empty-state">No incoming dependencies mapped.</div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
