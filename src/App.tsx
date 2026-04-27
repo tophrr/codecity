@@ -570,17 +570,18 @@ function App() {
         {analyticsOpen ? 'Close Analytics' : 'Analytics'}
       </button>
 
-      {/* Settings trigger */}
-      {!settingsOpen && (
-        <button className="sp-trigger" onClick={e => { e.stopPropagation(); setSettingsOpen(true); }}>
-          Settings
+      {/* Top action triggers */}
+      <div className="top-action-buttons">
+        <button className="about-trigger" onClick={e => { e.stopPropagation(); setAboutOpen(true); }}>
+          About Us
         </button>
-      )}
 
-      {/* About trigger */}
-      <button className="about-trigger" onClick={e => { e.stopPropagation(); setAboutOpen(true); }}>
-        About Us
-      </button>
+        {!settingsOpen && (
+          <button className="sp-trigger" onClick={e => { e.stopPropagation(); setSettingsOpen(true); }}>
+            Settings
+          </button>
+        )}
+      </div>
 
       {/* Settings panel */}
       {settingsOpen && (

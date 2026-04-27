@@ -513,11 +513,28 @@ html {
   left: 0px !important;
 }
 
-.about-trigger {
+.top-action-buttons {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 199;
+}
+
+.top-action-buttons .about-trigger,
+.top-action-buttons .sp-trigger {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  z-index: auto;
+}
+
+.about-trigger {
   background: rgba(30, 30, 60, 0.92);
   border: 1px solid rgba(100, 100, 180, 0.3);
   border-radius: 6px;
@@ -627,8 +644,12 @@ html {
 }
 
 @media (max-width: 720px) {
-  .about-trigger {
+  .top-action-buttons {
     top: 14px;
+  }
+
+  .top-action-buttons .about-trigger,
+  .top-action-buttons .sp-trigger {
     padding: 7px 10px;
   }
 
