@@ -6,9 +6,23 @@ interface SettingsPanelProps {
   config: CityConfig;
   onChange: (config: CityConfig) => void;
   onClose: () => void;
+  onRunRuntimeBenchmark: () => void;
+  onExportRuntimeBenchmark: () => void;
+  benchmarkRunning: boolean;
+  benchmarkReady: boolean;
+  benchmarkStatusText: string;
 }
 
-export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onChange, onClose }) => {
+export const SettingsPanel: React.FC<SettingsPanelProps> = ({
+  config,
+  onChange,
+  onClose,
+  onRunRuntimeBenchmark,
+  onExportRuntimeBenchmark,
+  benchmarkRunning,
+  benchmarkReady,
+  benchmarkStatusText,
+}) => {
   return (
     <div className="settings-panel" onClick={e => e.stopPropagation()}>
       <div className="settings-header">
@@ -136,6 +150,31 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onChange, 
             onChange={e => onChange({ ...config, analytics: { ...config.analytics, abandonedPercentile: parseFloat(e.target.value) } })}
           />
         </label>
+
+        <hr />
+
+        <div className="runtime-benchmark-section">
+          <span className="runtime-benchmark-title">Runtime benchmark</span>
+          <div className="runtime-benchmark-actions">
+            <button
+              type="button"
+              className="runtime-benchmark-btn"
+              onClick={onRunRuntimeBenchmark}
+              disabled={benchmarkRunning}
+            >
+              {benchmarkRunning ? 'Running...' : 'Run benchmark'}
+            </button>
+            <button
+              type="button"
+              className="runtime-benchmark-btn runtime-benchmark-btn--secondary"
+              onClick={onExportRuntimeBenchmark}
+              disabled={!benchmarkReady || benchmarkRunning}
+            >
+              Export JSON
+            </button>
+          </div>
+          <p className="runtime-benchmark-status">{benchmarkStatusText}</p>
+        </div>
 
       </div>
     </div>
