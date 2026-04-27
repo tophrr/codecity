@@ -35,9 +35,9 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           <span>Vertical scale</span>
           <input
             type="range"
-            min="0.5"
+            min="0.01"
             max="10"
-            step="0.1"
+            step="0.01"
             value={config.verticalScale}
             onChange={e => onChange({ ...config, verticalScale: parseFloat(e.target.value) })}
           />
