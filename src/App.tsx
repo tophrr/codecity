@@ -4,6 +4,7 @@ import { Scene } from './components/Scene';
 import { AnalyticsPanel } from './components/AnalyticsPanel';
 import { TimelinePanel } from './components/TimelinePanel';
 import { SettingsPanel } from './components/SettingsPanel';
+import { StatsPanel } from './components/StatsPanel';
 import { buildCityAtCommit, getCommitChangedPaths } from './utils/cityBuilder';
 import { computeLayout } from './utils/layout';
 import { computeCityMetrics } from './analytics';
@@ -230,6 +231,7 @@ function App() {
   const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [statsOpen, setStatsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [benchmarkTick, setBenchmarkTick] = useState(0);
   const [benchmarkStatus, setBenchmarkStatus] = useState<'idle' | 'running' | 'done' | 'error'>('idle');
@@ -276,6 +278,36 @@ function App() {
     () => cityLayout ? computeCityMetrics(cityLayout, deps, config.analytics) : null,
     [cityLayout, config.analytics]
   );
+
+  const sceneStats = useMemo(() => {
+    if (!cityLayout) return null;
+    let buildings = 0;
+    let districts = 0;
+    let totalSize = 0;
+    const traverse = (node: LayoutNode) => {
+      if (node.type === 'file') {
+        buildings++;
+        totalSize += node.size;
+      } else {
+        districts++;
+        if (node.children) node.children.forEach(traverse);
+      }
+    };
+    traverse(cityLayout);
+
+    let arcs = 0;
+    Object.values(deps).forEach(targets => {
+      arcs += targets.length;
+    });
+
+    return {
+      buildings,
+      districts,
+      arcs,
+      totalSize,
+      instances: buildings // Currently 1:1 for building instances
+    };
+  }, [cityLayout]);
 
   const handleSelect = useCallback((node: LayoutNode) => {
     setBuildingTab('overview');
@@ -576,6 +608,13 @@ function App() {
           About Us
         </button>
 
+        <button 
+          className={`stats-trigger ${statsOpen ? 'active' : ''}`} 
+          onClick={e => { e.stopPropagation(); setStatsOpen(o => !o); }}
+        >
+          {statsOpen ? 'Hide Stats' : 'Stats'}
+        </button>
+
         {!settingsOpen && (
           <button className="sp-trigger" onClick={e => { e.stopPropagation(); setSettingsOpen(true); }}>
             Settings
@@ -594,6 +633,14 @@ function App() {
           benchmarkRunning={benchmarkStatus === 'running'}
           benchmarkReady={benchmarkResults !== null}
           benchmarkStatusText={benchmarkStatusText}
+        />
+      )}
+
+      {/* Stats panel */}
+      {statsOpen && sceneStats && (
+        <StatsPanel 
+          stats={sceneStats} 
+          onClose={() => setStatsOpen(false)} 
         />
       )}
 

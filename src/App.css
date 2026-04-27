@@ -508,9 +508,16 @@ html {
 }
 
 .stats-panel {
-  top: auto !important;
-  bottom: 0px !important;
-  left: 0px !important;
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  z-index: 2 !important;
+}
+
+/* Stats panel positioning */
+.city-stats-panel {
+  top: 20px !important;
+  right: 20px !important;
 }
 
 .top-action-buttons {
@@ -525,13 +532,39 @@ html {
 }
 
 .top-action-buttons .about-trigger,
-.top-action-buttons .sp-trigger {
+.top-action-buttons .sp-trigger,
+.top-action-buttons .stats-trigger {
   position: static;
   top: auto;
   left: auto;
   right: auto;
   transform: none;
   z-index: auto;
+}
+
+.stats-trigger {
+  background: rgba(30, 30, 60, 0.92);
+  border: 1px solid rgba(100, 100, 180, 0.3);
+  border-radius: 6px;
+  color: #a8aaff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  transition: all 0.15s;
+  backdrop-filter: blur(8px);
+}
+
+.stats-trigger:hover {
+  background: rgba(50, 50, 100, 0.92);
+  color: #fff;
+}
+
+.stats-trigger.active {
+  background: rgba(50, 50, 200, 0.6);
+  border-color: rgba(150, 150, 255, 0.5);
+  color: #fff;
 }
 
 .about-trigger {
