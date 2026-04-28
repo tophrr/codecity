@@ -43,6 +43,17 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({
           />
         </label>
 
+        <hr />
+
+        <label className="checkbox-label">
+          <span>Show all dependency arcs</span>
+          <input
+            type="checkbox"
+            checked={config.visualization.showAllDependencies}
+            onChange={e => onChange({ ...config, visualization: { ...config.visualization, showAllDependencies: e.target.checked } })}
+          />
+        </label>
+
         <label>
           <span>Color palette</span>
           <select

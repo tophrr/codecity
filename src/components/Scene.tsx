@@ -77,6 +77,7 @@ export const Scene: React.FC<SceneProps> = ({ data, changedPaths, onSelect, minD
         hoveredPath={hoveredPath}
         deps={deps}
         positionMap={positionMap}
+        showAll={config.visualization.showAllDependencies}
       />
 
       <gridHelper args={[size * 2, 40, '#1a1a30', '#111120']} position={[cx, -0.6, cz]} />

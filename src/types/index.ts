@@ -55,4 +55,7 @@ export interface CityConfig {
     analytics: {
         abandonedPercentile: number;
     };
+    visualization: {
+        showAllDependencies: boolean;
+    };
 }

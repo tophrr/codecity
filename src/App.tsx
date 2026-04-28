@@ -245,7 +245,8 @@ function App() {
     colorPalette: 'magma',
     district: { lotHeight: 0.22, lotDepthStep: 0.09 },
     scene: { bloomIntensity: 0.8, bloomThreshold: 0.6 },
-    analytics: { abandonedPercentile: 0.25 }
+    analytics: { abandonedPercentile: 0.25 },
+    visualization: { showAllDependencies: false }
   });
 
   // Advance time while playing

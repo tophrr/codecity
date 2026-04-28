@@ -8,6 +8,7 @@ interface DependencyArcsProps {
   hoveredPath: string | null;
   deps: Record<string, string[]>;
   positionMap: PositionMap;
+  showAll?: boolean;
 }
 
 const ARC_SEGMENTS = 40;
@@ -67,51 +68,73 @@ export const DependencyArcs: React.FC<DependencyArcsProps> = ({
   hoveredPath,
   deps,
   positionMap,
+  showAll = false,
 }) => {
   const [hoveredArcId, setHoveredArcId] = useState<string | null>(null);
 
   const arcs = useMemo(() => {
-    if (!hoveredPath) return null;
-
-    const fromPos = positionMap.get(hoveredPath);
-    if (!fromPos) return null;
-
     const outgoing: ArcData[] = [];
     const incoming: ArcData[] = [];
 
-    // Outgoing: what this file imports
-    const targets = deps[hoveredPath] ?? [];
-    for (const target of targets) {
-      const toPos = positionMap.get(target);
-      if (toPos) {
-        outgoing.push({
-          id: `out-${hoveredPath}-${target}`,
-          from: hoveredPath,
-          to: target,
-          type: 'outgoing',
-          ...buildArcPoints(fromPos, toPos),
-        });
-      }
-    }
+    if (showAll) {
+      // In showAll mode, we render all outgoing dependencies from all files
+      for (const [source, targets] of Object.entries(deps)) {
+        const fromPos = positionMap.get(source);
+        if (!fromPos) continue;
 
-    // Incoming: what imports this file (reverse lookup)
-    for (const [importer, importees] of Object.entries(deps)) {
-      if (importees.includes(hoveredPath)) {
-        const fromImporterPos = positionMap.get(importer);
-        if (fromImporterPos) {
-          incoming.push({
-            id: `in-${importer}-${hoveredPath}`,
-            from: importer,
-            to: hoveredPath,
-            type: 'incoming',
-            ...buildArcPoints(fromImporterPos, fromPos),
-          });
+        for (const target of targets) {
+          const toPos = positionMap.get(target);
+          if (toPos) {
+            outgoing.push({
+              id: `out-${source}-${target}`,
+              from: source,
+              to: target,
+              type: 'outgoing',
+              ...buildArcPoints(fromPos, toPos),
+            });
+          }
+        }
+      }
+    } else if (hoveredPath) {
+      const fromPos = positionMap.get(hoveredPath);
+      if (fromPos) {
+        // Outgoing: what this file imports
+        const targets = deps[hoveredPath] ?? [];
+        for (const target of targets) {
+          const toPos = positionMap.get(target);
+          if (toPos) {
+            outgoing.push({
+              id: `out-${hoveredPath}-${target}`,
+              from: hoveredPath,
+              to: target,
+              type: 'outgoing',
+              ...buildArcPoints(fromPos, toPos),
+            });
+          }
+        }
+
+        // Incoming: what imports this file (reverse lookup)
+        for (const [importer, importees] of Object.entries(deps)) {
+          if (importees.includes(hoveredPath)) {
+            const fromImporterPos = positionMap.get(importer);
+            if (fromImporterPos) {
+              incoming.push({
+                id: `in-${importer}-${hoveredPath}`,
+                from: importer,
+                to: hoveredPath,
+                type: 'incoming',
+                ...buildArcPoints(fromImporterPos, fromPos),
+              });
+            }
+          }
         }
       }
     }
 
+    if (outgoing.length === 0 && incoming.length === 0) return null;
+
     return { outgoing, incoming };
-  }, [hoveredPath, deps, positionMap]);
+  }, [hoveredPath, deps, positionMap, showAll]);
 
   if (!arcs) return null;
 
